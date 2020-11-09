@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on 空栈攻城狮</title>
+    <link>https://www.huahuaorz.xyz/categories/</link>
+    <description>Recent content in Categories on 空栈攻城狮</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 10 Nov 2020 00:00:00 +0800</lastBuildDate><atom:link href="https://www.huahuaorz.xyz/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>编译原理</title>
+      <link>https://www.huahuaorz.xyz/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Tue, 10 Nov 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://www.huahuaorz.xyz/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>建站</title>
+      <link>https://www.huahuaorz.xyz/categories/%E5%BB%BA%E7%AB%99/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://www.huahuaorz.xyz/categories/%E5%BB%BA%E7%AB%99/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>数据库</title>
+      <link>https://www.huahuaorz.xyz/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+      <pubDate>Mon, 20 Apr 2020 01:00:00 +0800</pubDate>
+      
+      <guid>https://www.huahuaorz.xyz/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>杂谈</title>
+      <link>https://www.huahuaorz.xyz/categories/%E6%9D%82%E8%B0%88/</link>
+      <pubDate>Mon, 20 Apr 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://www.huahuaorz.xyz/categories/%E6%9D%82%E8%B0%88/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

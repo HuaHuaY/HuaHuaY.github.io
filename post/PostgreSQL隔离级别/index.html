@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>PostgreSQL隔离级别 | 空栈攻城狮</title>
+    <meta property="og:title" content="PostgreSQL隔离级别 - 空栈攻城狮">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2020-04-20T01:00:00&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2020-04-20T01:00:00&#43;08:00'>
+        
+    <meta name="Keywords" content="程序设计,c&#43;&#43;,java,c,python,方舟编译器">
+    <meta name="description" content="PostgreSQL隔离级别">
+        
+    <meta name="author" content="HuaHuaY">
+    <meta property="og:url" content="https://www.huahuaorz.xyz/post/PostgreSQL%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+        <link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    
+    
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://www.huahuaorz.xyz/">
+                        空栈攻城狮
+                    </a>
+                
+                <p class="description">优雅的代码是恰如其分，增之一分则太长，减之一分则太短。</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://www.huahuaorz.xyz/">首页</a>
+                    
+                    <a  href="https://www.huahuaorz.xyz/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://www.huahuaorz.xyz/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#自动提交">自动提交</a></li>
+    <li><a href="#脏读不可重复读与幻读">脏读、不可重复读与幻读</a>
+      <ul>
+        <li><a href="#脏读dirty-read">脏读（Dirty Read）</a></li>
+        <li><a href="#不可重复读-nonrepeatable-read">不可重复读 （Nonrepeatable Read）</a></li>
+        <li><a href="#幻读phantom-read">幻读（Phantom Read）</a></li>
+      </ul>
+    </li>
+    <li><a href="#四个事务隔离级别">四个事务隔离级别</a></li>
+    <li><a href="#read-commited">Read Commited</a></li>
+    <li><a href="#repeatable-read">Repeatable Read</a></li>
+    <li><a href="#serializable">Serializable</a></li>
+    <li><a href="#参考链接">参考链接</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">PostgreSQL隔离级别</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年4月20日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/%E6%95%B0%E6%8D%AE%E5%BA%93'>数据库</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="clear" style="display: none">
+            <div class="toc-article">
+                <div class="toc-title">文章目录</div>
+            </div>
+        </div>
+        
+        <div class="post-content">
+            <p>事务是一串不可分割的原子操作，不能只执行部分操作。例如银行转账，从一个账户中扣除资金，转账到另一个账户上。扣款成功却转账失败是不可接受的。事务可以有提交和回滚操作，提交事务后，事务的修改永久生效。而在提交前，可以通过回滚操作返回事务生效前的状态。</p>
+<h2 id="自动提交">自动提交</h2>
+<p>在PostgreSQL中，执行一个事务时，默认情况下执行后会立刻提交，我们不能去撤回已经执行的语句，这样执行时提交的模式被称为自动提交。</p>
+<p>可以用命令<code>\set AUTOCOMMIT off</code>，或者在执行的事务前加入<code>begin;</code>来取消自动提交。取消自动提交后，事务只会被执行，只有当我们运行<code>commit;</code>时，事务才会被提交。在这种模式下，可以通过运行<code>rollback;</code>语句去回滚已经执行的事务。</p>
+<h2 id="脏读不可重复读与幻读">脏读、不可重复读与幻读</h2>
+<p>使用SQL数据库的过程中，有多个事务同时使用一个数据库时，可能出现三种影响查阅数据的现象：脏读、不可重复读与幻读。其中脏读在PostgreSQL中不会发生。</p>
+<h3 id="脏读dirty-read">脏读（Dirty Read）</h3>
+<p>脏读是一个事务执行却未提交他的而数据操作，另一个事务查阅数据时，能读到前一个事务的数据操作。而在读取数据后，前一个事务可能取消了它的操作，后一个事务以为操作发生了，实际操作没有发生。</p>
+<h3 id="不可重复读-nonrepeatable-read">不可重复读 （Nonrepeatable Read）</h3>
+<p>不可重复读是一个事务查阅数据后，另一个事务修改（update）了数据库中的内容，执行并提交。前一个事务并不知道在他读取后，有事务修改了数据库中的内容。它如果按条件修改数据，但数据可能已被更改，不一定满足它的条件，亦或本不满足条件的数据变成满足条件的数据，但前一个事务都不知道的。如果它再一次查阅数据，就会发现数据已经发生了改变。连续两次数据查阅的结果不同，被称为不可重复读。</p>
+<h3 id="幻读phantom-read">幻读（Phantom Read）</h3>
+<p>幻读是一个事务，另一个事务增加或删减（insert/delete）数据库中的内容，执行并提交。前一个事务并不知道在他读取后，有事务增删了数据库中的内容，前一个事务再次查询时，查询出的内容会发生增删（仿佛出现了幻觉）。</p>
+<p>幻读和不可重复读十分相似，他们的区别主要在一个是Update，另一个是是Insert/Delete。</p>
+<h2 id="四个事务隔离级别">四个事务隔离级别</h2>
+<p>SQL标准中有4个事务隔离级别，分别规定了禁止哪些现象发生（N）。四个事务隔离级别分别是read uncommitted, read commited, repeatable read和serializable。</p>
+<table>
+<thead>
+<tr>
+<th>SQL</th>
+<th style="text-align:center">脏读</th>
+<th style="text-align:center">不可重复读</th>
+<th style="text-align:center">幻读</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>read uncommitted</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>read commited</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>repeatable read</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>serializable</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">N</td>
+</tr>
+</tbody>
+</table>
+<p>而在PostgreSQL中，只有三个隔离级别，可以用<code>set default_transaction_isolation = 'read uncommitted';</code>指定read uncommitted。但是read uncommitted被视为read commited。此外，在PostgreSQL中，隔离级别为repeatable read时，也不会出现幻读现象。</p>
+<table>
+<thead>
+<tr>
+<th>PostgreSQL</th>
+<th style="text-align:center">脏读</th>
+<th style="text-align:center">不可重复读</th>
+<th style="text-align:center">幻读</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>read commited</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>repeatable read</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">N</td>
+</tr>
+<tr>
+<td>serializable</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">N</td>
+</tr>
+</tbody>
+</table>
+<h2 id="read-commited">Read Commited</h2>
+<p>有多个事务时，Read commited只读取其他事务已经Commited后的数据内容，所以不会读取到uncommited的部分，也就不会发生脏读现象。</p>
+<h2 id="repeatable-read">Repeatable Read</h2>
+<p>Repeatable Read要求，一个事务读取数据后，它并不会阻止其他事务修改数据，但是其他的事务修改数据不会影响到它的操作结果。在它读取数据时，对已有数据的状态进行了快照。这样前一个事务对数据的读取和修改结果，只基于快照和自己的修改，不会发生不可重复读现象。虽然在PostgreSQL中该隔离级别不会发生幻读现象，在SQL标准中，并不禁止此隔离级别发生幻读。</p>
+<h2 id="serializable">Serializable</h2>
+<p>Serializable要求读写操作相对所在的事务，是串行的。两个事务同时进行，必须找到一个顺序，让两个事务的结果不能发生Serializable禁止的现象，且能够分出先后。</p>
+<p>Serializable是怎么防止幻读的，先挖个坑&hellip;&hellip;（没查到能理解的方法我要哭了</p>
+<h2 id="参考链接">参考链接</h2>
+<p>[1]. Microsoft SQL Docs: <a href="https://docs.microsoft.com/en-us/sql/odbc/reference/develop-app/transactions-odbc?view=sql-server-ver15">Transactions ODBC</a></p>
+<p>[2]. PostgreSQL 9.3.25 Documentation: <a href="https://www.postgresql.org/docs/9.3/sql-set-transaction.html">SET TRANSACTIO</a></p>
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://www.huahuaorz.xyz/">HuaHuaY</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://www.huahuaorz.xyz/post/PostgreSQL%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB/">https://www.huahuaorz.xyz/post/PostgreSQL%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/Welcome-to-My-Website/">Welcome to My Website!</a></li>
+        
+        <li><a href="/archives/">归档</a></li>
+        
+        <li><a href="/search/">搜索</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/PostgreSQL'>PostgreSQL</a></li>
+                
+                <li><a href='/tags/%E6%95%B0%E6%8D%AE%E5%BA%93'>数据库</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "HuaHuaY/HuaHuaY.github.io"
+            issue-term="title"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2020 <a href="https://www.huahuaorz.xyz/">空栈攻城狮 By HuaHuaY</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://www.huahuaorz.xyz/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://www.huahuaorz.xyz/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://www.huahuaorz.xyz/post/Welcome-to-My-Website/" title="Welcome to My Website!">Welcome to My Website!</a>
+    </li>
+    
+    <li>
+        <a href="https://www.huahuaorz.xyz/post/%E6%96%B9%E8%88%9F%E7%BC%96%E8%AF%91%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="方舟编译器学习笔记">方舟编译器学习笔记</a>
+    </li>
+    
+    <li>
+        <a href="https://www.huahuaorz.xyz/post/Typecho-Handsome%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/" title="Typecho Handsome主题美化">Typecho Handsome主题美化</a>
+    </li>
+    
+    <li>
+        <a href="https://www.huahuaorz.xyz/post/PostgreSQL%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB/" title="PostgreSQL隔离级别">PostgreSQL隔离级别</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://www.huahuaorz.xyz/categories/%E5%BB%BA%E7%AB%99/">建站 (1)</a></li>
+    
+    <li><a href="https://www.huahuaorz.xyz/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库 (1)</a></li>
+    
+    <li><a href="https://www.huahuaorz.xyz/categories/%E6%9D%82%E8%B0%88/">杂谈 (1)</a></li>
+    
+    <li><a href="https://www.huahuaorz.xyz/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理 (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://www.huahuaorz.xyz/tags/PostgreSQL/">PostgreSQL</a>
+    
+    <a href="https://www.huahuaorz.xyz/tags/Typecho/">Typecho</a>
+    
+    <a href="https://www.huahuaorz.xyz/tags/themes/">themes</a>
+    
+    <a href="https://www.huahuaorz.xyz/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+    
+    <a href="https://www.huahuaorz.xyz/tags/%E6%96%B9%E8%88%9F%E7%BC%96%E8%AF%91%E5%99%A8/">方舟编译器</a>
+    
+    <a href="https://www.huahuaorz.xyz/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://www.google.com/" title="Google">Google</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://www.baidu.com/" title="Baidu">Baidu</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://www.huahuaorz.xyz/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

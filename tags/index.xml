@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on 空栈攻城狮</title>
+    <link>https://www.huahuaorz.xyz/tags/</link>
+    <description>Recent content in Tags on 空栈攻城狮</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 10 Nov 2020 00:00:00 +0800</lastBuildDate><atom:link href="https://www.huahuaorz.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>方舟编译器</title>
+      <link>https://www.huahuaorz.xyz/tags/%E6%96%B9%E8%88%9F%E7%BC%96%E8%AF%91%E5%99%A8/</link>
+      <pubDate>Tue, 10 Nov 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://www.huahuaorz.xyz/tags/%E6%96%B9%E8%88%9F%E7%BC%96%E8%AF%91%E5%99%A8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>编译原理</title>
+      <link>https://www.huahuaorz.xyz/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Tue, 10 Nov 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://www.huahuaorz.xyz/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>themes</title>
+      <link>https://www.huahuaorz.xyz/tags/themes/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://www.huahuaorz.xyz/tags/themes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Typecho</title>
+      <link>https://www.huahuaorz.xyz/tags/Typecho/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://www.huahuaorz.xyz/tags/Typecho/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PostgreSQL</title>
+      <link>https://www.huahuaorz.xyz/tags/PostgreSQL/</link>
+      <pubDate>Mon, 20 Apr 2020 01:00:00 +0800</pubDate>
+      
+      <guid>https://www.huahuaorz.xyz/tags/PostgreSQL/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>数据库</title>
+      <link>https://www.huahuaorz.xyz/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+      <pubDate>Mon, 20 Apr 2020 01:00:00 +0800</pubDate>
+      
+      <guid>https://www.huahuaorz.xyz/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1640 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>Typecho Handsome主题美化 | 空栈攻城狮</title>
+    <meta property="og:title" content="Typecho Handsome主题美化 - 空栈攻城狮">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2020-08-12T00:00:00&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2020-08-12T00:00:00&#43;08:00'>
+        
+    <meta name="Keywords" content="程序设计,c&#43;&#43;,java,c,python,方舟编译器">
+    <meta name="description" content="Typecho Handsome主题美化">
+        
+    <meta name="author" content="HuaHuaY">
+    <meta property="og:url" content="https://www.huahuaorz.xyz/post/Typecho-Handsome%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+        <link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    
+    
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://www.huahuaorz.xyz/">
+                        空栈攻城狮
+                    </a>
+                
+                <p class="description">优雅的代码是恰如其分，增之一分则太长，减之一分则太短。</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://www.huahuaorz.xyz/">首页</a>
+                    
+                    <a  href="https://www.huahuaorz.xyz/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://www.huahuaorz.xyz/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#外观设置">外观设置</a>
+      <ul>
+        <li><a href="#透明模式">透明模式</a></li>
+        <li><a href="#其他调整">其他调整</a></li>
+      </ul>
+    </li>
+    <li><a href="#功能美化">功能美化</a>
+      <ul>
+        <li><a href="#手机不显示标签云和热门">手机不显示标签云和热门</a></li>
+        <li><a href="#头像旋转">头像旋转</a></li>
+        <li><a href="#面板上浮和阴影效果">面板上浮和阴影效果</a></li>
+        <li><a href="#页面顶部彩虹条">页面顶部彩虹条</a></li>
+        <li><a href="#鼠标按压烟花特效">鼠标按压烟花特效</a></li>
+        <li><a href="#复制时弹出提示">复制时弹出提示</a></li>
+        <li><a href="#禁用f12">禁用F12</a></li>
+        <li><a href="#自定义右键菜单">自定义右键菜单</a></li>
+        <li><a href="#彩色标签云">彩色标签云</a></li>
+        <li><a href="#页面标题变化">页面标题变化</a></li>
+        <li><a href="#useragent显示评论者的浏览器系统ip所在地址">UserAgent——显示评论者的浏览器、系统、IP所在地址</a></li>
+      </ul>
+    </li>
+    <li><a href="#2020-11-09-更新">2020-11-09 更新</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">Typecho Handsome主题美化</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年8月12日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/%E5%BB%BA%E7%AB%99'>建站</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="clear" style="display: none">
+            <div class="toc-article">
+                <div class="toc-title">文章目录</div>
+            </div>
+        </div>
+        
+        <div class="post-content">
+            <p>记录我的个人站点美化教程，有些设定是自己用F12调试，有些是收集自网络。使用Typecho搭建，handsome主题。</p>
+<p>不恰饭的广告：handsome是一款功能完善的Typecho主题，从它的功能设计和更新迭代可以看出作者对这款主题的用心，安利（<a href="https://www.ihewro.com/archives/489/">链接</a>）。</p>
+<h2 id="外观设置">外观设置</h2>
+<h3 id="透明模式">透明模式</h3>
+<p>
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/HuaHuaY/HuaHuaY.github.io/res/2020/08/background.jpg">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/HuaHuaY/HuaHuaY.github.io/res/2020/08/background.jpg" />
+        </a>
+    </p>
+<p>使用<code>外观设置——外观设置开关——炫酷透明模式</code>，背景图片设为上图，主题色调使用<code>light-light-light</code>，透明模式的背景颜色设为<code>rgba(161,209,235,0.4)</code>。</p>
+<p>主题开启透明模式时，有些地方需要补充设定CSS来让界面看着和谐统一，主要是底色和文字颜色的调整。在<code>开发者设置——自定义CSS</code>中加入以下代码：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#998;font-style:italic">/*除代码框、搜索结果、页面提示、超链接以外文字黑色，透明模式下文字原均为白色*/</span>
+:<span style="color:#3c5d5d;font-weight:bold">not</span><span style="color:#000;font-weight:bold">(*[</span><span style="color:#000080">class</span><span style="color:#000;font-weight:bold">^=</span><span style="color:#d14">&#34;hljs-&#34;</span><span style="color:#000;font-weight:bold">])</span>:<span style="color:#3c5d5d;font-weight:bold">not</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000080">mark</span><span style="color:#000;font-weight:bold">)</span>:<span style="color:#3c5d5d;font-weight:bold">not</span><span style="color:#000;font-weight:bold">(</span>.<span style="color:#458;font-weight:bold">layui-layer-content</span><span style="color:#000;font-weight:bold">)</span>:<span style="color:#3c5d5d;font-weight:bold">not</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000080">a</span><span style="color:#000;font-weight:bold">)</span> {
+    <span style="color:#000;font-weight:bold">color</span>:<span style="color:#099">#000</span><span style="color:#999;font-weight:bold;font-style:italic">!important</span>;
+}
+
+<span style="color:#998;font-style:italic">/*页面提示字体白色（黑底）*/</span>
+.<span style="color:#458;font-weight:bold">layui-layer-content</span> {
+    <span style="color:#000;font-weight:bold">color</span>: <span style="color:#000;font-weight:bold">white</span>;
+}
+
+<span style="color:#998;font-style:italic">/*超链接颜色设为蓝色*/</span>
+.<span style="color:#458;font-weight:bold">comment-content-true</span> <span style="color:#000080">a</span><span style="color:#000;font-weight:bold">,</span> .<span style="color:#458;font-weight:bold">wrapper-lg</span> .<span style="color:#458;font-weight:bold">entry-content</span> <span style="color:#000080">a</span> {
+    <span style="color:#000;font-weight:bold">color</span>: <span style="color:#099">#337ab7</span>;
+}
+
+<span style="color:#998;font-style:italic">/*标题栏底色透明度调整*/</span>
+.<span style="color:#458;font-weight:bold">bg-light</span> .<span style="color:#458;font-weight:bold">lter</span><span style="color:#000;font-weight:bold">,</span> .<span style="color:#458;font-weight:bold">bg-light</span>.<span style="color:#458;font-weight:bold">lter</span> {
+    <span style="color:#000;font-weight:bold">background-color</span>: <span style="color:#0086b3">rgba</span>(<span style="color:#099">255</span>,<span style="color:#099">255</span>,<span style="color:#099">255</span>,<span style="color:#099">0.5</span>);
+}
+
+<span style="color:#998;font-style:italic">/*目录树底色透明度调整*/</span>
+.<span style="color:#458;font-weight:bold">tocify</span> .<span style="color:#458;font-weight:bold">active</span><span style="color:#000;font-weight:bold">,</span> .<span style="color:#458;font-weight:bold">vditor-outline__item--current</span><span style="color:#000;font-weight:bold">,</span> .<span style="color:#458;font-weight:bold">vditor-outline__item</span>:<span style="color:#3c5d5d;font-weight:bold">hover</span> {
+    <span style="color:#000;font-weight:bold">background-color</span>: <span style="color:#0086b3">rgba</span>(<span style="color:#099">255</span>,<span style="color:#099">255</span>,<span style="color:#099">255</span>,<span style="color:#099">0.9</span>);
+}
+
+<span style="color:#998;font-style:italic">/*左边栏友链提示信息底色透明度调整，原本为黑底黑字无法分辨，调为白底*/</span>
+.<span style="color:#458;font-weight:bold">tooltip-inner</span> {
+    <span style="color:#000;font-weight:bold">background-color</span>: <span style="color:#0086b3">rgba</span>(<span style="color:#099">255</span>,<span style="color:#099">255</span>,<span style="color:#099">255</span>,<span style="color:#099">0.9</span>);
+}
+
+<span style="color:#998;font-style:italic">/*代码框底色透明度，上面为三对反引号的多行代码框，下面为单对引号的行内代码框。上面原本为纯白，下面原本几乎透明和背景难以区分*/</span>
+.<span style="color:#458;font-weight:bold">hljs</span> {
+    <span style="color:#000;font-weight:bold">background-color</span>:<span style="color:#0086b3">rgba</span>(<span style="color:#099">255</span>,<span style="color:#099">255</span>,<span style="color:#099">255</span>,<span style="color:#099">0</span>)<span style="color:#999;font-weight:bold;font-style:italic">!important</span>;
+}
+.<span style="color:#458;font-weight:bold">well</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000080">pre</span> {
+    <span style="color:#000;font-weight:bold">background</span>: <span style="color:#0086b3">rgba</span>(<span style="color:#099">255</span>,<span style="color:#099">255</span>,<span style="color:#099">255</span>,<span style="color:#099">.5</span>);
+}
+<span style="color:#000080">code</span> {
+    <span style="color:#000;font-weight:bold">background-color</span>: <span style="color:#0086b3">rgba</span>(<span style="color:#099">255</span>,<span style="color:#099">255</span>,<span style="color:#099">255</span>,<span style="color:#099">0.66</span>);
+}
+
+<span style="color:#998;font-style:italic">/*搜索提示列表、歌单、闲言碎语透明化，原先为茶色面板，和透明模式其他设置不太搭*/</span>
+.<span style="color:#458;font-weight:bold">dropdown-menu</span><span style="color:#000;font-weight:bold">,</span> #<span style="color:#555">skPlayer</span> .<span style="color:#458;font-weight:bold">skPlayer-list</span> {
+    <span style="color:#000;font-weight:bold">background-color</span>: <span style="color:#0086b3">rgba</span>(<span style="color:#099">255</span>,<span style="color:#099">255</span>,<span style="color:#099">255</span>,<span style="color:#099">0.9</span>);
+}
+.<span style="color:#458;font-weight:bold">panel-heading</span> {
+    <span style="color:#000;font-weight:bold">background-color</span>: <span style="color:#0086b3">rgba</span>(<span style="color:#099">255</span>,<span style="color:#099">255</span>,<span style="color:#099">255</span>,<span style="color:#099">0.6</span>);
+}
+#<span style="color:#555">smallRecording</span> {
+   <span style="color:#000;font-weight:bold">background-color</span>:<span style="color:#0086b3">rgba</span>(<span style="color:#099">255</span>,<span style="color:#099">255</span>,<span style="color:#099">255</span>,<span style="color:#099">0.4</span>);
+}
+
+<span style="color:#998;font-style:italic">/*修复GitHub页面透明问题。开启透明模式后除暗色外的颜色都变为透明，需要手动修改暗色为透明*/</span>
+.<span style="color:#458;font-weight:bold">bg-dark</span> {
+    <span style="color:#000;font-weight:bold">background-color</span>: <span style="color:#000;font-weight:bold">transparent</span>;
+}
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="其他调整">其他调整</h3>
+<p>在<code>开发者设置——自定义CSS</code>中加入以下代码：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#998;font-style:italic">/*博客首页、文章标题栏加粗*/</span>
+.<span style="color:#458;font-weight:bold">font-thin</span> {
+    <span style="color:#000;font-weight:bold">font-weight</span>: <span style="color:#099">500</span>;
+}
+
+<span style="color:#998;font-style:italic">/*搜索提示栏宽度*/</span>
+#<span style="color:#555">search_tips_drop</span> {
+    <span style="color:#000;font-weight:bold">max-width</span>:<span style="color:#099">180</span><span style="color:#458;font-weight:bold">px</span>;
+}
+
+<span style="color:#998;font-style:italic">/*搜索框匹配结果，去除原本黄底效果，去除匹配成功的字符两边的空格*/</span>
+.<span style="color:#458;font-weight:bold">mark</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000080">mark</span> {
+    <span style="color:#000;font-weight:bold">padding</span>: <span style="color:#099">0</span><span style="color:#458;font-weight:bold">em</span>;
+    <span style="color:#000;font-weight:bold">background-color</span>: <span style="color:#000;font-weight:bold">transparent</span>;
+    <span style="color:#000;font-weight:bold">color</span>: <span style="color:#0086b3">rgba</span>(<span style="color:#099">255</span>,<span style="color:#099">0</span>,<span style="color:#099">0</span>,<span style="color:#099">1</span>)<span style="color:#999;font-weight:bold;font-style:italic">!important</span>;
+}
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="功能美化">功能美化</h2>
+<h3 id="手机不显示标签云和热门">手机不显示标签云和热门</h3>
+<p>在<code>开发者设置——自定义CSS</code>中加入以下代码：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#998;font-style:italic">/*手机不显示标签云和热门*/</span>
+@<span style="color:#000;font-weight:bold">media</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000080">max-width</span>:<span style="color:#3c5d5d;font-weight:bold">767px</span><span style="color:#000;font-weight:bold">)</span> {
+    #<span style="color:#555">tabs-4</span><span style="color:#000;font-weight:bold">,</span>#<span style="color:#555">tag_cloud-2</span> {
+        <span style="color:#000;font-weight:bold">display</span>: <span style="color:#000;font-weight:bold">none</span>;
+    }
+}
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="头像旋转">头像旋转</h3>
+<p>鼠标浮在头像上时，头像旋转720度，鼠标离开后，头像反方向转回720度。</p>
+<p>在<code>开发者设置——自定义CSS</code>中加入以下代码：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#998;font-style:italic">/*头像旋转*/</span>
+.<span style="color:#458;font-weight:bold">img-circle</span> {
+    <span style="color:#000;font-weight:bold">transition</span>: <span style="color:#000;font-weight:bold">all</span> <span style="color:#099">0.5</span><span style="color:#458;font-weight:bold">s</span>;
+}
+.<span style="color:#458;font-weight:bold">img-circle</span>:<span style="color:#3c5d5d;font-weight:bold">hover</span> {
+    <span style="color:#000;font-weight:bold">transform</span>: <span style="color:#0086b3">scale</span>(<span style="color:#099">1.15</span>) <span style="color:#0086b3">rotate</span>(<span style="color:#099">720</span><span style="color:#458;font-weight:bold">deg</span>);
+}
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="面板上浮和阴影效果">面板上浮和阴影效果</h3>
+<p>在<code>开发者设置——自定义CSS</code>中加入以下代码：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#998;font-style:italic">/*首页文章面板上浮特效，以及上浮后阴影效果*/</span>
+.<span style="color:#458;font-weight:bold">blog-post</span> .<span style="color:#458;font-weight:bold">panel-small</span>:<span style="color:#3c5d5d;font-weight:bold">not</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000080">article</span><span style="color:#000;font-weight:bold">),</span>
+.<span style="color:#458;font-weight:bold">blog-post</span> .<span style="color:#458;font-weight:bold">panel</span>:<span style="color:#3c5d5d;font-weight:bold">not</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000080">article</span><span style="color:#000;font-weight:bold">)</span> {
+    <span style="color:#000;font-weight:bold">transition</span>: <span style="color:#000;font-weight:bold">all</span> <span style="color:#099">0.3</span><span style="color:#458;font-weight:bold">s</span>;
+}
+
+.<span style="color:#458;font-weight:bold">blog-post</span> .<span style="color:#458;font-weight:bold">panel-small</span>:<span style="color:#3c5d5d;font-weight:bold">not</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000080">article</span><span style="color:#000;font-weight:bold">)</span>:<span style="color:#3c5d5d;font-weight:bold">hover</span><span style="color:#000;font-weight:bold">,</span>
+.<span style="color:#458;font-weight:bold">blog-post</span> .<span style="color:#458;font-weight:bold">panel</span>:<span style="color:#3c5d5d;font-weight:bold">not</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000080">article</span><span style="color:#000;font-weight:bold">)</span>:<span style="color:#3c5d5d;font-weight:bold">hover</span> {
+    <span style="color:#000;font-weight:bold">transform</span>: <span style="color:#0086b3">translateY</span>(<span style="color:#099">-10</span><span style="color:#458;font-weight:bold">px</span>);
+    <span style="color:#000;font-weight:bold">box-shadow</span>: <span style="color:#099">0</span> <span style="color:#099">4</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#099">5</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#0086b3">rgba</span>(<span style="color:#099">80</span>,<span style="color:#099">100</span>,<span style="color:#099">117</span>,<span style="color:#099">0.3</span>);
+}
+
+<span style="color:#998;font-style:italic">/*首页文章面板四周阴影*/</span>
+.<span style="color:#458;font-weight:bold">panel</span> {
+    <span style="color:#000;font-weight:bold">box-shadow</span>: <span style="color:#099">1</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#099">1</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#099">5</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#099">5</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#0086b3">rgba</span>(<span style="color:#099">25</span>, <span style="color:#099">55</span>, <span style="color:#099">105</span>, <span style="color:#099">0.3</span>);
+    <span style="color:#000;font-weight:bold">-moz-</span><span style="color:#000;font-weight:bold">box-shadow</span>: <span style="color:#099">1</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#099">1</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#099">5</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#099">5</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#0086b3">rgba</span>(<span style="color:#099">25</span>, <span style="color:#099">55</span>, <span style="color:#099">105</span>, <span style="color:#099">0.3</span>);
+}
+
+.<span style="color:#458;font-weight:bold">panel</span>:<span style="color:#3c5d5d;font-weight:bold">hover</span> {
+    <span style="color:#000;font-weight:bold">box-shadow</span>: <span style="color:#099">1</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#099">1</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#099">5</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#099">5</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#0086b3">rgba</span>(<span style="color:#099">25</span>, <span style="color:#099">55</span>, <span style="color:#099">105</span>, <span style="color:#099">0.3</span>);
+    <span style="color:#000;font-weight:bold">-moz-</span><span style="color:#000;font-weight:bold">box-shadow</span>: <span style="color:#099">1</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#099">1</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#099">5</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#099">5</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#0086b3">rgba</span>(<span style="color:#099">25</span>, <span style="color:#099">55</span>, <span style="color:#099">105</span>, <span style="color:#099">0.3</span>);
+}
+
+.<span style="color:#458;font-weight:bold">panel-small</span> {
+    <span style="color:#000;font-weight:bold">box-shadow</span>: <span style="color:#099">1</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#099">1</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#099">5</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#099">5</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#0086b3">rgba</span>(<span style="color:#099">25</span>, <span style="color:#099">55</span>, <span style="color:#099">105</span>, <span style="color:#099">0.3</span>);
+    <span style="color:#000;font-weight:bold">-moz-</span><span style="color:#000;font-weight:bold">box-shadow</span>: <span style="color:#099">1</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#099">1</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#099">5</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#099">5</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#0086b3">rgba</span>(<span style="color:#099">25</span>, <span style="color:#099">55</span>, <span style="color:#099">105</span>, <span style="color:#099">0.3</span>);
+}
+
+.<span style="color:#458;font-weight:bold">panel-small</span>:<span style="color:#3c5d5d;font-weight:bold">hover</span> {
+    <span style="color:#000;font-weight:bold">box-shadow</span>: <span style="color:#099">1</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#099">1</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#099">5</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#099">5</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#0086b3">rgba</span>(<span style="color:#099">25</span>, <span style="color:#099">55</span>, <span style="color:#099">105</span>, <span style="color:#099">0.3</span>);
+    <span style="color:#000;font-weight:bold">-moz-</span><span style="color:#000;font-weight:bold">box-shadow</span>: <span style="color:#099">1</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#099">1</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#099">5</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#099">5</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#0086b3">rgba</span>(<span style="color:#099">25</span>, <span style="color:#099">55</span>, <span style="color:#099">105</span>, <span style="color:#099">0.3</span>);
+}
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="页面顶部彩虹条">页面顶部彩虹条</h3>
+<p>在<code>开发者设置——自定义输出body尾部的HTML代码</code>中加入以下代码：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#998;font-style:italic">&lt;!--顶部彩虹进度条--&gt;</span>
+&lt;<span style="color:#000080">div</span> <span style="color:#008080">class</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;colorTopBar&#34;</span>&gt;&lt;/<span style="color:#000080">div</span>&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>在<code>开发者设置——自定义CSS</code>中加入以下代码：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#998;font-style:italic">/*顶部彩色条*/</span>
+.<span style="color:#458;font-weight:bold">colorTopBar</span>{
+    <span style="color:#000;font-weight:bold">animation</span>: colorTopBar <span style="color:#099">1</span><span style="color:#458;font-weight:bold">s</span> <span style="color:#000;font-weight:bold">infinite</span> <span style="color:#000;font-weight:bold">linear</span>;
+    <span style="color:#000;font-weight:bold">height</span>:<span style="color:#099">2</span><span style="color:#458;font-weight:bold">px</span>;
+    <span style="color:#000;font-weight:bold">top</span>:<span style="color:#099">0</span>;
+    <span style="color:#000;font-weight:bold">left</span>:<span style="color:#099">0</span>;
+    <span style="color:#000;font-weight:bold">position</span>: <span style="color:#000;font-weight:bold">fixed</span>;
+    <span style="color:#000;font-weight:bold">width</span>:<span style="color:#099">100</span><span style="color:#458;font-weight:bold">%</span>;
+    <span style="color:#000;font-weight:bold">z-index</span>:<span style="color:#099">9999</span>;
+}
+@<span style="color:#000;font-weight:bold">keyframes</span> <span style="color:#000080">colorTopBar</span>{
+        <span style="color:#000080">0</span><span style="color:#000;font-weight:bold">%</span>{
+            <span style="color:#000;font-weight:bold">background</span>: <span style="color:#099">#000</span> <span style="color:#0086b3">linear-gradient</span>(<span style="color:#000;font-weight:bold">to</span> <span style="color:#000;font-weight:bold">left</span>, <span style="color:#099">#5ac8fa</span>,<span style="color:#099">#007aff</span>,<span style="color:#099">#34aadc</span>,<span style="color:#099">#5856d6</span>,<span style="color:#099">#ff2d55</span>,<span style="color:#099">#4cd964</span>);
+        }
+        <span style="color:#000080">20</span><span style="color:#000;font-weight:bold">%</span>{
+            <span style="color:#000;font-weight:bold">background</span>: <span style="color:#099">#000</span> <span style="color:#0086b3">linear-gradient</span>(<span style="color:#000;font-weight:bold">to</span> <span style="color:#000;font-weight:bold">left</span>, <span style="color:#099">#007aff</span>,<span style="color:#099">#34aadc</span>,<span style="color:#099">#5856d6</span>,<span style="color:#099">#ff2d55</span>,<span style="color:#099">#4cd964</span>, <span style="color:#099">#5ac8fa</span>);
+        }
+        <span style="color:#000080">40</span><span style="color:#000;font-weight:bold">%</span>{
+            <span style="color:#000;font-weight:bold">background</span>: <span style="color:#099">#000</span> <span style="color:#0086b3">linear-gradient</span>(<span style="color:#000;font-weight:bold">to</span> <span style="color:#000;font-weight:bold">left</span>, <span style="color:#099">#34aadc</span>,<span style="color:#099">#5856d6</span>,<span style="color:#099">#ff2d55</span>,<span style="color:#099">#4cd964</span>, <span style="color:#099">#5ac8fa</span>, <span style="color:#099">#007aff</span>);
+        }
+        <span style="color:#000080">60</span><span style="color:#000;font-weight:bold">%</span>{
+            <span style="color:#000;font-weight:bold">background</span>: <span style="color:#099">#000</span> <span style="color:#0086b3">linear-gradient</span>(<span style="color:#000;font-weight:bold">to</span> <span style="color:#000;font-weight:bold">left</span>, <span style="color:#099">#5856d6</span>,<span style="color:#099">#ff2d55</span>,<span style="color:#099">#4cd964</span>, <span style="color:#099">#5ac8fa</span>, <span style="color:#099">#007aff</span>, <span style="color:#099">#34aadc</span>);
+        }
+        <span style="color:#000080">80</span><span style="color:#000;font-weight:bold">%</span>{
+            <span style="color:#000;font-weight:bold">background</span>: <span style="color:#099">#000</span> <span style="color:#0086b3">linear-gradient</span>(<span style="color:#000;font-weight:bold">to</span> <span style="color:#000;font-weight:bold">left</span>, <span style="color:#099">#ff2d55</span>,<span style="color:#099">#4cd964</span>, <span style="color:#099">#5ac8fa</span>, <span style="color:#099">#007aff</span>, <span style="color:#099">#34aadc</span>,<span style="color:#099">#5856d6</span>);
+        }
+        <span style="color:#000080">100</span><span style="color:#000;font-weight:bold">%</span>{
+            <span style="color:#000;font-weight:bold">background</span>: <span style="color:#099">#000</span> <span style="color:#0086b3">linear-gradient</span>(<span style="color:#000;font-weight:bold">to</span> <span style="color:#000;font-weight:bold">left</span>, <span style="color:#099">#4cd964</span>, <span style="color:#099">#5ac8fa</span>, <span style="color:#099">#007aff</span>, <span style="color:#099">#34aadc</span>, <span style="color:#099">#5856d6</span>, <span style="color:#099">#ff2d55</span>);
+        } 
+}
+
+<span style="color:#998;font-style:italic">/*手机端不显示*/</span>
+<span style="color:#998;font-style:italic">/*
+</span><span style="color:#998;font-style:italic">@media (max-width:767px) {
+</span><span style="color:#998;font-style:italic">    .colorTopBar {
+</span><span style="color:#998;font-style:italic">        display: none;
+</span><span style="color:#998;font-style:italic">    }
+</span><span style="color:#998;font-style:italic">}
+</span><span style="color:#998;font-style:italic">*/</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="鼠标按压烟花特效">鼠标按压烟花特效</h3>
+<p>第一段代码修改自个人博客<a href="https://www.onesrc.cn/p/add-a-fireworks-click-effect-to-your-website.html/comment-page-1">ONESRC</a>文中源码，第二段代码来源已忘。</p>
+<p>在<code>开发者设置——自定义JavaScript</code>中加入以下代码：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">135
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">136
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">137
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">138
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">139
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">140
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">141
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">142
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">143
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">144
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">145
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">146
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">147
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">148
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">149
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">155
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">156
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">157
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#998;font-style:italic">/*鼠标按压特效，这一段是控制圆球的生成以及向四周扩散*/</span>
+<span style="color:#998;font-style:italic">&lt;!--</span> Click Effect <span style="color:#000;font-weight:bold">--&gt;</span>
+<span style="color:#000;font-weight:bold">function</span> clickEffect() {
+    <span style="color:#000;font-weight:bold">let</span> balls <span style="color:#000;font-weight:bold">=</span> [];
+    <span style="color:#000;font-weight:bold">let</span> longPressed <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">false</span>;
+    <span style="color:#000;font-weight:bold">let</span> longPress;
+    <span style="color:#000;font-weight:bold">let</span> multiplier <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>;
+    <span style="color:#000;font-weight:bold">let</span> width, height;
+    <span style="color:#000;font-weight:bold">let</span> origin;
+    <span style="color:#000;font-weight:bold">let</span> normal;
+    <span style="color:#000;font-weight:bold">let</span> ctx;
+    <span style="color:#000;font-weight:bold">const</span> colours <span style="color:#000;font-weight:bold">=</span> [<span style="color:#d14">&#34;#F73859&#34;</span>, <span style="color:#d14">&#34;#14FFEC&#34;</span>, <span style="color:#d14">&#34;#00E0FF&#34;</span>, <span style="color:#d14">&#34;#FF99FE&#34;</span>, <span style="color:#d14">&#34;#FAF15D&#34;</span>];
+    <span style="color:#000;font-weight:bold">const</span> canvas <span style="color:#000;font-weight:bold">=</span> <span style="color:#0086b3">document</span>.createElement(<span style="color:#d14">&#34;canvas&#34;</span>);
+    <span style="color:#0086b3">document</span>.body.appendChild(canvas);
+    canvas.setAttribute(<span style="color:#d14">&#34;style&#34;</span>, <span style="color:#d14">&#34;width: 100%; height: 100%; top: 0; left: 0; z-index: 99999; position: fixed; pointer-events: none;&#34;</span>);
+    <span style="color:#000;font-weight:bold">const</span> pointer <span style="color:#000;font-weight:bold">=</span> <span style="color:#0086b3">document</span>.createElement(<span style="color:#d14">&#34;span&#34;</span>);
+    pointer.classList.add(<span style="color:#d14">&#34;pointer&#34;</span>);
+    <span style="color:#0086b3">document</span>.body.appendChild(pointer);
+
+    <span style="color:#000;font-weight:bold">if</span> (canvas.getContext <span style="color:#000;font-weight:bold">&amp;&amp;</span> <span style="color:#0086b3">window</span>.addEventListener) {
+        ctx <span style="color:#000;font-weight:bold">=</span> canvas.getContext(<span style="color:#d14">&#34;2d&#34;</span>);
+        updateSize();
+        <span style="color:#0086b3">window</span>.addEventListener(<span style="color:#d14">&#39;resize&#39;</span>, updateSize, <span style="color:#000;font-weight:bold">false</span>);
+        loop();
+        <span style="color:#0086b3">window</span>.addEventListener(<span style="color:#d14">&#34;mousedown&#34;</span>, <span style="color:#000;font-weight:bold">function</span>(e) {
+            pushBalls(randBetween(<span style="color:#099">10</span>, <span style="color:#099">20</span>), e.clientX, e.clientY);
+            <span style="color:#0086b3">document</span>.body.classList.add(<span style="color:#d14">&#34;is-pressed&#34;</span>);
+            longPress <span style="color:#000;font-weight:bold">=</span> setTimeout(<span style="color:#000;font-weight:bold">function</span>() {
+                <span style="color:#0086b3">document</span>.body.classList.add(<span style="color:#d14">&#34;is-longpress&#34;</span>);
+                longPressed <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">true</span>;
+            }, <span style="color:#099">500</span>);
+        }, <span style="color:#000;font-weight:bold">false</span>);
+        <span style="color:#0086b3">window</span>.addEventListener(<span style="color:#d14">&#34;mouseup&#34;</span>, <span style="color:#000;font-weight:bold">function</span>(e) {
+            clearInterval(longPress);
+            <span style="color:#000;font-weight:bold">if</span> (longPressed <span style="color:#000;font-weight:bold">==</span> <span style="color:#000;font-weight:bold">true</span>) {
+                <span style="color:#0086b3">document</span>.body.classList.remove(<span style="color:#d14">&#34;is-longpress&#34;</span>);
+                pushBalls(randBetween(<span style="color:#099">50</span> <span style="color:#000;font-weight:bold">+</span> <span style="color:#0086b3">Math</span>.ceil(multiplier), <span style="color:#099">100</span> <span style="color:#000;font-weight:bold">+</span> <span style="color:#0086b3">Math</span>.ceil(multiplier)), e.clientX, e.clientY);
+                longPressed <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">false</span>;
+            }
+            <span style="color:#0086b3">document</span>.body.classList.remove(<span style="color:#d14">&#34;is-pressed&#34;</span>);
+        }, <span style="color:#000;font-weight:bold">false</span>);
+        <span style="color:#0086b3">window</span>.addEventListener(<span style="color:#d14">&#34;mousemove&#34;</span>, <span style="color:#000;font-weight:bold">function</span>(e) {
+            <span style="color:#000;font-weight:bold">let</span> x <span style="color:#000;font-weight:bold">=</span> e.clientX;
+            <span style="color:#000;font-weight:bold">let</span> y <span style="color:#000;font-weight:bold">=</span> e.clientY;
+            pointer.style.top <span style="color:#000;font-weight:bold">=</span> y <span style="color:#000;font-weight:bold">+</span> <span style="color:#d14">&#34;px&#34;</span>;
+            pointer.style.left <span style="color:#000;font-weight:bold">=</span> x <span style="color:#000;font-weight:bold">+</span> <span style="color:#d14">&#34;px&#34;</span>;
+        }, <span style="color:#000;font-weight:bold">false</span>);
+    } <span style="color:#000;font-weight:bold">else</span> {
+        console.log(<span style="color:#d14">&#34;canvas or addEventListener is unsupported!&#34;</span>);
+    }
+
+
+    <span style="color:#000;font-weight:bold">function</span> updateSize() {
+        canvas.width <span style="color:#000;font-weight:bold">=</span> <span style="color:#0086b3">window</span>.innerWidth <span style="color:#000;font-weight:bold">*</span> <span style="color:#099">2</span>;
+        canvas.height <span style="color:#000;font-weight:bold">=</span> <span style="color:#0086b3">window</span>.innerHeight <span style="color:#000;font-weight:bold">*</span> <span style="color:#099">2</span>;
+        canvas.style.width <span style="color:#000;font-weight:bold">=</span> <span style="color:#0086b3">window</span>.innerWidth <span style="color:#000;font-weight:bold">+</span> <span style="color:#d14">&#39;px&#39;</span>;
+        canvas.style.height <span style="color:#000;font-weight:bold">=</span> <span style="color:#0086b3">window</span>.innerHeight <span style="color:#000;font-weight:bold">+</span> <span style="color:#d14">&#39;px&#39;</span>;
+        ctx.scale(<span style="color:#099">2</span>, <span style="color:#099">2</span>);
+        width <span style="color:#000;font-weight:bold">=</span> (canvas.width <span style="color:#000;font-weight:bold">=</span> <span style="color:#0086b3">window</span>.innerWidth);
+        height <span style="color:#000;font-weight:bold">=</span> (canvas.height <span style="color:#000;font-weight:bold">=</span> <span style="color:#0086b3">window</span>.innerHeight);
+        origin <span style="color:#000;font-weight:bold">=</span> {
+            x<span style="color:#000;font-weight:bold">:</span> width <span style="color:#000;font-weight:bold">/</span> <span style="color:#099">2</span>,
+            y<span style="color:#000;font-weight:bold">:</span> height <span style="color:#000;font-weight:bold">/</span> <span style="color:#099">2</span>
+        };
+        normal <span style="color:#000;font-weight:bold">=</span> {
+            x<span style="color:#000;font-weight:bold">:</span> width <span style="color:#000;font-weight:bold">/</span> <span style="color:#099">2</span>,
+            y<span style="color:#000;font-weight:bold">:</span> height <span style="color:#000;font-weight:bold">/</span> <span style="color:#099">2</span>
+        };
+    }
+    <span style="color:#000;font-weight:bold">class</span> Ball {
+        constructor(x <span style="color:#000;font-weight:bold">=</span> origin.x, y <span style="color:#000;font-weight:bold">=</span> origin.y) {
+            <span style="color:#000;font-weight:bold">this</span>.x <span style="color:#000;font-weight:bold">=</span> x;
+            <span style="color:#000;font-weight:bold">this</span>.y <span style="color:#000;font-weight:bold">=</span> y;
+            <span style="color:#000;font-weight:bold">this</span>.angle <span style="color:#000;font-weight:bold">=</span> <span style="color:#0086b3">Math</span>.PI <span style="color:#000;font-weight:bold">*</span> <span style="color:#099">2</span> <span style="color:#000;font-weight:bold">*</span> <span style="color:#0086b3">Math</span>.random();
+            <span style="color:#000;font-weight:bold">if</span> (longPressed <span style="color:#000;font-weight:bold">==</span> <span style="color:#000;font-weight:bold">true</span>) {
+                <span style="color:#000;font-weight:bold">this</span>.multiplier <span style="color:#000;font-weight:bold">=</span> randBetween(<span style="color:#099">14</span> <span style="color:#000;font-weight:bold">+</span> multiplier, <span style="color:#099">15</span> <span style="color:#000;font-weight:bold">+</span> multiplier);
+            } <span style="color:#000;font-weight:bold">else</span> {
+                <span style="color:#000;font-weight:bold">this</span>.multiplier <span style="color:#000;font-weight:bold">=</span> randBetween(<span style="color:#099">6</span>, <span style="color:#099">12</span>);
+            }
+            <span style="color:#000;font-weight:bold">this</span>.vx <span style="color:#000;font-weight:bold">=</span> (<span style="color:#000;font-weight:bold">this</span>.multiplier <span style="color:#000;font-weight:bold">+</span> <span style="color:#0086b3">Math</span>.random() <span style="color:#000;font-weight:bold">*</span> <span style="color:#099">0.5</span>) <span style="color:#000;font-weight:bold">*</span> <span style="color:#0086b3">Math</span>.cos(<span style="color:#000;font-weight:bold">this</span>.angle);
+            <span style="color:#000;font-weight:bold">this</span>.vy <span style="color:#000;font-weight:bold">=</span> (<span style="color:#000;font-weight:bold">this</span>.multiplier <span style="color:#000;font-weight:bold">+</span> <span style="color:#0086b3">Math</span>.random() <span style="color:#000;font-weight:bold">*</span> <span style="color:#099">0.5</span>) <span style="color:#000;font-weight:bold">*</span> <span style="color:#0086b3">Math</span>.sin(<span style="color:#000;font-weight:bold">this</span>.angle);
+            <span style="color:#000;font-weight:bold">this</span>.r <span style="color:#000;font-weight:bold">=</span> randBetween(<span style="color:#099">8</span>, <span style="color:#099">12</span>) <span style="color:#000;font-weight:bold">+</span> <span style="color:#099">3</span> <span style="color:#000;font-weight:bold">*</span> <span style="color:#0086b3">Math</span>.random();
+            <span style="color:#000;font-weight:bold">this</span>.color <span style="color:#000;font-weight:bold">=</span> colours[<span style="color:#0086b3">Math</span>.floor(<span style="color:#0086b3">Math</span>.random() <span style="color:#000;font-weight:bold">*</span> colours.length)];
+        }
+        update() {
+            <span style="color:#000;font-weight:bold">this</span>.x <span style="color:#000;font-weight:bold">+=</span> <span style="color:#000;font-weight:bold">this</span>.vx <span style="color:#000;font-weight:bold">-</span> normal.x;
+            <span style="color:#000;font-weight:bold">this</span>.y <span style="color:#000;font-weight:bold">+=</span> <span style="color:#000;font-weight:bold">this</span>.vy <span style="color:#000;font-weight:bold">-</span> normal.y;
+            normal.x <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">-</span><span style="color:#099">2</span> <span style="color:#000;font-weight:bold">/</span> <span style="color:#0086b3">window</span>.innerWidth <span style="color:#000;font-weight:bold">*</span> <span style="color:#0086b3">Math</span>.sin(<span style="color:#000;font-weight:bold">this</span>.angle);
+            normal.y <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">-</span><span style="color:#099">2</span> <span style="color:#000;font-weight:bold">/</span> <span style="color:#0086b3">window</span>.innerHeight <span style="color:#000;font-weight:bold">*</span> <span style="color:#0086b3">Math</span>.cos(<span style="color:#000;font-weight:bold">this</span>.angle);
+            <span style="color:#000;font-weight:bold">this</span>.r <span style="color:#000;font-weight:bold">-=</span> <span style="color:#099">0.3</span>;
+            <span style="color:#000;font-weight:bold">this</span>.vx <span style="color:#000;font-weight:bold">*=</span> <span style="color:#099">0.9</span>;
+            <span style="color:#000;font-weight:bold">this</span>.vy <span style="color:#000;font-weight:bold">*=</span> <span style="color:#099">0.9</span>;
+        }
+    }
+
+    <span style="color:#000;font-weight:bold">function</span> pushBalls(count <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">1</span>, x <span style="color:#000;font-weight:bold">=</span> origin.x, y <span style="color:#000;font-weight:bold">=</span> origin.y) {
+        <span style="color:#000;font-weight:bold">for</span> (<span style="color:#000;font-weight:bold">let</span> i <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>; i <span style="color:#000;font-weight:bold">&lt;</span> count; i<span style="color:#000;font-weight:bold">++</span>) {
+            balls.push(<span style="color:#000;font-weight:bold">new</span> Ball(x, y));
+        }
+    }
+
+    <span style="color:#000;font-weight:bold">function</span> randBetween(min, max) {
+        <span style="color:#000;font-weight:bold">return</span> <span style="color:#0086b3">Math</span>.floor(<span style="color:#0086b3">Math</span>.random() <span style="color:#000;font-weight:bold">*</span> max) <span style="color:#000;font-weight:bold">+</span> min;
+    }
+
+    <span style="color:#000;font-weight:bold">function</span> loop() {
+        ctx.fillStyle <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;rgba(255, 255, 255, 0)&#34;</span>;
+        ctx.clearRect(<span style="color:#099">0</span>, <span style="color:#099">0</span>, canvas.width, canvas.height);
+        <span style="color:#000;font-weight:bold">for</span> (<span style="color:#000;font-weight:bold">let</span> i <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>; i <span style="color:#000;font-weight:bold">&lt;</span> balls.length; i<span style="color:#000;font-weight:bold">++</span>) {
+            <span style="color:#000;font-weight:bold">let</span> b <span style="color:#000;font-weight:bold">=</span> balls[i];
+            <span style="color:#000;font-weight:bold">if</span> (b.r <span style="color:#000;font-weight:bold">&lt;</span> <span style="color:#099">0</span>) <span style="color:#000;font-weight:bold">continue</span>;
+            ctx.fillStyle <span style="color:#000;font-weight:bold">=</span> b.color;
+            ctx.beginPath();
+            ctx.arc(b.x, b.y, b.r, <span style="color:#099">0</span>, <span style="color:#0086b3">Math</span>.PI <span style="color:#000;font-weight:bold">*</span> <span style="color:#099">2</span>, <span style="color:#000;font-weight:bold">false</span>);
+            ctx.fill();
+            b.update();
+        }
+        <span style="color:#000;font-weight:bold">if</span> (longPressed <span style="color:#000;font-weight:bold">==</span> <span style="color:#000;font-weight:bold">true</span>) {
+            multiplier <span style="color:#000;font-weight:bold">+=</span> <span style="color:#099">0.2</span>;
+        } <span style="color:#000;font-weight:bold">else</span> <span style="color:#000;font-weight:bold">if</span> (<span style="color:#000;font-weight:bold">!</span>longPressed <span style="color:#000;font-weight:bold">&amp;&amp;</span> multiplier <span style="color:#000;font-weight:bold">&gt;=</span> <span style="color:#099">0</span>) {
+            multiplier <span style="color:#000;font-weight:bold">-=</span> <span style="color:#099">0.4</span>;
+        }
+        removeBall();
+        requestAnimationFrame(loop);
+    }
+
+    <span style="color:#000;font-weight:bold">function</span> removeBall() {
+        <span style="color:#000;font-weight:bold">for</span> (<span style="color:#000;font-weight:bold">let</span> i <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>; i <span style="color:#000;font-weight:bold">&lt;</span> balls.length; i<span style="color:#000;font-weight:bold">++</span>) {
+            <span style="color:#000;font-weight:bold">let</span> b <span style="color:#000;font-weight:bold">=</span> balls[i];
+            <span style="color:#000;font-weight:bold">if</span> (b.x <span style="color:#000;font-weight:bold">+</span> b.r <span style="color:#000;font-weight:bold">&lt;</span> <span style="color:#099">0</span> <span style="color:#000;font-weight:bold">||</span> b.x <span style="color:#000;font-weight:bold">-</span> b.r <span style="color:#000;font-weight:bold">&gt;</span> width <span style="color:#000;font-weight:bold">||</span> b.y <span style="color:#000;font-weight:bold">+</span> b.r <span style="color:#000;font-weight:bold">&lt;</span> <span style="color:#099">0</span> <span style="color:#000;font-weight:bold">||</span> b.y <span style="color:#000;font-weight:bold">-</span> b.r <span style="color:#000;font-weight:bold">&gt;</span> height <span style="color:#000;font-weight:bold">||</span> b.r <span style="color:#000;font-weight:bold">&lt;</span> <span style="color:#099">0</span>) {
+                balls.splice(i, <span style="color:#099">1</span>);
+            }
+        }
+    }
+}
+
+<span style="color:#998;font-style:italic">/*可以选择在手机上关闭特效*/</span>
+<span style="color:#998;font-style:italic">/*
+</span><span style="color:#998;font-style:italic">function isPC() { 
+</span><span style="color:#998;font-style:italic">  var userAgentInfo=navigator.userAgent; 
+</span><span style="color:#998;font-style:italic">  var Agents =new Array(&#34;Android&#34;,&#34;iPhone&#34;,&#34;SymbianOS&#34;,&#34;Windows Phone&#34;,&#34;iPad&#34;,&#34;iPod&#34;); 
+</span><span style="color:#998;font-style:italic">  var flag=true; 
+</span><span style="color:#998;font-style:italic">  for(var v=0;v&lt;Agents.length;v++) { 
+</span><span style="color:#998;font-style:italic">     if(userAgentInfo.indexOf(Agents[v])&gt;0) { 
+</span><span style="color:#998;font-style:italic">       flag=false; 
+</span><span style="color:#998;font-style:italic">       break; 
+</span><span style="color:#998;font-style:italic">     } 
+</span><span style="color:#998;font-style:italic">  } 
+</span><span style="color:#998;font-style:italic">  return flag; 
+</span><span style="color:#998;font-style:italic">}
+</span><span style="color:#998;font-style:italic">*/</span>
+
+<span style="color:#998;font-style:italic">// if(isPC()) {
+</span><span style="color:#998;font-style:italic"></span>  <span style="color:#998;font-style:italic">//调用
+</span><span style="color:#998;font-style:italic"></span>  clickEffect();
+<span style="color:#998;font-style:italic">// }
+</span><span style="color:#998;font-style:italic"></span><span style="color:#998;font-style:italic">&lt;!--</span> End Click Effect <span style="color:#000;font-weight:bold">--&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在<code>开发者设置——自定义CSS</code>中加入以下代码：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#998;font-style:italic">/*鼠标按压特效*/</span>
+<span style="color:#998;font-style:italic">/*这一段是生成长按鼠标时，鼠标周围的圆环，以及在按下位置黄色圆圈的收缩舒张*/</span>
+.<span style="color:#458;font-weight:bold">pointer</span> {
+    <span style="color:#008080">--size</span>: <span style="color:#099">30</span><span style="color:#458;font-weight:bold">px</span>;
+    pointer-events: <span style="color:#000;font-weight:bold">none</span>;
+    <span style="color:#000;font-weight:bold">width</span>: <span style="color:#900;font-weight:bold">var</span>(<span style="color:#000;font-weight:bold">--</span>size);
+    <span style="color:#000;font-weight:bold">height</span>: <span style="color:#900;font-weight:bold">var</span>(<span style="color:#000;font-weight:bold">--</span>size);
+    <span style="color:#000;font-weight:bold">background</span>: <span style="color:#0086b3">rgba</span>(<span style="color:#099">247</span>, <span style="color:#099">56</span>, <span style="color:#099">89</span>, <span style="color:#099">0.2</span>);
+    <span style="color:#000;font-weight:bold">position</span>: <span style="color:#000;font-weight:bold">fixed</span>;
+    <span style="color:#000;font-weight:bold">border-radius</span>: <span style="color:#099">50</span><span style="color:#458;font-weight:bold">%</span>;
+    <span style="color:#000;font-weight:bold">transform</span>: <span style="color:#0086b3">translate3d</span>(<span style="color:#099">-50</span><span style="color:#458;font-weight:bold">%</span>, <span style="color:#099">-50</span><span style="color:#458;font-weight:bold">%</span>, <span style="color:#099">0</span>) <span style="color:#0086b3">scale</span>(<span style="color:#099">0</span>);
+    <span style="color:#000;font-weight:bold">transition</span>: <span style="color:#000;font-weight:bold">transform</span> <span style="color:#099">0.3</span><span style="color:#458;font-weight:bold">s</span>;
+    <span style="color:#000;font-weight:bold">border</span>: <span style="color:#099">2</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#000;font-weight:bold">solid</span> <span style="color:#0086b3">rgba</span>(<span style="color:#099">247</span>, <span style="color:#099">56</span>, <span style="color:#099">89</span>, <span style="color:#099">0.2</span>);
+    <span style="color:#000;font-weight:bold">display</span>: <span style="color:#000;font-weight:bold">flex</span>;
+    <span style="color:#000;font-weight:bold">align-items</span>: <span style="color:#000;font-weight:bold">center</span>;
+    <span style="color:#000;font-weight:bold">justify-content</span>: <span style="color:#000;font-weight:bold">center</span>;
+    <span style="color:#000;font-weight:bold">z-index</span>: <span style="color:#099">10</span>;
+}
+
+.<span style="color:#458;font-weight:bold">pointer</span>:<span style="color:#3c5d5d;font-weight:bold">before</span> {
+    <span style="color:#000;font-weight:bold">content</span>: <span style="color:#d14">&#34;&#34;</span>;
+    <span style="color:#000;font-weight:bold">width</span>: <span style="color:#099">80</span><span style="color:#458;font-weight:bold">%</span>;
+    <span style="color:#000;font-weight:bold">height</span>: <span style="color:#099">80</span><span style="color:#458;font-weight:bold">%</span>;
+    <span style="color:#000;font-weight:bold">position</span>: <span style="color:#000;font-weight:bold">absolute</span>;
+    <span style="color:#000;font-weight:bold">display</span>: <span style="color:#000;font-weight:bold">block</span>;
+    <span style="color:#000;font-weight:bold">background</span>: <span style="color:#000;font-weight:bold">none</span>;
+    <span style="color:#000;font-weight:bold">border-radius</span>: <span style="color:#099">50</span><span style="color:#458;font-weight:bold">%</span>;
+    <span style="color:#000;font-weight:bold">transition</span>: <span style="color:#000;font-weight:bold">background</span> <span style="color:#099">0.5</span><span style="color:#458;font-weight:bold">s</span>, <span style="color:#000;font-weight:bold">box-shadow</span> <span style="color:#099">0.5</span><span style="color:#458;font-weight:bold">s</span>;
+}
+
+.<span style="color:#458;font-weight:bold">is-pressed</span> .<span style="color:#458;font-weight:bold">pointer</span> {
+    <span style="color:#000;font-weight:bold">transform</span>: <span style="color:#0086b3">translate3d</span>(<span style="color:#099">-50</span><span style="color:#458;font-weight:bold">%</span>, <span style="color:#099">-50</span><span style="color:#458;font-weight:bold">%</span>, <span style="color:#099">0</span>) <span style="color:#0086b3">scale</span>(<span style="color:#099">1</span>);
+}
+
+.<span style="color:#458;font-weight:bold">is-longpress</span> .<span style="color:#458;font-weight:bold">pointer</span> {
+    <span style="color:#000;font-weight:bold">animation</span>: wobble <span style="color:#099">0.2</span><span style="color:#458;font-weight:bold">s</span> <span style="color:#000;font-weight:bold">infinite</span> <span style="color:#000;font-weight:bold">alternate</span>;
+}
+
+.<span style="color:#458;font-weight:bold">is-longpress</span> .<span style="color:#458;font-weight:bold">pointer</span>:<span style="color:#3c5d5d;font-weight:bold">before</span> {
+    <span style="color:#000;font-weight:bold">background</span>: <span style="color:#099">#faf15d</span>;
+    <span style="color:#000;font-weight:bold">box-shadow</span>: <span style="color:#099">0</span> <span style="color:#099">0</span> <span style="color:#099">5</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#0086b3">rgba</span>(<span style="color:#099">250</span>, <span style="color:#099">241</span>, <span style="color:#099">93</span>, <span style="color:#099">0.5</span>);
+    <span style="color:#000;font-weight:bold">animation</span>: wobble2 <span style="color:#099">0.2</span><span style="color:#458;font-weight:bold">s</span> <span style="color:#000;font-weight:bold">infinite</span> <span style="color:#000;font-weight:bold">alternate</span>;
+}
+
+@<span style="color:#000;font-weight:bold">keyframes</span> <span style="color:#000080">wobble</span> {
+    <span style="color:#000080">to</span> {
+        <span style="color:#000;font-weight:bold">transform</span>: <span style="color:#0086b3">translate3d</span>(<span style="color:#099">-50</span><span style="color:#458;font-weight:bold">%</span>, <span style="color:#099">-50</span><span style="color:#458;font-weight:bold">%</span>, <span style="color:#099">0</span>) <span style="color:#0086b3">scale</span>(<span style="color:#099">0.5</span>);
+    }
+}
+
+@<span style="color:#000;font-weight:bold">keyframes</span> <span style="color:#000080">wobble2</span> {
+    <span style="color:#000080">to</span> {
+        <span style="color:#000;font-weight:bold">transform</span>: <span style="color:#0086b3">scale</span>(<span style="color:#099">0.5</span>);
+    }
+}
+
+<span style="color:#998;font-style:italic">/*手机端不显示*/</span>
+<span style="color:#998;font-style:italic">/*
+</span><span style="color:#998;font-style:italic">@media (max-width:767px) {
+</span><span style="color:#998;font-style:italic">    .pointer,wobble,wobble2 {
+</span><span style="color:#998;font-style:italic">        display: none;
+</span><span style="color:#998;font-style:italic">    }
+</span><span style="color:#998;font-style:italic">}
+</span><span style="color:#998;font-style:italic">*/</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="复制时弹出提示">复制时弹出提示</h3>
+<p>复制时弹出提示“复制成功,若要转载请注明出处！”。</p>
+<p>在<code>开发者设置——自定义输出body尾部的HTML代码</code>中加入以下代码：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#998;font-style:italic">&lt;!--复制提示 &amp;&amp; 禁用F12 &amp;&amp; 自定义右键--&gt;</span>
+<span style="color:#998;font-style:italic">&lt;!--这个lay.js是用在与页面弹窗有关的功能上的--&gt;</span>
+&lt;<span style="color:#000080">script</span> <span style="color:#008080">src</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;https://cdn.jsdelivr.net/gh/HuaHuaY/huahuaorz.com-handsome-assets/6.0.0/src/脚本/layer.js&#34;</span>&gt;&lt;/<span style="color:#000080">script</span>&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>在<code>开发者设置——自定义JavaScript</code>中加入以下代码：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#998;font-style:italic">/*复制提示*/</span>
+<span style="color:#0086b3">document</span>.body.oncopy <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">function</span>() {layer.msg(<span style="color:#d14">&#39;复制成功,若要转载请注明出处！&#39;</span>);};
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="禁用f12">禁用F12</h3>
+<p>按下键盘上F12后，不弹出调试界面并提示“F12已禁用”。</p>
+<p>在<code>开发者设置——自定义输出body尾部的HTML代码</code>中加入以下代码：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#998;font-style:italic">&lt;!--复制提示 &amp;&amp; 禁用F12 &amp;&amp; 自定义右键--&gt;</span>
+<span style="color:#998;font-style:italic">&lt;!--这个lay.js是用于与页面提示有关的功能--&gt;</span>
+&lt;<span style="color:#000080">script</span> <span style="color:#008080">src</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;https://cdn.jsdelivr.net/gh/HuaHuaY/huahuaorz.com-handsome-assets/6.0.0/src/脚本/layer.js&#34;</span>&gt;&lt;/<span style="color:#000080">script</span>&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>在<code>开发者设置——自定义JavaScript</code>中加入以下代码：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#998;font-style:italic">/*禁用F12*/</span>
+<span style="color:#0086b3">document</span>.onkeydown <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">function</span>(){
+    <span style="color:#000;font-weight:bold">if</span>(<span style="color:#0086b3">window</span>.event <span style="color:#000;font-weight:bold">&amp;&amp;</span> <span style="color:#0086b3">window</span>.event.keyCode <span style="color:#000;font-weight:bold">==</span> <span style="color:#099">123</span>) {
+        layer.msg(<span style="color:#d14">&#34;F12被禁用&#34;</span>);
+        event.keyCode<span style="color:#000;font-weight:bold">=</span><span style="color:#099">0</span>;
+        event.returnValue<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">false</span>;
+    }
+}
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="自定义右键菜单">自定义右键菜单</h3>
+<p>将网页内鼠标右键单击菜单替换成自定义样式。</p>
+<p>有“返回”、“前进”、“刷新”、“复制”、“百度搜索”、“Google搜索”、“首页”和“友链”共8个选项。</p>
+<p>在<code>开发者设置——自定义输出body尾部的HTML代码</code>中加入以下代码：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">89
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#998;font-style:italic">&lt;!--复制提示 &amp;&amp; 禁用F12 &amp;&amp; 自定义右键--&gt;</span>
+<span style="color:#998;font-style:italic">&lt;!--这个lay.js是用在与页面弹窗有关的功能上的--&gt;</span>
+&lt;<span style="color:#000080">script</span> <span style="color:#008080">src</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;https://cdn.jsdelivr.net/gh/HuaHuaY/huahuaorz.com-handsome-assets/6.0.0/src/脚本/layer.js&#34;</span>&gt;&lt;/<span style="color:#000080">script</span>&gt;
+
+<span style="color:#998;font-style:italic">&lt;!--自定义右键--&gt;</span>
+&lt;<span style="color:#000080">style</span> <span style="color:#008080">type</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;text/css&#34;</span>&gt;
+    <span style="color:#000080">a</span> {<span style="color:#000;font-weight:bold">text-decoration</span>: <span style="color:#000;font-weight:bold">none</span>;}
+    <span style="color:#000080">div</span>.<span style="color:#458;font-weight:bold">usercm</span>{<span style="color:#000;font-weight:bold">background-repeat</span>:<span style="color:#000;font-weight:bold">no-repeat</span>;<span style="color:#000;font-weight:bold">background-position</span>:<span style="color:#000;font-weight:bold">center</span> <span style="color:#000;font-weight:bold">center</span>;<span style="color:#000;font-weight:bold">background-size</span>:<span style="color:#000;font-weight:bold">cover</span>;<span style="color:#000;font-weight:bold">background-color</span>:<span style="color:#0086b3">rgba</span>(<span style="color:#099">194</span>, <span style="color:#099">212</span>, <span style="color:#099">231</span>, <span style="color:#099">0.3</span>);<span style="color:#000;font-weight:bold">font-weight</span>:<span style="color:#099">700</span>;<span style="color:#000;font-weight:bold">font-size</span>:<span style="color:#099">13</span><span style="color:#458;font-weight:bold">px</span><span style="color:#999;font-weight:bold;font-style:italic">!important</span>;<span style="color:#000;font-weight:bold">width</span>:<span style="color:#099">130</span><span style="color:#458;font-weight:bold">px</span>;<span style="color:#000;font-weight:bold">-moz-</span><span style="color:#000;font-weight:bold">box-shadow</span>:<span style="color:#099">1</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#099">1</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#099">3</span><span style="color:#458;font-weight:bold">px</span> rgba
+(<span style="color:#099">0</span>,<span style="color:#099">0</span>,<span style="color:#099">0</span>,<span style="color:#099">.3</span>);<span style="color:#000;font-weight:bold">box-shadow</span>:<span style="color:#099">0</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#099">0</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#099">15</span><span style="color:#458;font-weight:bold">px</span> <span style="color:#099">#333</span>;<span style="color:#000;font-weight:bold">position</span>:<span style="color:#000;font-weight:bold">absolute</span>;<span style="color:#000;font-weight:bold">display</span>:<span style="color:#000;font-weight:bold">none</span>;<span style="color:#000;font-weight:bold">z-index</span>:<span style="color:#099">10000</span>;<span style="color:#000;font-weight:bold">opacity</span>:<span style="color:#099">0.9</span>; <span style="color:#000;font-weight:bold">border-radius</span>: <span style="color:#099">8</span><span style="color:#458;font-weight:bold">px</span>;}
+    <span style="color:#000080">div</span>.<span style="color:#458;font-weight:bold">usercm</span> <span style="color:#000080">ul</span>{<span style="color:#000;font-weight:bold">list-style-type</span>:<span style="color:#000;font-weight:bold">none</span>;<span style="color:#000;font-weight:bold">list-style-position</span>:<span style="color:#000;font-weight:bold">outside</span>;<span style="color:#000;font-weight:bold">margin</span>:<span style="color:#099">0</span><span style="color:#458;font-weight:bold">px</span>;<span style="color:#000;font-weight:bold">padding</span>:<span style="color:#099">0</span><span style="color:#458;font-weight:bold">px</span>;<span style="color:#000;font-weight:bold">display</span>:<span style="color:#000;font-weight:bold">block</span>}
+    <span style="color:#000080">div</span>.<span style="color:#458;font-weight:bold">usercm</span> <span style="color:#000080">ul</span> <span style="color:#000080">li</span>{<span style="color:#000;font-weight:bold">margin</span>:<span style="color:#099">0</span><span style="color:#458;font-weight:bold">px</span>;<span style="color:#000;font-weight:bold">padding</span>:<span style="color:#099">0</span><span style="color:#458;font-weight:bold">px</span>;<span style="color:#000;font-weight:bold">line-height</span>:<span style="color:#099">35</span><span style="color:#458;font-weight:bold">px</span>;}
+    <span style="color:#000080">div</span>.<span style="color:#458;font-weight:bold">usercm</span> <span style="color:#000080">ul</span> <span style="color:#000080">li</span> <span style="color:#000080">a</span>{<span style="color:#000;font-weight:bold">color</span>:<span style="color:#099">#000</span>;<span style="color:#000;font-weight:bold">padding</span>:<span style="color:#099">0</span> <span style="color:#099">15</span><span style="color:#458;font-weight:bold">px</span>;<span style="color:#000;font-weight:bold">display</span>:<span style="color:#000;font-weight:bold">block</span>}
+    <span style="color:#000080">div</span>.<span style="color:#458;font-weight:bold">usercm</span> <span style="color:#000080">ul</span> <span style="color:#000080">li</span> <span style="color:#000080">a</span>:<span style="color:#3c5d5d;font-weight:bold">hover</span>{<span style="color:#000;font-weight:bold">color</span>:<span style="color:#099">#000</span>;<span style="color:#000;font-weight:bold">background</span>:<span style="color:#0086b3">rgba</span>(<span style="color:#099">255</span>,<span style="color:#099">255</span>,<span style="color:#099">255</span>,<span style="color:#099">0.3</span>)}
+    <span style="color:#000080">div</span>.<span style="color:#458;font-weight:bold">usercm</span> <span style="color:#000080">ul</span> <span style="color:#000080">li</span> <span style="color:#000080">a</span> <span style="color:#000080">i</span>{<span style="color:#000;font-weight:bold">margin-right</span>:<span style="color:#099">10</span><span style="color:#458;font-weight:bold">px</span>}
+    <span style="color:#000080">a</span>.<span style="color:#458;font-weight:bold">disabled</span>{<span style="color:#000;font-weight:bold">color</span>:<span style="color:#0086b3">rgba</span>(<span style="color:#099">194</span>, <span style="color:#099">212</span>, <span style="color:#099">231</span>, <span style="color:#099">0.3</span>)<span style="color:#999;font-weight:bold;font-style:italic">!important</span>;<span style="color:#000;font-weight:bold">cursor</span>:<span style="color:#000;font-weight:bold">not-allowed</span>}
+    <span style="color:#000080">a</span>.<span style="color:#458;font-weight:bold">disabled</span>:<span style="color:#3c5d5d;font-weight:bold">hover</span>{<span style="color:#000;font-weight:bold">background-color</span>:<span style="color:#0086b3">rgba</span>(<span style="color:#099">255</span>,<span style="color:#099">11</span>,<span style="color:#099">11</span>,<span style="color:#099">0</span>)<span style="color:#999;font-weight:bold;font-style:italic">!important</span>}
+    <span style="color:#000080">div</span>.<span style="color:#458;font-weight:bold">usercm</span>{<span style="color:#000;font-weight:bold">background</span>:<span style="color:#0086b3">rgba</span>(<span style="color:#099">194</span>, <span style="color:#099">212</span>, <span style="color:#099">231</span>, <span style="color:#099">0.3</span>) <span style="color:#999;font-weight:bold;font-style:italic">!important</span>;}
+    &lt;/<span style="color:#000080">style</span>&gt;
+&lt;<span style="color:#000080">div</span> <span style="color:#008080">class</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;usercm&#34;</span> <span style="color:#008080">style</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;left: 199px; top: 5px; display: none;&#34;</span>&gt;
+    &lt;<span style="color:#000080">ul</span>&gt;
+&lt;<span style="color:#000080">li</span>&gt;&lt;<span style="color:#000080">a</span> <span style="color:#008080">href</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;javascript:history.go(-1);&#34;</span>&gt;&lt;<span style="color:#000080">i</span> <span style="color:#008080">class</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;fa fa-arrow-left fa-fw&#34;</span>&gt;&lt;/<span style="color:#000080">i</span>&gt;&lt;<span style="color:#000080">span</span>&gt;返回&lt;/<span style="color:#000080">span</span>&gt;&lt;/<span style="color:#000080">a</span>&gt;&lt;/<span style="color:#000080">li</span>&gt;
+        &lt;<span style="color:#000080">li</span>&gt;&lt;<span style="color:#000080">a</span> <span style="color:#008080">href</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;javascript:history.go(1);&#34;</span>&gt;&lt;<span style="color:#000080">i</span> <span style="color:#008080">class</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;fa fa-arrow-right fa-fw&#34;</span>&gt;&lt;/<span style="color:#000080">i</span>&gt;&lt;<span style="color:#000080">span</span>&gt;前进&lt;/<span style="color:#000080">span</span>&gt;&lt;/<span style="color:#000080">a</span>&gt;&lt;/<span style="color:#000080">li</span>&gt;
+        &lt;<span style="color:#000080">li</span> <span style="color:#008080">style</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;border-bottom:2px solid gray&#34;</span>&gt;&lt;<span style="color:#000080">a</span> <span style="color:#008080">href</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;javascript:window.location.reload();&#34;</span>&gt;&lt;<span style="color:#000080">i</span> <span style="color:#008080">class</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;fa fa-refresh fa-fw&#34;</span>&gt;&lt;/<span style="color:#000080">i</span>&gt;&lt;<span style="color:#000080">span</span>&gt;刷新&lt;/<span style="color:#000080">span</span>&gt;&lt;/<span style="color:#000080">a</span>&gt;&lt;/<span style="color:#000080">li</span>&gt;
+        &lt;<span style="color:#000080">li</span>&gt;&lt;<span style="color:#000080">a</span> <span style="color:#008080">href</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;javascript:void(0);&#34;</span> <span style="color:#008080">onclick</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;getSelect();&#34;</span>&gt;&lt;<span style="color:#000080">i</span> <span style="color:#008080">class</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;fa fa-copy fa-fw&#34;</span>&gt;&lt;/<span style="color:#000080">i</span>&gt;&lt;<span style="color:#000080">span</span>&gt;复制&lt;/<span style="color:#000080">span</span>&gt;&lt;/<span style="color:#000080">a</span>&gt;&lt;/<span style="color:#000080">li</span>&gt;
+        &lt;<span style="color:#000080">li</span>&gt;&lt;<span style="color:#000080">a</span> <span style="color:#008080">href</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;javascript:void(0);&#34;</span> <span style="color:#008080">onclick</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;baiduSearch();&#34;</span>&gt;&lt;<span style="color:#000080">i</span> <span style="color:#008080">class</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;fa fa-search fa-fw&#34;</span>&gt;&lt;/<span style="color:#000080">i</span>&gt;&lt;<span style="color:#000080">span</span>&gt;百度搜索&lt;/<span style="color:#000080">span</span>&gt;&lt;/<span style="color:#000080">a</span>&gt;&lt;/<span style="color:#000080">li</span>&gt;
+        &lt;<span style="color:#000080">li</span> <span style="color:#008080">style</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;border-bottom:2px solid gray&#34;</span>&gt;&lt;<span style="color:#000080">a</span> <span style="color:#008080">href</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;javascript:void(0);&#34;</span> <span style="color:#008080">onclick</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;googleSearch();&#34;</span>&gt;&lt;<span style="color:#000080">i</span> <span style="color:#008080">class</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;fa fa-search fa-fw&#34;</span>&gt;&lt;/<span style="color:#000080">i</span>&gt;&lt;<span style="color:#000080">span</span>&gt;Google搜索&lt;/<span style="color:#000080">span</span>&gt;&lt;/<span style="color:#000080">a</span>&gt;&lt;/<span style="color:#000080">li</span>&gt;
+        &lt;<span style="color:#000080">li</span>&gt;&lt;<span style="color:#000080">a</span> <span style="color:#008080">href</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;https://www.huahuaorz.com/&#34;</span>&gt;&lt;<span style="color:#000080">i</span> <span style="color:#008080">class</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;fa fa-home fa-fw&#34;</span>&gt;&lt;/<span style="color:#000080">i</span>&gt;&lt;<span style="color:#000080">span</span>&gt;首页&lt;/<span style="color:#000080">span</span>&gt;&lt;/<span style="color:#000080">a</span>&gt;&lt;/<span style="color:#000080">li</span>&gt;
+        &lt;<span style="color:#000080">li</span>&gt;&lt;<span style="color:#000080">a</span> <span style="color:#008080">href</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;https://www.huahuaorz.com/links.html&#34;</span>&gt;&lt;<span style="color:#000080">i</span> <span style="color:#008080">class</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;fa fa-meh-o fa-fw&#34;</span>&gt;&lt;/<span style="color:#000080">i</span>&gt;&lt;<span style="color:#000080">span</span>&gt;友链&lt;/<span style="color:#000080">span</span>&gt;&lt;/<span style="color:#000080">a</span>&gt;&lt;/<span style="color:#000080">li</span>&gt; 
+    &lt;/<span style="color:#000080">ul</span>&gt;
+&lt;/<span style="color:#000080">div</span>&gt;
+&lt;<span style="color:#000080">script</span> <span style="color:#008080">type</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;text/javascript&#34;</span>&gt;
+    (<span style="color:#000;font-weight:bold">function</span>(a) {
+        a.extend({
+            mouseMoveShow<span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">function</span>(b) {
+                <span style="color:#000;font-weight:bold">var</span> d <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>,
+                    c <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>,
+                    h <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>,
+                    k <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>,
+                    e <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>,
+                    f <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>;
+                a(<span style="color:#0086b3">window</span>).mousemove(<span style="color:#000;font-weight:bold">function</span>(g) {
+                    d <span style="color:#000;font-weight:bold">=</span> a(<span style="color:#0086b3">window</span>).width();
+                    c <span style="color:#000;font-weight:bold">=</span> a(<span style="color:#0086b3">window</span>).height();
+                    h <span style="color:#000;font-weight:bold">=</span> g.clientX;
+                    k <span style="color:#000;font-weight:bold">=</span> g.clientY;
+                    e <span style="color:#000;font-weight:bold">=</span> g.pageX;
+                    f <span style="color:#000;font-weight:bold">=</span> g.pageY;
+                    h <span style="color:#000;font-weight:bold">+</span> a(b).width() <span style="color:#000;font-weight:bold">&gt;=</span> d <span style="color:#000;font-weight:bold">&amp;&amp;</span> (e <span style="color:#000;font-weight:bold">=</span> e <span style="color:#000;font-weight:bold">-</span> a(b).width() <span style="color:#000;font-weight:bold">-</span> <span style="color:#099">5</span>);
+                    k <span style="color:#000;font-weight:bold">+</span> a(b).height() <span style="color:#000;font-weight:bold">&gt;=</span> c <span style="color:#000;font-weight:bold">&amp;&amp;</span> (f <span style="color:#000;font-weight:bold">=</span> f <span style="color:#000;font-weight:bold">-</span> a(b).height() <span style="color:#000;font-weight:bold">-</span> <span style="color:#099">5</span>);
+                    a(<span style="color:#d14">&#34;html&#34;</span>).on({
+                        contextmenu<span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">function</span>(c) {
+                            <span style="color:#099">3</span> <span style="color:#000;font-weight:bold">==</span> c.which <span style="color:#000;font-weight:bold">&amp;&amp;</span> a(b).css({
+                                left<span style="color:#000;font-weight:bold">:</span> e,
+                                top<span style="color:#000;font-weight:bold">:</span> f
+                            }).show()
+                        },
+                        click<span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">function</span>() {
+                            a(b).hide()
+                        }
+                    })
+                })
+            },
+            disabledContextMenu<span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">function</span>() {
+                <span style="color:#0086b3">window</span>.oncontextmenu <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">function</span>() {
+                    <span style="color:#000;font-weight:bold">return</span> <span style="color:#000;font-weight:bold">!</span><span style="color:#099">1</span>
+                }
+            }
+        })
+    })(jQuery);
+     
+    <span style="color:#000;font-weight:bold">function</span> getSelect() {
+        <span style="color:#d14">&#34;&#34;</span> <span style="color:#000;font-weight:bold">==</span> (<span style="color:#0086b3">window</span>.getSelection <span style="color:#000;font-weight:bold">?</span> <span style="color:#0086b3">window</span>.getSelection() <span style="color:#000;font-weight:bold">:</span> <span style="color:#0086b3">document</span>.selection.createRange().text) <span style="color:#000;font-weight:bold">?</span> layer.msg(<span style="color:#d14">&#34;啊噢...你没还没选择文字呢！&#34;</span>) <span style="color:#000;font-weight:bold">:</span> <span style="color:#0086b3">document</span>.execCommand(<span style="color:#d14">&#34;Copy&#34;</span>)
+    }
+    <span style="color:#000;font-weight:bold">function</span> baiduSearch() {
+        <span style="color:#000;font-weight:bold">var</span> a <span style="color:#000;font-weight:bold">=</span> <span style="color:#0086b3">window</span>.getSelection <span style="color:#000;font-weight:bold">?</span> <span style="color:#0086b3">window</span>.getSelection() <span style="color:#000;font-weight:bold">:</span> <span style="color:#0086b3">document</span>.selection.createRange().text;
+        <span style="color:#d14">&#34;&#34;</span> <span style="color:#000;font-weight:bold">==</span> a <span style="color:#000;font-weight:bold">?</span> layer.msg(<span style="color:#d14">&#34;啊噢...你没还没选择文字呢！&#34;</span>) <span style="color:#000;font-weight:bold">:</span> <span style="color:#0086b3">window</span>.open(<span style="color:#d14">&#34;https://www.baidu.com/s?wd=&#34;</span> <span style="color:#000;font-weight:bold">+</span> a)
+    }
+    <span style="color:#000;font-weight:bold">function</span> googleSearch() {
+        <span style="color:#000;font-weight:bold">var</span> a <span style="color:#000;font-weight:bold">=</span> <span style="color:#0086b3">window</span>.getSelection <span style="color:#000;font-weight:bold">?</span> <span style="color:#0086b3">window</span>.getSelection() <span style="color:#000;font-weight:bold">:</span> <span style="color:#0086b3">document</span>.selection.createRange().text;
+        <span style="color:#d14">&#34;&#34;</span> <span style="color:#000;font-weight:bold">==</span> a <span style="color:#000;font-weight:bold">?</span> layer.msg(<span style="color:#d14">&#34;啊噢...你没还没选择文字呢！&#34;</span>) <span style="color:#000;font-weight:bold">:</span> <span style="color:#0086b3">window</span>.open(<span style="color:#d14">&#34;https://www.google.com/search?q=&#34;</span> <span style="color:#000;font-weight:bold">+</span> a)
+    }
+    $(<span style="color:#000;font-weight:bold">function</span>() {
+        <span style="color:#000;font-weight:bold">for</span> (<span style="color:#000;font-weight:bold">var</span> a <span style="color:#000;font-weight:bold">=</span> navigator.userAgent, b <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;Android;iPhone;SymbianOS;Windows Phone;iPad;iPod&#34;</span>.split(<span style="color:#d14">&#34;;&#34;</span>), d <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">!</span><span style="color:#099">0</span>, c <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>; c <span style="color:#000;font-weight:bold">&lt;</span> b.length; c<span style="color:#000;font-weight:bold">++</span>) <span style="color:#000;font-weight:bold">if</span> (<span style="color:#099">0</span> <span style="color:#000;font-weight:bold">&lt;</span> a.indexOf(b[c])) {
+            d <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">!</span><span style="color:#099">1</span>;
+            <span style="color:#000;font-weight:bold">break</span>
+        }
+        d <span style="color:#000;font-weight:bold">&amp;&amp;</span> ($.mouseMoveShow(<span style="color:#d14">&#34;.usercm&#34;</span>), $.disabledContextMenu())
+    });
+&lt;/<span style="color:#000080">script</span>&gt;
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="彩色标签云">彩色标签云</h3>
+<p>标签云背景改为彩色。</p>
+<p>在<code>开发者设置——自定义JavaScript</code>和<code>PJAX——PJAX回调函数</code>中均加入以下代码：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#998;font-style:italic">&lt;!--</span>彩色标签云<span style="color:#000;font-weight:bold">--&gt;</span>
+<span style="color:#000;font-weight:bold">let</span> tags <span style="color:#000;font-weight:bold">=</span> <span style="color:#0086b3">document</span>.querySelectorAll(<span style="color:#d14">&#34;#tag_cloud-2 a&#34;</span>);
+<span style="color:#000;font-weight:bold">let</span> colorArr <span style="color:#000;font-weight:bold">=</span> [<span style="color:#d14">&#34;#428BCA&#34;</span>, <span style="color:#d14">&#34;#AEDCAE&#34;</span>, <span style="color:#d14">&#34;#ECA9A7&#34;</span>, <span style="color:#d14">&#34;#DA99FF&#34;</span>, <span style="color:#d14">&#34;#FFB380&#34;</span>, <span style="color:#d14">&#34;#D9B999&#34;</span>];
+tags.forEach(tag =&gt; {
+    tagsColor <span style="color:#000;font-weight:bold">=</span> colorArr[<span style="color:#0086b3">Math</span>.floor(<span style="color:#0086b3">Math</span>.random() <span style="color:#000;font-weight:bold">*</span> colorArr.length)];
+    tag.style.backgroundColor <span style="color:#000;font-weight:bold">=</span> tagsColor;
+});
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="页面标题变化">页面标题变化</h3>
+<p>在浏览器中切换到博客所在标签页时，网站在浏览器标题栏名称显示2秒“ヾ(Ő∀Ő3)ノ想我啦！”后换为正常标题，切换到其他标签页时，标题栏名称显示“ヽ(●-`Д´-)ノ别走啊！”。</p>
+<p>在<code>开发者设置——自定义输出body尾部的HTML代码</code>中加入以下代码：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#998;font-style:italic">&lt;!--页面标题变化--&gt;</span>
+&lt;<span style="color:#000080">script</span>&gt;
+ <span style="color:#000;font-weight:bold">var</span> OriginTitle <span style="color:#000;font-weight:bold">=</span> <span style="color:#0086b3">document</span>.title;
+ <span style="color:#000;font-weight:bold">var</span> titleTime;
+ <span style="color:#0086b3">document</span>.addEventListener(<span style="color:#d14">&#39;visibilitychange&#39;</span>, <span style="color:#000;font-weight:bold">function</span> () {
+     <span style="color:#000;font-weight:bold">if</span> (<span style="color:#0086b3">document</span>.hidden) {
+         <span style="color:#0086b3">document</span>.title <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;ヽ(●-`Д´-)ノ别走啊！&#39;</span>;
+         clearTimeout(titleTime);
+     }
+     <span style="color:#000;font-weight:bold">else</span> {
+         <span style="color:#0086b3">document</span>.title <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;ヾ(Ő∀Ő3)ノ想我啦！&#39;</span>;
+         titleTime <span style="color:#000;font-weight:bold">=</span> setTimeout(<span style="color:#000;font-weight:bold">function</span> () {
+             <span style="color:#0086b3">document</span>.title <span style="color:#000;font-weight:bold">=</span> OriginTitle;
+         }, <span style="color:#099">2000</span>);
+     }
+ });
+&lt;/<span style="color:#000080">script</span>&gt;
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="useragent显示评论者的浏览器系统ip所在地址">UserAgent——显示评论者的浏览器、系统、IP所在地址</h3>
+<p>暂不支持IPV6。来自松鼠的博客：<a href="https://doge.uk/coding/useragent-modify.html">安利一款Hansome主题专用的UserAgent插件</a></p>
+<h4 id="修改文件调用插件">修改文件调用插件</h4>
+<p>修改handsome主题<code>componet</code>目录下<code>comments.php</code>文件。将</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#000;font-weight:bold">&lt;</span>span class<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;comment-author vcard&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+    <span style="color:#000;font-weight:bold">&lt;</span>b class<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;fn&#34;</span><span style="color:#000;font-weight:bold">&gt;&lt;?</span>php <span style="color:#000;font-weight:bold">echo</span> <span style="color:#008080">$author</span>; <span style="color:#999;font-weight:bold;font-style:italic">?&gt;</span><span style="color:#a61717;background-color:#e3d2d2">&lt;/b&gt;
+</span><span style="color:#a61717;background-color:#e3d2d2">&lt;/span&gt;
+</span></code></pre></td></tr></table>
+</div>
+</div><p>修改为</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#000;font-weight:bold">&lt;</span>span class<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;comment-author vcard&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+    <span style="color:#000;font-weight:bold">&lt;</span>b class<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;fn&#34;</span><span style="color:#000;font-weight:bold">&gt;&lt;?</span>php <span style="color:#000;font-weight:bold">echo</span> <span style="color:#008080">$author</span>; <span style="color:#999;font-weight:bold;font-style:italic">?&gt;</span><span style="color:#a61717;background-color:#e3d2d2">&lt;/b&gt;&lt;?php UserAgent_Plugin::get_useragent($comments-&gt;agent,$comments-&gt;ip); ?&gt;
+</span><span style="color:#a61717;background-color:#e3d2d2">&lt;/span&gt;
+</span></code></pre></td></tr></table>
+</div>
+</div><p>P.S. 使用vim编辑时，可以使用“:/”去定位，匹配到的文字会高亮显示，修改完成后可输入“:noh”取消高亮。</p>
+<h4 id="在typecho后台启用插件">在Typecho后台启用插件</h4>
+<p>将<a href="https://cdn.jsdelivr.net/gh/HuaHuaY/HuaHuaY.github.io/res/2020/08/UserAgent%201.1.7z">UserAgent 1.1.7z</a>解压后上传到主题下的<code>usr/plugins</code>目录，并在后台启用。</p>
+<h4 id="修改文件获取真实ip">修改文件获取真实IP</h4>
+<p>在Typecho根目录下<code>config.inc.php</code>文件末尾添加以下代码：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#998;font-style:italic">//** 防止CDN造成无法获取客户真实IP地址 */
+</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">if</span>(isset(<span style="color:#008080">$_SERVER</span>[<span style="color:#d14">&#39;HTTP_X_FORWARDED_FOR&#39;</span>])) 
+{
+    <span style="color:#008080">$list</span> <span style="color:#000;font-weight:bold">=</span> explode(<span style="color:#d14">&#39;,&#39;</span>,<span style="color:#008080">$_SERVER</span>[<span style="color:#d14">&#39;HTTP_X_FORWARDED_FOR&#39;</span>]);
+    <span style="color:#008080">$_SERVER</span>[<span style="color:#d14">&#39;REMOTE_ADDR&#39;</span>] <span style="color:#000;font-weight:bold">=</span> <span style="color:#008080">$list</span>[<span style="color:#099">0</span>];
+}
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="2020-11-09-更新">2020-11-09 更新</h2>
+<p>由于阿里云第二年续费比较高，难以承担，阿里云的学生机也只能够用几年，考虑到将来尽可能的少迁移，决定还是用GitHub Pages搭建博客站点。</p>
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://www.huahuaorz.xyz/">HuaHuaY</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://www.huahuaorz.xyz/post/Typecho-Handsome%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/">https://www.huahuaorz.xyz/post/Typecho-Handsome%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/about/">关于</a></li>
+        
+        <li><a href="/post/PostgreSQL%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB/">PostgreSQL隔离级别</a></li>
+        
+        <li><a href="/post/Welcome-to-My-Website/">Welcome to My Website!</a></li>
+        
+        <li><a href="/archives/">归档</a></li>
+        
+        <li><a href="/search/">搜索</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/Typecho'>Typecho</a></li>
+                
+                <li><a href='/tags/themes'>themes</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "HuaHuaY/HuaHuaY.github.io"
+            issue-term="title"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2020 <a href="https://www.huahuaorz.xyz/">空栈攻城狮 By HuaHuaY</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://www.huahuaorz.xyz/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://www.huahuaorz.xyz/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://www.huahuaorz.xyz/post/Welcome-to-My-Website/" title="Welcome to My Website!">Welcome to My Website!</a>
+    </li>
+    
+    <li>
+        <a href="https://www.huahuaorz.xyz/post/%E6%96%B9%E8%88%9F%E7%BC%96%E8%AF%91%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="方舟编译器学习笔记">方舟编译器学习笔记</a>
+    </li>
+    
+    <li>
+        <a href="https://www.huahuaorz.xyz/post/Typecho-Handsome%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/" title="Typecho Handsome主题美化">Typecho Handsome主题美化</a>
+    </li>
+    
+    <li>
+        <a href="https://www.huahuaorz.xyz/post/PostgreSQL%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB/" title="PostgreSQL隔离级别">PostgreSQL隔离级别</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://www.huahuaorz.xyz/categories/%E5%BB%BA%E7%AB%99/">建站 (1)</a></li>
+    
+    <li><a href="https://www.huahuaorz.xyz/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库 (1)</a></li>
+    
+    <li><a href="https://www.huahuaorz.xyz/categories/%E6%9D%82%E8%B0%88/">杂谈 (1)</a></li>
+    
+    <li><a href="https://www.huahuaorz.xyz/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理 (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://www.huahuaorz.xyz/tags/PostgreSQL/">PostgreSQL</a>
+    
+    <a href="https://www.huahuaorz.xyz/tags/Typecho/">Typecho</a>
+    
+    <a href="https://www.huahuaorz.xyz/tags/themes/">themes</a>
+    
+    <a href="https://www.huahuaorz.xyz/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+    
+    <a href="https://www.huahuaorz.xyz/tags/%E6%96%B9%E8%88%9F%E7%BC%96%E8%AF%91%E5%99%A8/">方舟编译器</a>
+    
+    <a href="https://www.huahuaorz.xyz/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://www.google.com/" title="Google">Google</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://www.baidu.com/" title="Baidu">Baidu</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://www.huahuaorz.xyz/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
