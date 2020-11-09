@@ -142,9 +142,9 @@
     <li><a href="#20201109">2020.11.09</a>
       <ul>
         <li><a href="#方舟编译器源码编译">方舟编译器源码编译</a></li>
+        <li><a href="#toy-runtime编译运行">Toy runtime编译运行</a></li>
       </ul>
     </li>
-    <li><a href="#toy-runtime编译运行">Toy runtime编译运行</a></li>
   </ul>
 </nav>
     </div>
@@ -217,7 +217,7 @@
 <p>根据方舟编译器的仓库下“环境配置”一节所述，第二步配置Clang编译器路径的文件已从build/config/BUILDCONFIG.gn变为build/config.gni。</p>
 <p>下载<a href="https://gitee.com/xlnb/gn_binary/blob/master/gn">gn</a>时，不要直接<code>wget https://gitee.com/xlnb/gn_binary/blob/master/gn</code>，这样是下载了网页页面而非gn程序，可以用git clone下载。</p>
 <p>最终编译生成的文件在output/bin下而非out/bin，文件四个：java2jar, jbc2mpl, maple, maplegen。</p>
-<h2 id="toy-runtime编译运行">Toy runtime编译运行</h2>
+<h3 id="toy-runtime编译运行">Toy runtime编译运行</h3>
 <p>相比书中，多了一步<code>make aarch64-qemu</code>，且在这一步之前需要运行<code>sudo apt install libglib2.0-dev libpixman-1-dev</code>，否则会依次得到两个编译错误。</p>
         </div>
 
