@@ -223,6 +223,7 @@
 <h3 id="历史">历史</h3>
 <p>Maple是方舟的早期命名，后来用Maple来命名IR。</p>
 <h3 id="方舟编译器源码编译">方舟编译器源码编译</h3>
+<p>构建体系分为Makefile、gn和Ninja三层。gn只生成Ninja构建文件，不进行编译。<a href="https://ninja-build.org/">Ninja</a>是一个小型构建系统。</p>
 <p>根据方舟编译器的仓库下“环境配置”一节所述，第二步配置Clang编译器路径的文件已从build/config/BUILDCONFIG.gn变为build/config.gni。</p>
 <p>下载<a href="https://gitee.com/xlnb/gn_binary/blob/master/gn">gn</a>时，不要直接<code>wget https://gitee.com/xlnb/gn_binary/blob/master/gn</code>，这样是下载了网页页面而非gn程序，可以用git clone下载。</p>
 <p>最终编译生成的文件在output/bin下而非out/bin，文件四个：java2jar, jbc2mpl, maple, maplegen。</p>
