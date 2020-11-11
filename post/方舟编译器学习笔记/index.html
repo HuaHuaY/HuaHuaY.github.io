@@ -141,8 +141,15 @@
   <ul>
     <li><a href="#20201109">2020.11.09</a>
       <ul>
+        <li><a href="#历史">历史</a></li>
         <li><a href="#方舟编译器源码编译">方舟编译器源码编译</a></li>
         <li><a href="#toy-runtime编译运行">Toy runtime编译运行</a></li>
+      </ul>
+    </li>
+    <li><a href="#20201111">2020.11.11</a>
+      <ul>
+        <li><a href="#项目结构">项目结构</a></li>
+        <li><a href="#执行流程">执行流程</a></li>
       </ul>
     </li>
   </ul>
@@ -212,13 +219,61 @@
         </a>
     </p>
 <h2 id="20201109">2020.11.09</h2>
-<p>依照书本第2章编译方舟编译器源码，并在Toy runtime(<a href="https://github.com/isrc-cas/pacific">pacific</a>)上编译运行了Hello World。</p>
+<p>浏览第1章历史，依照书本第2章编译方舟编译器源码，并在Toy runtime(<a href="https://github.com/isrc-cas/pacific">pacific</a>)上编译运行了Hello World。</p>
+<h3 id="历史">历史</h3>
+<p>Maple是方舟的早期命名，后来用Maple来命名IR。</p>
 <h3 id="方舟编译器源码编译">方舟编译器源码编译</h3>
 <p>根据方舟编译器的仓库下“环境配置”一节所述，第二步配置Clang编译器路径的文件已从build/config/BUILDCONFIG.gn变为build/config.gni。</p>
 <p>下载<a href="https://gitee.com/xlnb/gn_binary/blob/master/gn">gn</a>时，不要直接<code>wget https://gitee.com/xlnb/gn_binary/blob/master/gn</code>，这样是下载了网页页面而非gn程序，可以用git clone下载。</p>
 <p>最终编译生成的文件在output/bin下而非out/bin，文件四个：java2jar, jbc2mpl, maple, maplegen。</p>
 <h3 id="toy-runtime编译运行">Toy runtime编译运行</h3>
 <p>相比书中，多了一步<code>make aarch64-qemu</code>，且在这一步之前需要运行<code>sudo apt install libglib2.0-dev libpixman-1-dev</code>，否则会依次得到两个编译错误。</p>
+<h2 id="20201111">2020.11.11</h2>
+<p>浏览书本第三章，了解方舟编译器项目结构和执行流程。</p>
+<h3 id="项目结构">项目结构</h3>
+<ul>
+<li>build：环境设置脚本、一些build用的Makefile。</li>
+<li>doc：文档。
+<ul>
+<li>MapleIRDesign.md：Maple IR的设计文档，只有英文版没有中文版。</li>
+<li>CompilerPhaseDescription.md：方舟编译器phase设计介绍。</li>
+<li>NaiveRcInsertionDescription.md：朴素版RC操作插入文档。</li>
+<li>RcApi.md：RC API，和上一文档都是关于方舟编译器在内存管理中使用的引用计数。</li>
+<li>VtableItableDescription.md：虚函数表和接口函数表设计，每个类一张虚函数表，存储父类虚方法、子类虚方法和实现的接口类的default方法。</li>
+</ul>
+</li>
+<li>license：木兰宽松许可证（第1版）。</li>
+<li>samples：例子程序目录。</li>
+<li>src：核心源码目录。
+<ul>
+<li>bin：java2jar、jbc2mpl和maple共3个可执行文件，除maple外的文件都要在创建的时候复制到output/bin目录下。</li>
+<li>deplibs：编译时依赖的库。</li>
+<li>huawei_secure_c：一些安全代码，如str_cat_s、str_cpy_s。</li>
+<li>maple_be：// TODO 功能未探明。</li>
+<li>maple_driver：maple可执行程序主要源码所在位置。</li>
+<li>maple_ipa：phase manager相关代码，具体ModulePhase类phase的运行框架。</li>
+<li>maple_ir：针对maple的IR的基本操作的相关的代码。</li>
+<li>maple_me：MeFuncPhase类别的phase的框架及具体内容。</li>
+<li>maple_phase：phase的基本框架的代码，只有头文件。</li>
+<li>maple_util：推测是maple需要的一些util。</li>
+<li>mempool：应该是内存池相关代码。</li>
+<li>mpl2mpl：该目录包含一些从maple IR倒maple IR的转换，转换是为后续me做准备，ModulePhase类phase的具体实现。</li>
+<li>mplfe：// TODO 功能未探明。</li>
+</ul>
+</li>
+<li>test：// TODO 功能未探明。</li>
+<li>tools：为编译和使用过程中用到的其他工具预留的目录。</li>
+</ul>
+<h3 id="执行流程">执行流程</h3>
+<p>output/bin目录下：</p>
+<ul>
+<li>java2jar将Java文件转为jar格式。</li>
+<li>jbc2mpl将Java bc文件转换为mpl格式文件。</li>
+<li>maple将mpl格式文件转换为方舟编译器汇编文件。</li>
+</ul>
+<p>maple可执行文件入口函数是位于src/maple_driver/src/maple.cpp中的main函数。</p>
+<p>先调用工厂方法获取CompilerFactory实例，其中调用ADD_COMPILER宏添加编译器类到supportedCompilers。然后调用返回实例的Compile方法，根据mplOptions选择supportedCompilers中的编译器放入compilers中，然后执行其中每个编译器的Compile方法。</p>
+<p>// TODO 浏览三个compiler编译器类。</p>
         </div>
 
         
