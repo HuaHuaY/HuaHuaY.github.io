@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>PVE on 空栈攻城狮</title>
-    <link>https://www.huahuaorz.xyz/tags/PVE/</link>
+    <link>https://www.huahuaorz.com/tags/PVE/</link>
     <description>Recent content in PVE on 空栈攻城狮</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 04 Dec 2020 00:23:00 +0800</lastBuildDate><atom:link href="https://www.huahuaorz.xyz/tags/PVE/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Dec 2020 00:23:00 +0800</lastBuildDate><atom:link href="https://www.huahuaorz.com/tags/PVE/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PVE安装记录</title>
-      <link>https://www.huahuaorz.xyz/post/PVE%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</link>
+      <link>https://www.huahuaorz.com/post/PVE%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Fri, 04 Dec 2020 00:23:00 +0800</pubDate>
       
-      <guid>https://www.huahuaorz.xyz/post/PVE%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</guid>
+      <guid>https://www.huahuaorz.com/post/PVE%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</guid>
       <description>&lt;p&gt;PVE版本：6.3&lt;/p&gt;
 &lt;p&gt;主板：Asus H370i&lt;/p&gt;
 &lt;p&gt;显卡：RTX2070S&lt;/p&gt;</description>
