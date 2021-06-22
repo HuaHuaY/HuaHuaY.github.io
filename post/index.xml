@@ -6,7 +6,7 @@
     <description>Recent content in Posts on 空栈攻城狮</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 22 Jun 2021 02:00:00 +0800</lastBuildDate><atom:link href="https://www.huahuaorz.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Jun 2021 13:00:00 +0800</lastBuildDate><atom:link href="https://www.huahuaorz.com/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Welcome to My Website!</title>
       <link>https://www.huahuaorz.com/post/Welcome-to-My-Website/</link>
@@ -17,11 +17,20 @@
     </item>
     
     <item>
-      <title>CTF校队2021暑期练习1</title>
-      <link>https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F2021%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A01/</link>
-      <pubDate>Tue, 22 Jun 2021 02:00:00 +0800</pubDate>
+      <title>CTF校队暑期练习2021.6.22</title>
+      <link>https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.22/</link>
+      <pubDate>Tue, 22 Jun 2021 13:00:00 +0800</pubDate>
       
-      <guid>https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F2021%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A01/</guid>
+      <guid>https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.22/</guid>
+      <description>&lt;p&gt;CTF题目 June. 22nd 2021&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CTF校队暑期练习2021.6.21</title>
+      <link>https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.21/</link>
+      <pubDate>Mon, 21 Jun 2021 23:59:59 +0800</pubDate>
+      
+      <guid>https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.21/</guid>
       <description>&lt;p&gt;CTF题目 June. 21st 2021&lt;/p&gt;</description>
     </item>
     
