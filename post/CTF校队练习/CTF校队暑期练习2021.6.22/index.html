@@ -9,20 +9,20 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
     
 
-    <title>方舟编译器学习笔记 | 空栈攻城狮</title>
-    <meta property="og:title" content="方舟编译器学习笔记 - 空栈攻城狮">
+    <title>CTF校队暑期练习2021.6.22 | 空栈攻城狮</title>
+    <meta property="og:title" content="CTF校队暑期练习2021.6.22 - 空栈攻城狮">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content='2020-11-10T00:00:00&#43;08:00'>
+    <meta property="article:published_time" content='2021-06-22T13:00:00&#43;08:00'>
         
         
-    <meta property="article:modified_time" content='2020-11-10T00:00:00&#43;08:00'>
+    <meta property="article:modified_time" content='2021-06-22T13:00:00&#43;08:00'>
         
     <meta name="Keywords" content="程序设计,c&#43;&#43;,java,c,python,方舟编译器">
-    <meta name="description" content="方舟编译器学习笔记">
+    <meta name="description" content="CTF校队暑期练习2021.6.22">
         
     <meta name="author" content="HuaHuaY">
-    <meta property="og:url" content="https://www.huahuaorz.com/post/%E6%96%B9%E8%88%9F%E7%BC%96%E8%AF%91%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+    <meta property="og:url" content="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.22/">
     <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
@@ -139,19 +139,10 @@
     <div class="post-toc-content">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#20201109">2020.11.09</a>
-      <ul>
-        <li><a href="#历史">历史</a></li>
-        <li><a href="#方舟编译器源码编译">方舟编译器源码编译</a></li>
-        <li><a href="#toy-runtime编译运行">Toy runtime编译运行</a></li>
-      </ul>
-    </li>
-    <li><a href="#20201111">2020.11.11</a>
-      <ul>
-        <li><a href="#项目结构">项目结构</a></li>
-        <li><a href="#执行流程">执行流程</a></li>
-      </ul>
-    </li>
+    <li><a href="#chalkboard">Chalkboard</a></li>
+    <li><a href="#time-traveller">Time Traveller</a></li>
+    <li><a href="#gobustme-">Gobustme 👻</a></li>
+    <li><a href="#raspberry">Raspberry</a></li>
   </ul>
 </nav>
     </div>
@@ -185,16 +176,16 @@
 </script>
     <article class="post">
         <header>
-            <h1 class="post-title">方舟编译器学习笔记</h1>
+            <h1 class="post-title">CTF校队暑期练习2021.6.22</h1>
         </header>
         <date class="post-meta meta-date">
-            2020年11月10日
+            2021年6月22日
         </date>
         
         <div class="post-meta">
             <span>|</span>
             
-            <span class="meta-category"><a href='/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86'>编译原理</a></span>
+            <span class="meta-category"><a href='/categories/CTF'>CTF</a></span>
             
         </div>
         
@@ -212,76 +203,64 @@
         </div>
         
         <div class="post-content">
-            <p>读<a href="https://item.jd.com/12741645.html">《华为方舟编译器之美》</a>，学习<a href="https://gitee.com/openarkcompiler/OpenArkCompiler">方舟编译器源码</a>。</p>
+            <p>CTF题目 June. 22nd 2021</p>
+<h2 id="chalkboard">Chalkboard</h2>
+<blockquote>
+<p>Solve the equations embedded in the jpeg to find the flag.</p>
+<p><a href="https://ctflearn.com/challenge/download/972">https://ctflearn.com/challenge/download/972</a></p>
+<p>Flag format: CTFlearn{**************}</p>
+</blockquote>
+<p>链接下载一张图片：</p>
 <p>
-        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/HuaHuaY/HuaHuaY.github.io/res/2020/11/%e5%8d%8e%e4%b8%ba%e6%96%b9%e8%88%9f%e7%bc%96%e8%af%91%e5%99%a8%e4%b9%8b%e7%be%8e.jpg">
-            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/HuaHuaY/HuaHuaY.github.io/res/2020/11/%e5%8d%8e%e4%b8%ba%e6%96%b9%e8%88%9f%e7%bc%96%e8%af%91%e5%99%a8%e4%b9%8b%e7%be%8e.jpg" />
+        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/HuaHuaY/HuaHuaY.github.io/res/2021/06/22/p1_1.jpg">
+            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/HuaHuaY/HuaHuaY.github.io/res/2021/06/22/p1_1.jpg" />
         </a>
     </p>
-<h2 id="20201109">2020.11.09</h2>
-<p>浏览第1章历史，依照书本第2章编译方舟编译器源码，并在Toy runtime(<a href="https://github.com/isrc-cas/pacific">pacific</a>)上编译运行了Hello World。</p>
-<h3 id="历史">历史</h3>
-<p>Maple是方舟的早期命名，后来用Maple来命名IR。</p>
-<h3 id="方舟编译器源码编译">方舟编译器源码编译</h3>
-<p>构建体系分为Makefile、gn和Ninja三层。gn只生成Ninja构建文件，不进行编译。<a href="https://ninja-build.org/">Ninja</a>是一个小型构建系统。</p>
-<p>根据方舟编译器的仓库下“环境配置”一节所述，第二步配置Clang编译器路径的文件已从build/config/BUILDCONFIG.gn变为build/config.gni。</p>
-<p>下载<a href="https://gitee.com/xlnb/gn_binary/blob/master/gn">gn</a>时，不要直接<code>wget https://gitee.com/xlnb/gn_binary/blob/master/gn</code>，这样是下载了网页页面而非gn程序，可以用git clone下载。</p>
-<p>最终编译生成的文件在output/bin下而非out/bin，文件四个：java2jar, jbc2mpl, maple, maplegen。</p>
-<h3 id="toy-runtime编译运行">Toy runtime编译运行</h3>
-<p>相比书中，多了一步<code>make aarch64-qemu</code>，且在这一步之前需要运行<code>sudo apt install libglib2.0-dev libpixman-1-dev</code>，否则会依次得到两个编译错误。</p>
-<h2 id="20201111">2020.11.11</h2>
-<p>浏览书本第三章，了解方舟编译器项目结构和执行流程。</p>
-<h3 id="项目结构">项目结构</h3>
-<ul>
-<li>build：环境设置脚本、一些build用的Makefile。</li>
-<li>doc：文档。
-<ul>
-<li>MapleIRDesign.md：Maple IR的设计文档，只有英文版没有中文版。</li>
-<li>CompilerPhaseDescription.md：方舟编译器phase设计介绍。</li>
-<li>NaiveRcInsertionDescription.md：朴素版RC操作插入文档。</li>
-<li>RcApi.md：RC API，和上一文档都是关于方舟编译器在内存管理中使用的引用计数。</li>
-<li>VtableItableDescription.md：虚函数表和接口函数表设计，每个类一张虚函数表，存储父类虚方法、子类虚方法和实现的接口类的default方法。</li>
-</ul>
-</li>
-<li>license：木兰宽松许可证（第1版）。</li>
-<li>samples：例子程序目录。</li>
-<li>src：核心源码目录。
-<ul>
-<li>bin：java2jar、jbc2mpl和maple共3个可执行文件，除maple外的文件都要在创建的时候复制到output/bin目录下。</li>
-<li>deplibs：编译时依赖的库。</li>
-<li>huawei_secure_c：一些安全代码，如str_cat_s、str_cpy_s。</li>
-<li>maple_be：// TODO 功能未探明。</li>
-<li>maple_driver：maple可执行程序主要源码所在位置。</li>
-<li>maple_ipa：phase manager相关代码，具体ModulePhase类phase的运行框架。</li>
-<li>maple_ir：针对maple的IR的基本操作的相关的代码。</li>
-<li>maple_me：MeFuncPhase类别的phase的框架及具体内容。</li>
-<li>maple_phase：phase的基本框架的代码，只有头文件。</li>
-<li>maple_util：推测是maple需要的一些util。</li>
-<li>mempool：应该是内存池相关代码。</li>
-<li>mpl2mpl：该目录包含一些从maple IR倒maple IR的转换，转换是为后续me做准备，ModulePhase类phase的具体实现。</li>
-<li>mplfe：// TODO 功能未探明。</li>
-</ul>
-</li>
-<li>test：// TODO 功能未探明。</li>
-<li>tools：为编译和使用过程中用到的其他工具预留的目录。</li>
-</ul>
-<h3 id="执行流程">执行流程</h3>
-<p>output/bin目录下：</p>
-<ul>
-<li>java2jar将Java文件转为jar格式。</li>
-<li>jbc2mpl将Java bc文件转换为mpl格式文件。</li>
-<li>maple将mpl格式文件转换为方舟编译器汇编文件。</li>
-</ul>
-<p>maple可执行文件入口函数是位于src/maple_driver/src/maple.cpp中的main函数。</p>
-<p>先调用工厂方法获取CompilerFactory实例，其中调用ADD_COMPILER宏添加编译器类到supportedCompilers。然后调用返回实例的Compile方法，根据mplOptions选择supportedCompilers中的编译器放入compilers中，然后执行其中每个编译器的Compile方法。</p>
-<p>// TODO 浏览三个compiler编译器类。</p>
+<p>图片的EXIF信息中有flag，可以用<a href="https://exif.tuchong.com/">图虫</a>查看。</p>
+<h2 id="time-traveller">Time Traveller</h2>
+<blockquote>
+<p>Let&rsquo;s take a trip to nasa.gov on December 31, 1996. If you can tell me what email NASA listed on their website, I&rsquo;ll provide you with 10 points.</p>
+<p>Format: CTFlearn{email}</p>
+</blockquote>
+<p>使用<a href="https://web.archive.org/">Web Archive</a>查看网页的历史存档。</p>
+<p>可以找到1996年12月31日nasa.gov的存档：<a href="https://web.archive.org/web/19961231235847/http://www.nasa.gov/">NASA Home Page/Mars Pathfinder Sites (archive.org)</a></p>
+<h2 id="gobustme-">Gobustme 👻</h2>
+<blockquote>
+<p>Some ghosts made this site 👻, it&rsquo;s a little spooky but there&rsquo;s a bunch of stuff hidden around.</p>
+<p>gobustme.ctflearn.com</p>
+<p>Flag format: CTFlearn{************}</p>
+</blockquote>
+<p>点开这个网址，视频下方第一个链接，指向一个gobuster的教程。</p>
+<p>在Kali里面用gobuster扫一遍网站，可以发现flag：https://gobustme.ctflearn.com/hide/</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">gobuster dir -e -u https://gobustme.ctflearn.com/ -w /usr/share/wordlists/dirb/common.txt
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="raspberry">Raspberry</h2>
+<blockquote>
+<p>Raspberry Reversing Challenge</p>
+<p>This 20 point challenge is specifically created for people new to reversing and assembly language programming. You can solve this first using Ghidra or IDA if you want to just get the flag and solve the challenge.</p>
+<p>If you want to start learning some assembly language programming to build the skills needed to solve some of the more difficult reversing challenges, then step through the debugger and examine the registers to see how each each letter in the flag is determined to be correct or incorrect.</p>
+<p>This challenge gives people new to assembly language programming the chance to learn mov, xor, cmp, jmp, call, add, sub, mul, div and shl instructions when they operate on a single byte (for most of the letters in the flag).</p>
+<p>Good luck and have fun!</p>
+<p><a href="https://ctflearn.com/challenge/download/1080">https://ctflearn.com/challenge/download/1080</a></p>
+<p>Flag format: CTFlearn{*******}</p>
+</blockquote>
+<p>下载下来一个zip：<a href="https://cdn.jsdelivr.net/gh/HuaHuaY/HuaHuaY.github.io/res/2021/06/22/Raspberry.zip">Raspberry.zip</a></p>
+<p>解压后有个Raspberry程序，可以用<code>./Raspberry CTFlearn{*********}</code>测试flag的正确性。</p>
+<p>查看他的汇编代码，算出flag。</p>
+<p>第15个字符的计算过程比其他的复杂，可以通过IDA看反汇编代码。</p>
         </div>
 
         
 <div class="post-archive">
     <ul class="post-copyright">
         <li><strong>原文作者：</strong><a rel="author" href="https://www.huahuaorz.com/">HuaHuaY</a></li>
-        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://www.huahuaorz.com/post/%E6%96%B9%E8%88%9F%E7%BC%96%E8%AF%91%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">https://www.huahuaorz.com/post/%E6%96%B9%E8%88%9F%E7%BC%96%E8%AF%91%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.22/">https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.22/</a></li>
         <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
     </ul>
 </div>
@@ -295,15 +274,15 @@
     <h2>See Also</h2>
     <ul class="listing">
         
+        <li><a href="/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.21/">CTF校队暑期练习2021.6.21</a></li>
+        
+        <li><a href="/post/PVE%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/">PVE安装记录</a></li>
+        
+        <li><a href="/post/%E6%96%B9%E8%88%9F%E7%BC%96%E8%AF%91%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">方舟编译器学习笔记</a></li>
+        
         <li><a href="/post/Typecho-Handsome%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/">Typecho Handsome主题美化</a></li>
         
         <li><a href="/about/">关于</a></li>
-        
-        <li><a href="/post/PostgreSQL%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB/">PostgreSQL隔离级别</a></li>
-        
-        <li><a href="/post/Welcome-to-My-Website/">Welcome to My Website!</a></li>
-        
-        <li><a href="/archives/">归档</a></li>
         
     </ul>
 </div>
@@ -313,9 +292,9 @@
             
             <ul class="clearfix">
                 
-                <li><a href='/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86'>编译原理</a></li>
+                <li><a href='/tags/CTF'>CTF</a></li>
                 
-                <li><a href='/tags/%E6%96%B9%E8%88%9F%E7%BC%96%E8%AF%91%E5%99%A8'>方舟编译器</a></li>
+                <li><a href='/tags/%E5%AE%89%E5%85%A8'>安全</a></li>
                 
             </ul>
             
