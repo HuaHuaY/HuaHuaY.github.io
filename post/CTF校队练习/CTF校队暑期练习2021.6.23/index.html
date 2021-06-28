@@ -219,14 +219,14 @@
 </blockquote>
 <p>下载下来是一张图片：</p>
 <p>
-        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/HuaHuaY/HuaHuaY.github.io/res/2021/06/23/p2_1.jpg">
-            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/HuaHuaY/HuaHuaY.github.io/res/2021/06/23/p2_1.jpg" />
+        <a data-fancybox="gallery" href="/res/2021/06/23/p2_1.jpg">
+            <img class="mx-auto" alt="" src="/res/2021/06/23/p2_1.jpg" />
         </a>
     </p>
 <p>使用binwalk查看，发现里面藏有文件：</p>
 <p>
-        <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/HuaHuaY/HuaHuaY.github.io/res/2021/06/23/p2_2.png">
-            <img class="mx-auto" alt="" src="https://cdn.jsdelivr.net/gh/HuaHuaY/HuaHuaY.github.io/res/2021/06/23/p2_2.png" />
+        <a data-fancybox="gallery" href="/res/2021/06/23/p2_2.png">
+            <img class="mx-auto" alt="" src="/res/2021/06/23/p2_2.png" />
         </a>
     </p>
 <p>用<code>binwalk -e 图片</code>命令把藏入的文件解压出来，发现是一个需要密码的压缩包。密码藏在图片文件的EXIF信息里。用<a href="https://exif.tuchong.com/">图虫</a>查看，在<a href="https://gchq.github.io/CyberChef/">CyberChef</a>进行Base64解密Comment一行的值，得到压缩包密码。打开压缩包后获得flag。</p>
@@ -292,7 +292,7 @@ Amount: 25.00€</p>
 <li>x64 Manual: <a href="https://cs.brown.edu/courses/cs033/docs/guides/x64_cheatsheet.pdf">https://cs.brown.edu/courses/cs033/docs/guides/x64_cheatsheet.pdf</a></li>
 </ol>
 </blockquote>
-<p>链接里下载一个txt文件：<a href="https://cdn.jsdelivr.net/gh/HuaHuaY/HuaHuaY.github.io/res/2021/06/23/bitecode.txt">bitecode.txt</a></p>
+<p>链接里下载一个txt文件：<a href="/res/2021/06/23/bitecode.txt">bitecode.txt</a></p>
 <p>点开是一系列指令，<code>iload_n</code>表示从第n位取一个数，<code>istore_n</code>表示把一个数存到第n位。</p>
 <p>解析得，flag需要满足<code>(n &lt;&lt; 3) ^ (n ^ 525024598) == -889275714</code></p>
 <p>得到<code>(n &lt;&lt; 3) ^ n == 0b11010101101101011000011111101000</code></p>
