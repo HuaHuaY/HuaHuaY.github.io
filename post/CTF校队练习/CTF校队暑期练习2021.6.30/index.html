@@ -9,20 +9,20 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
     
 
-    <title>CTF校队暑期练习2021.6.29 | 空栈攻城狮</title>
-    <meta property="og:title" content="CTF校队暑期练习2021.6.29 - 空栈攻城狮">
+    <title>CTF校队暑期练习2021.6.30 | 空栈攻城狮</title>
+    <meta property="og:title" content="CTF校队暑期练习2021.6.30 - 空栈攻城狮">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content='2021-06-29T23:59:59&#43;08:00'>
+    <meta property="article:published_time" content='2021-06-30T23:59:59&#43;08:00'>
         
         
-    <meta property="article:modified_time" content='2021-06-29T23:59:59&#43;08:00'>
+    <meta property="article:modified_time" content='2021-06-30T23:59:59&#43;08:00'>
         
     <meta name="Keywords" content="程序设计,c&#43;&#43;,java,c,python,方舟编译器">
-    <meta name="description" content="CTF校队暑期练习2021.6.29">
+    <meta name="description" content="CTF校队暑期练习2021.6.30">
         
     <meta name="author" content="HuaHuaY">
-    <meta property="og:url" content="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.29/">
+    <meta property="og:url" content="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.30/">
     <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
@@ -140,10 +140,10 @@
         <nav id="TableOfContents">
   <ul>
     <li><a href="#easy-reverse-open-source">[Easy] [Reverse] open-source</a></li>
-    <li><a href="#easy-web-backup">[Easy] [Web] backup</a></li>
-    <li><a href="#medium-pwn-level0">[Medium] [PWN] level0</a></li>
-    <li><a href="#hard-pwn-level2">[Hard] [PWN] level2</a></li>
-    <li><a href="#hard-forensics-功夫再高也怕菜刀">[Hard] [Forensics] 功夫再高也怕菜刀</a></li>
+    <li><a href="#easy-cryptography-mind-your-ps-and-qs">[Easy] [Cryptography] Mind your Ps and Qs</a></li>
+    <li><a href="#medium-web-it-is-my-birthday">[Medium] [Web] It is my Birthday</a></li>
+    <li><a href="#medium-binary-stonks">[Medium] [Binary] Stonks</a></li>
+    <li><a href="#hard-binary-heres-a-libc">[Hard] [Binary] Here&rsquo;s a LIBC</a></li>
   </ul>
 </nav>
     </div>
@@ -177,10 +177,10 @@
 </script>
     <article class="post">
         <header>
-            <h1 class="post-title">CTF校队暑期练习2021.6.29</h1>
+            <h1 class="post-title">CTF校队暑期练习2021.6.30</h1>
         </header>
         <date class="post-meta meta-date">
-            2021年6月29日
+            2021年6月30日
         </date>
         
         <div class="post-meta">
@@ -204,66 +204,119 @@
         </div>
         
         <div class="post-content">
-            <p>CTF题目 June. 29th 2021</p>
+            <p>CTF题目 June. 30th 2021</p>
 <h2 id="easy-reverse-open-source">[Easy] [Reverse] open-source</h2>
 <blockquote>
-<p>菜鸡学逆向学得头皮发麻，终于它拿到了一段源代码</p>
-<p><a href="https://adworld.xctf.org.cn/media/task/attachments/8b6405c25fe447fa804c6833a0d72808.c">https://adworld.xctf.org.cn/media/task/attachments/8b6405c25fe447fa804c6833a0d72808.c</a></p>
+<p>I wonder what this really is&hellip; enc</p>
+<p><code>''.join([chr((ord(flag[i]) &lt;&lt; 8) + ord(flag[i + 1])) for i in range(0, len(flag), 2)])</code></p>
+<p><a href="https://mercury.picoctf.net/static/77a2b202236aa741e988581e78d277a6/enc">https://mercury.picoctf.net/static/77a2b202236aa741e988581e78d277a6/enc</a></p>
+<p>Hint: You may find some decoders online</p>
 </blockquote>
-<p>下载下来一个.c文件：<a href="/res/2021/06/29/p1_1.c">p1_1.c</a></p>
-<p>运行得到flag。</p>
+<p>下载下来一个文本：<a href="/res/2021/06/30/env">env</a>，用VSCode打开默认是UTF-8编码，内容是乱码。</p>
+<p>用<a href="https://gchq.github.io/CyberChef/">CyberChef</a>的Magic功能处理内容，打开Intensive mode，在Encode_text(&lsquo;UTF-16BE (1201)')一行能看见flag。</p>
+<p>也可以在VSCode中先以UTF-16BE保存文件，再用UTF-8打开。</p>
+<h2 id="easy-cryptography-mind-your-ps-and-qs">[Easy] [Cryptography] Mind your Ps and Qs</h2>
+<blockquote>
+<p>In RSA, a small e value can be problematic, but what about N ? Can you decrypt this? values</p>
+<p><a href="https://mercury.picoctf.net/static/b9ddda080c56fb421bf30409bec3460d/values">https://mercury.picoctf.net/static/b9ddda080c56fb421bf30409bec3460d/values</a></p>
+<p>Hint: Bits are expensive, I used only a little bit over 100 to save money</p>
+</blockquote>
+<p>下载下来一个文本：<a href="/res/2021/06/30/values">values</a></p>
+<p>文件内容：</p>
+<pre><code>Decrypt my super sick RSA:
+c: 964354128913912393938480857590969826308054462950561875638492039363373779803642185
+n: 1584586296183412107468474423529992275940096154074798537916936609523894209759157543
+e: 65537
+</code></pre><p>用<a href="http://factordb.com">factordb.com</a>算出n的两个质因数。</p>
+<pre><code>p = 2434792384523484381583634042478415057961
+q = 650809615742055581459820253356987396346063
+</code></pre><p>运行<code>pip install pycryptodome</code>安装依赖，之后运行这段代码得到flag：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#000;font-weight:bold">from</span> <span style="color:#555">Crypto.Util.number</span> <span style="color:#000;font-weight:bold">import</span> inverse, long_to_bytes
+
+c <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">964354128913912393938480857590969826308054462950561875638492039363373779803642185</span>
+n <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">1584586296183412107468474423529992275940096154074798537916936609523894209759157543</span>
+e <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">65537</span>
+
+p <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">2434792384523484381583634042478415057961</span>
+q <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">650809615742055581459820253356987396346063</span>
+
+fhi_n <span style="color:#000;font-weight:bold">=</span> (p <span style="color:#000;font-weight:bold">-</span> <span style="color:#099">1</span>) <span style="color:#000;font-weight:bold">*</span> (q <span style="color:#000;font-weight:bold">-</span> <span style="color:#099">1</span>)
+
+d <span style="color:#000;font-weight:bold">=</span> inverse(e, fhi_n)
+
+m <span style="color:#000;font-weight:bold">=</span> <span style="color:#0086b3">pow</span>(c, d, n)
+
+<span style="color:#0086b3">print</span>(long_to_bytes(m))
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="medium-web-it-is-my-birthday">[Medium] [Web] It is my Birthday</h2>
+<blockquote>
+<p>I sent out 2 invitations to all of my friends for my birthday! I&rsquo;ll know if they get stolen because the two invites look similar, and they even have the same md5 hash, but they are slightly different! You wouldn&rsquo;t believe how long it took me to find a collision. Anyway, see if you&rsquo;re invited by submitting 2 PDFs to my website.</p>
+<p><a href="http://mercury.picoctf.net:63578/">http://mercury.picoctf.net:63578/</a></p>
+<p>Hint1: Look at the category of this problem.</p>
+<p>Hint2: How may a PHP site check the rules in the description?</p>
+</blockquote>
+<p>新建一个空的文本文档，改名1.pdf。</p>
+<p>然后使用<a href="/res/2021/06/30/fastcoll.exe">fastcoll_v1.0.0.5.exe</a>，运行命令<code>.\fastcoll.exe -p 1.pdf -o 1.pdf 2.pdf</code>得到两个相同MD5的pdf文件，上传得到flag。</p>
+<h2 id="medium-binary-stonks">[Medium] [Binary] Stonks</h2>
+<blockquote>
+<p>I decided to try something noone else has before. I made a bot to automatically trade stonks for me using AI and machine learning. I wouldn&rsquo;t believe you if you told me it&rsquo;s unsecure! vuln.c</p>
+<p><code>nc mercury.picoctf.net 27912</code></p>
+<p><a href="https://mercury.picoctf.net/static/17ba7f9351aca192c45833c658742fe5/vuln.c">https://mercury.picoctf.net/static/17ba7f9351aca192c45833c658742fe5/vuln.c</a></p>
+<p>Hint: Okay, maybe I&rsquo;d believe you if you find my API key</p>
+</blockquote>
+<p>下载下来一个.c文件：<a href="/res/2021/06/30/vuln.c">vuln.c</a></p>
+<p>主要的代码是62行的buy_stonks函数，漏洞在于函数中第93行没有指定printf参数，而我们又能指定user_buf是什么，那就让他把栈上的数据打印出来。</p>
+<p>编译，运行，输入一堆%x打出栈上的信息：</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">gcc p1_1.c
-.<span style="color:#d14">\a</span>.exe <span style="color:#099">51966</span> <span style="color:#099">25</span> h4cky0u
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x<span style="color:#000;font-weight:bold">%</span>x
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="easy-web-backup">[Easy] [Web] backup</h2>
+</div><p>利用<a href="https://gchq.github.io/CyberChef/">CyberChef</a>的From Hex功能解析打印出的结果，可以发现有一串<code>pocip{FTC0l_I4_t5m_ll0m_y_y3n2fc10a10ÿ´.}</code>，看起来像flag。</p>
+<p>因为%x一次打印四个字节，所以要每四个字节翻转一次。因为flag的格式是picoCTF{xxx}，所以我们知道从第二个字符o开始翻转。之后得到flag。</p>
+<h2 id="hard-binary-heres-a-libc">[Hard] [Binary] Here&rsquo;s a LIBC</h2>
 <blockquote>
-<p>X老师忘记删除备份文件，他派小宁同学去把备份文件找出来,一起来帮小宁同学吧！</p>
-<p><a href="https://adworld.xctf.org.cn/task/answer?type=web&amp;id=5064">https://adworld.xctf.org.cn/task/answer?type=web&amp;id=5064</a></p>
-<p>需要创建在线场景</p>
+<p>I am once again asking for you to pwn this binary vuln libc.so.6 Makefile</p>
+<p><code>nc mercury.picoctf.net 62289</code></p>
+<p><a href="https://mercury.picoctf.net/static/2c327c6c08e9d1d8142dbdb85ae00574/vuln">https://mercury.picoctf.net/static/2c327c6c08e9d1d8142dbdb85ae00574/vuln</a></p>
+<p><a href="https://mercury.picoctf.net/static/2c327c6c08e9d1d8142dbdb85ae00574/libc.so.6">https://mercury.picoctf.net/static/2c327c6c08e9d1d8142dbdb85ae00574/libc.so.6</a></p>
+<p><a href="https://mercury.picoctf.net/static/2c327c6c08e9d1d8142dbdb85ae00574/Makefile">https://mercury.picoctf.net/static/2c327c6c08e9d1d8142dbdb85ae00574/Makefile</a></p>
+<p>Hint: PWNTools has a lot of useful features for getting offsets.</p>
+<p>参考资料：https://ctf-wiki.org/pwn/linux/stackoverflow/basic-rop/</p>
 </blockquote>
+<p>下载下来三个文件：<a href="/res/2021/06/30/vuln">vuln</a>、<a href="/res/2021/06/30/libc.so.6">libc.so.6</a>、<a href="/res/2021/06/30/Makefile">Makefile</a></p>
 <p>// TODO</p>
-<h2 id="medium-pwn-level0">[Medium] [PWN] level0</h2>
-<blockquote>
-<p>菜鸡了解了什么是溢出，他相信自己能得到shell</p>
-<p><a href="https://adworld.xctf.org.cn/task/answer?type=pwn&amp;id=5053">https://adworld.xctf.org.cn/task/answer?type=pwn&amp;id=5053</a></p>
-<p>需要创建在线场景</p>
-<p><a href="https://adworld.xctf.org.cn/media/task/attachments/291721f42a044f50a2aead748d539df0">https://adworld.xctf.org.cn/media/task/attachments/291721f42a044f50a2aead748d539df0</a></p>
-</blockquote>
-<p>// TODO</p>
-<h2 id="hard-pwn-level2">[Hard] [PWN] level2</h2>
-<blockquote>
-<p>菜鸡请教大神如何获得flag，大神告诉他‘使用 面向返回的编程 (ROP)就可以了’</p>
-<p><a href="https://adworld.xctf.org.cn/task/answer?type=pwn&amp;id=5055">https://adworld.xctf.org.cn/task/answer?type=pwn&amp;id=5055</a></p>
-<p>需要创建在线场景</p>
-<p><a href="https://adworld.xctf.org.cn/media/task/attachments/1ab77c073b4f4524b73e086d063f884e">https://adworld.xctf.org.cn/media/task/attachments/1ab77c073b4f4524b73e086d063f884e</a></p>
-</blockquote>
-<p>// TODO</p>
-<h2 id="hard-forensics-功夫再高也怕菜刀">[Hard] [Forensics] 功夫再高也怕菜刀</h2>
-<blockquote>
-<p>菜狗决定用菜刀和菜鸡决一死战</p>
-<p><a href="https://adworld.xctf.org.cn/media/task/attachments/acfff53ce3fa4e2bbe8654284dfc18e1.pcapng">https://adworld.xctf.org.cn/media/task/attachments/acfff53ce3fa4e2bbe8654284dfc18e1.pcapng</a></p>
-</blockquote>
-<p>下载下来一个.pcapng文件：<a href="/res/2021/06/29/p5_1.pcapng">p5_1.pcapng</a></p>
-<p>直接用binwalk解压，发现有个空的flag.txt，还有一个加了密的15B561.zip。</p>
-<p>用Wireshark打开，地址栏输入http，过滤出http协议的报文。</p>
-<p>查看其中的POST和响应，可以看见有“aa”、“action”、“z1”和“z2”字段，前三用Base64解密，没啥用。</p>
-<p>“z2”字段以FFD8FFE0开头，猜测是特定的文件格式。搜索一下，这是jpg。</p>
-<p>用能编辑二进制的编辑器，将z2的值写入空文件，命名为.jpg文件，图片上能看见一个密码。</p>
-<p>用7zip打开先前带密码的压缩包，输入密码，提取出一个flag.txt，里面即是flag。</p>
         </div>
 
         
 <div class="post-archive">
     <ul class="post-copyright">
         <li><strong>原文作者：</strong><a rel="author" href="https://www.huahuaorz.com/">HuaHuaY</a></li>
-        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.29/">https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.29/</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.30/">https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.30/</a></li>
         <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
     </ul>
 </div>
@@ -277,6 +330,8 @@
     <h2>See Also</h2>
     <ul class="listing">
         
+        <li><a href="/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.29/">CTF校队暑期练习2021.6.29</a></li>
+        
         <li><a href="/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.28/">CTF校队暑期练习2021.6.28</a></li>
         
         <li><a href="/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.25/">CTF校队暑期练习2021.6.25</a></li>
@@ -284,8 +339,6 @@
         <li><a href="/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.24/">CTF校队暑期练习2021.6.24</a></li>
         
         <li><a href="/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.23/">CTF校队暑期练习2021.6.23</a></li>
-        
-        <li><a href="/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.22/">CTF校队暑期练习2021.6.22</a></li>
         
     </ul>
 </div>
