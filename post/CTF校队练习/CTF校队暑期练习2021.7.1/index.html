@@ -9,20 +9,20 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
     
 
-    <title>CTF校队暑期练习2021.6.28 | 空栈攻城狮</title>
-    <meta property="og:title" content="CTF校队暑期练习2021.6.28 - 空栈攻城狮">
+    <title>CTF校队暑期练习2021.7.1 | 空栈攻城狮</title>
+    <meta property="og:title" content="CTF校队暑期练习2021.7.1 - 空栈攻城狮">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content='2021-06-28T23:59:59&#43;08:00'>
+    <meta property="article:published_time" content='2021-07-01T23:59:59&#43;08:00'>
         
         
-    <meta property="article:modified_time" content='2021-06-28T23:59:59&#43;08:00'>
+    <meta property="article:modified_time" content='2021-07-01T23:59:59&#43;08:00'>
         
     <meta name="Keywords" content="程序设计,c&#43;&#43;,java,c,python,方舟编译器">
-    <meta name="description" content="CTF校队暑期练习2021.6.28">
+    <meta name="description" content="CTF校队暑期练习2021.7.1">
         
     <meta name="author" content="HuaHuaY">
-    <meta property="og:url" content="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.28/">
+    <meta property="og:url" content="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.1/">
     <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
@@ -139,11 +139,11 @@
     <div class="post-toc-content">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#easy-misc-pdf">[Easy] [Misc] pdf</a></li>
-    <li><a href="#easy-reverse-坚持60s">[Easy] [Reverse] 坚持60s</a></li>
-    <li><a href="#medium-misc-give_you_flag">[Medium] [Misc] give_you_flag</a></li>
-    <li><a href="#medium-misc-ext3">[Medium] [Misc] ext3</a></li>
-    <li><a href="#hard-misc-simplerar">[Hard] [Misc] SimpleRAR</a></li>
+    <li><a href="#easy-misc-tab-tab-attack">[Easy] [Misc] Tab, Tab, Attack</a></li>
+    <li><a href="#easy-misc-magikarp-ground-mission">[Easy] [Misc] Magikarp Ground Mission</a></li>
+    <li><a href="#medium-web-who-are-you">[Medium] [Web] Who are you?</a></li>
+    <li><a href="#medium-crypto-pixelated">[Medium] [Crypto] Pixelated</a></li>
+    <li><a href="#hard-binary-filtered-shellcode">[Hard] [Binary] filtered-shellcode</a></li>
   </ul>
 </nav>
     </div>
@@ -177,10 +177,10 @@
 </script>
     <article class="post">
         <header>
-            <h1 class="post-title">CTF校队暑期练习2021.6.28</h1>
+            <h1 class="post-title">CTF校队暑期练习2021.7.1</h1>
         </header>
         <date class="post-meta meta-date">
-            2021年6月28日
+            2021年7月1日
         </date>
         
         <div class="post-meta">
@@ -204,67 +204,116 @@
         </div>
         
         <div class="post-content">
-            <p>CTF题目 June. 28th 2021</p>
-<h2 id="easy-misc-pdf">[Easy] [Misc] pdf</h2>
+            <p>CTF题目 July. 1st 2021</p>
+<h2 id="easy-misc-tab-tab-attack">[Easy] [Misc] Tab, Tab, Attack</h2>
 <blockquote>
-<p>菜猫给了菜狗一张图，说图下面什么都没有</p>
-<p><a href="https://adworld.xctf.org.cn/media/task/attachments/ad00be3652ac4301a71dedd2708f78b8.pdf">https://adworld.xctf.org.cn/media/task/attachments/ad00be3652ac4301a71dedd2708f78b8.pdf</a></p>
+<p>Using tabcomplete in the Terminal will add years to your life, esp. when dealing with long rambling directory structures and filenames: <a href="https://mercury.picoctf.net/static/72712e82413e78cc8aa8d553ffea42b0/Addadshashanammu.zip">Addadshashanammu.zip</a></p>
+<p>Hint: After unzip ing, this problem can be solved with 11 button-presses&hellip;(mostly Tab)&hellip;</p>
 </blockquote>
-<p>下载下来一个pdf文件：<a href="/res/2021/06/28/p1_1.pdf">p1_1.pdf</a></p>
-<p>用一个有文档视图/文本查看器的pdf阅读器/编辑器，就能看见flag了。</p>
-<p>或者选择能朗读的pdf阅读器，考验听力的时候到了。</p>
-<h2 id="easy-reverse-坚持60s">[Easy] [Reverse] 坚持60s</h2>
+<p>下载下来一个.zip文件：<a href="/res/2021/07/01/Addadshashanammu.zip">Addadshashanammu.zip</a></p>
+<p>解压，运行，一气呵成。</p>
+<h2 id="easy-misc-magikarp-ground-mission">[Easy] [Misc] Magikarp Ground Mission</h2>
 <blockquote>
-<p>菜狗发现最近菜猫不爱理他，反而迷上了菜鸡</p>
-<p><a href="https://adworld.xctf.org.cn/media/task/attachments/9dc125bf1b84478cb14813d9bed6470c.jar">https://adworld.xctf.org.cn/media/task/attachments/9dc125bf1b84478cb14813d9bed6470c.jar</a></p>
+<p>Do you know how to move between directories and read files in the shell? Start the container, ssh to it, and then ls once connected to begin. Login via ssh as ctf-player with the password, ee388b88</p>
+<p>Hint: Finding a cheatsheet for bash would be really helpful!</p>
+<p><a href="https://play.picoctf.org/practice/challenge/189?category=5&amp;originalEvent=34&amp;page=1">https://play.picoctf.org/practice/challenge/189?category=5&amp;originalEvent=34&amp;page=1</a></p>
 </blockquote>
-<p>下载下来一个jar文件：<a href="/res/2021/06/28/p2_1.jar">p2_1.jar</a></p>
-<p>用jd-gui反编译看一看源码，其中flag{}内是密文，需要Base64解密。</p>
-<h2 id="medium-misc-give_you_flag">[Medium] [Misc] give_you_flag</h2>
+<p>cat与cd使用教学。</p>
+<h2 id="medium-web-who-are-you">[Medium] [Web] Who are you?</h2>
 <blockquote>
-<p>菜狗找到了文件中的彩蛋很开心，给菜猫发了个表情包</p>
-<p><a href="https://adworld.xctf.org.cn/media/task/attachments/4b0799f9a4d649f09a882b6b1130bb70.gif">https://adworld.xctf.org.cn/media/task/attachments/4b0799f9a4d649f09a882b6b1130bb70.gif</a></p>
+<p>Let me in. Let me iiiiiiinnnnnnnnnnnnnnnnnnnn</p>
+<p><a href="http://mercury.picoctf.net:36622/">http://mercury.picoctf.net:36622/</a></p>
+<p>Hint: It ain&rsquo;t much, but it&rsquo;s an RFC <a href="https://tools.ietf.org/html/rfc2616">https://tools.ietf.org/html/rfc2616</a></p>
 </blockquote>
-<p>下载下来一张gif：</p>
+<p>加上这些headers：</p>
+<pre><code>User-Agent: PicoBrowser
+Host: mercury.picoctf.net:36622
+Referer: http://mercury.picoctf.net:36622/
+Date: 01 Jul 2018
+DNT: 1
+X-Forwarded-For: 31.44.224.0
+Accept-Language: sv, en
+</code></pre><h2 id="medium-crypto-pixelated">[Medium] [Crypto] Pixelated</h2>
+<blockquote>
+<p>I have these 2 images, can you make a flag out of them?</p>
+<p><a href="https://mercury.picoctf.net/static/49743139fb7c10765dbf462d40987d2a/scrambled1.png">scrambled1.png</a></p>
+<p><a href="https://mercury.picoctf.net/static/49743139fb7c10765dbf462d40987d2a/scrambled1.png">scrambled2.png</a></p>
+<p>Hint1: <a href="https://en.wikipedia.org/wiki/Visual_cryptography">https://en.wikipedia.org/wiki/Visual_cryptography</a></p>
+<p>Hint2: Think of different ways you can &ldquo;stack&rdquo; images</p>
+</blockquote>
+<p>下载下来两张图片：</p>
 <p>
-        <a data-fancybox="gallery" href="/res/2021/06/28/p3_1.gif">
-            <img class="mx-auto" alt="" src="/res/2021/06/28/p3_1.gif" />
+        <a data-fancybox="gallery" href="/res/2021/07/01/scrambled1.png">
+            <img class="mx-auto" alt="" src="/res/2021/07/01/scrambled1.png" />
+        </a>
+    
+        <a data-fancybox="gallery" href="/res/2021/07/01/scrambled2.png">
+            <img class="mx-auto" alt="" src="/res/2021/07/01/scrambled2.png" />
         </a>
     </p>
-<p>把gif拆开，其中一张长这样：</p>
-<p>
-        <a data-fancybox="gallery" href="/res/2021/06/28/p3_2.gif">
-            <img class="mx-auto" alt="" src="/res/2021/06/28/p3_2.gif" />
-        </a>
-    </p>
-<p>看起来就是少了定位点的QR码。用PS魔棒工具选择其他二维码的定位点，p上来，扫描得到flag。</p>
-<h2 id="medium-misc-ext3">[Medium] [Misc] ext3</h2>
+<p>两个图片异或操作，之后让纯白变纯黑。</p>
+<p>执行这段Python代码：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#000;font-weight:bold">from</span> <span style="color:#555">PIL</span> <span style="color:#000;font-weight:bold">import</span> Image, ImageChops
+
+i1 <span style="color:#000;font-weight:bold">=</span> Image<span style="color:#000;font-weight:bold">.</span>open(<span style="color:#d14">&#34;scrambled1.png&#34;</span>)
+i2 <span style="color:#000;font-weight:bold">=</span> Image<span style="color:#000;font-weight:bold">.</span>open(<span style="color:#d14">&#34;scrambled2.png&#34;</span>)
+
+w, h <span style="color:#000;font-weight:bold">=</span> i1<span style="color:#000;font-weight:bold">.</span>size
+
+i3 <span style="color:#000;font-weight:bold">=</span> Image<span style="color:#000;font-weight:bold">.</span>new(<span style="color:#d14">&#34;RGB&#34;</span>, (w, h), (<span style="color:#099">255</span>, <span style="color:#099">255</span>, <span style="color:#099">255</span>))
+
+i1l <span style="color:#000;font-weight:bold">=</span> i1<span style="color:#000;font-weight:bold">.</span>load()
+i2l <span style="color:#000;font-weight:bold">=</span> i2<span style="color:#000;font-weight:bold">.</span>load()
+i3l <span style="color:#000;font-weight:bold">=</span> i3<span style="color:#000;font-weight:bold">.</span>load()
+
+<span style="color:#000;font-weight:bold">for</span> i <span style="color:#000;font-weight:bold">in</span> <span style="color:#0086b3">range</span>(w):
+    <span style="color:#000;font-weight:bold">for</span> j <span style="color:#000;font-weight:bold">in</span> <span style="color:#0086b3">range</span>(h):
+        i3l[i, j] <span style="color:#000;font-weight:bold">=</span> (i1l[i, j][<span style="color:#099">0</span>] <span style="color:#000;font-weight:bold">^</span> i2l[i, j][<span style="color:#099">0</span>], i1l[i, j][<span style="color:#099">1</span>] <span style="color:#000;font-weight:bold">^</span>
+                     i2l[i, j][<span style="color:#099">1</span>], i1l[i, j][<span style="color:#099">2</span>] <span style="color:#000;font-weight:bold">^</span> i2l[i, j][<span style="color:#099">2</span>])
+        <span style="color:#000;font-weight:bold">if</span> i3l[i, j] <span style="color:#000;font-weight:bold">==</span> (<span style="color:#099">255</span>, <span style="color:#099">255</span>, <span style="color:#099">255</span>):
+            i3l[i, j] <span style="color:#000;font-weight:bold">=</span> (<span style="color:#099">0</span>, <span style="color:#099">0</span>, <span style="color:#099">0</span>)
+i3<span style="color:#000;font-weight:bold">.</span>show()
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="hard-binary-filtered-shellcode">[Hard] [Binary] filtered-shellcode</h2>
 <blockquote>
-<p>今天是菜狗的生日，他收到了一个linux系统光盘</p>
-<p><a href="https://adworld.xctf.org.cn/media/task/attachments/f1fc23f5c743425d9e0073887c846d23">https://adworld.xctf.org.cn/media/task/attachments/f1fc23f5c743425d9e0073887c846d23</a></p>
+<p>A program that just runs the code you give it? That seems kinda boring&hellip; <a href="https://mercury.picoctf.net/static/a265c792afa91dc767145b07c0986e87/fun">fun</a></p>
+<p>nc mercury.picoctf.net 16610</p>
+<p>Hint: Take a look at the calling convention and see how you might be able to setup all the registers</p>
 </blockquote>
-<p>下载下来一张文件：<a href="/res/2021/06/28/p4_1">p4_1</a></p>
-<p>用7zip解压缩，O7avZhikgKgbF目录下有flag.txt文件。</p>
-<p>内容用Base64解密得到flag。</p>
-<h2 id="hard-misc-simplerar">[Hard] [Misc] SimpleRAR</h2>
-<blockquote>
-<p>菜狗最近学会了拼图，这是他刚拼好的，可是却搞错了一块(ps:双图层)</p>
-<p><a href="https://adworld.xctf.org.cn/media/task/attachments/18c5326aada0499eafbe03ad8a52e40c.rar">https://adworld.xctf.org.cn/media/task/attachments/18c5326aada0499eafbe03ad8a52e40c.rar</a></p>
-</blockquote>
-<p>下载下来是一个rar文件：<a href="/res/2021/06/28/p5_1.rar">p5_1.rar</a></p>
-<p>拿到题之后搜rar格式，一不小心搜出题解第一步：<a href="https://cloud.tencent.com/developer/article/1419460">CTF解题技能之压缩包分析基础篇 - 云+社区 - 腾讯云 (tencent.com)</a></p>
-<p>用010Editor打开，发现有一个图片没解压出来，因为文件头的HEAD_TYPE错了。</p>
-<p>7A改为74后解压，得到一个secret.png文件。查看二进制，这是个gif。修改后缀名为gif。</p>
-<p>该gif是两张图片组成的。拆开后分别用stegslove查看隐藏内容，可以看见两个半边二维码，其中，上半部分二维码的定位点需要补全。</p>
-<p>用ps工具整一下，用<a href="https://cli.im/deqr">草料二维码</a>扫描，得到flag。</p>
-<p>P.S. 手机扫码可能扫不出来，原因暂未知。</p>
+<p>下载下来一个文件：<a href="/res/2021/07/01/fun">fun</a></p>
+<p>// TODO</p>
         </div>
 
         
 <div class="post-archive">
     <ul class="post-copyright">
         <li><strong>原文作者：</strong><a rel="author" href="https://www.huahuaorz.com/">HuaHuaY</a></li>
-        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.28/">https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.28/</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.1/">https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.1/</a></li>
         <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
     </ul>
 </div>
@@ -278,15 +327,15 @@
     <h2>See Also</h2>
     <ul class="listing">
         
+        <li><a href="/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.30/">CTF校队暑期练习2021.6.30</a></li>
+        
+        <li><a href="/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.29/">CTF校队暑期练习2021.6.29</a></li>
+        
+        <li><a href="/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.28/">CTF校队暑期练习2021.6.28</a></li>
+        
         <li><a href="/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.25/">CTF校队暑期练习2021.6.25</a></li>
         
         <li><a href="/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.24/">CTF校队暑期练习2021.6.24</a></li>
-        
-        <li><a href="/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.23/">CTF校队暑期练习2021.6.23</a></li>
-        
-        <li><a href="/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.22/">CTF校队暑期练习2021.6.22</a></li>
-        
-        <li><a href="/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.21/">CTF校队暑期练习2021.6.21</a></li>
         
     </ul>
 </div>
