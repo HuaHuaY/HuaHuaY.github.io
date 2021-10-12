@@ -9,21 +9,24 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
     
 
-    <title>KVM | 空栈攻城狮</title>
-    <meta property="og:title" content="KVM - 空栈攻城狮">
+    <title>面试复习收录 | 空栈攻城狮</title>
+    <meta property="og:title" content="面试复习收录 - 空栈攻城狮">
     <meta property="og:type" content="article">
         
+    <meta property="article:published_time" content='2021-10-12T23:00:00&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2021-10-12T23:00:00&#43;08:00'>
         
     <meta name="Keywords" content="程序设计,c&#43;&#43;,java,c,python,方舟编译器">
-    <meta name="description" content="KVM">
+    <meta name="description" content="面试复习收录">
         
     <meta name="author" content="HuaHuaY">
-    <meta property="og:url" content="https://www.huahuaorz.com/tags/KVM/">
+    <meta property="og:url" content="https://www.huahuaorz.com/post/%E9%9D%A2%E8%AF%95%E5%A4%8D%E4%B9%A0%E6%94%B6%E5%BD%95/%E9%9D%A2%E8%AF%95%E5%A4%8D%E4%B9%A0%E6%94%B6%E5%BD%95/">
     <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
     <link rel="stylesheet" href='/css/style.css'>
-    <link rel="alternate" type="application/rss+xml" href="https://www.huahuaorz.com/tags/KVM/index.xml" title="空栈攻城狮" />
     <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
@@ -51,7 +54,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="" href="https://www.huahuaorz.com/">首页</a>
+                    <a class="current" href="https://www.huahuaorz.com/">首页</a>
                     
                     <a  href="https://www.huahuaorz.com/archives/" title="归档">归档</a>
                     
@@ -70,47 +73,245 @@
                 <div class="col-8" id="main">
                     
 <div class="res-cons">
-    
-    <h3 class="archive-title">
-        包含标签
-        <span class="keyword">KVM</span>
-        的文章
-    </h3>
-    
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
 
-    
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#计算机网络">计算机网络</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
     <article class="post">
         <header>
-            <h1 class="post-title">
-                <a href="https://www.huahuaorz.com/post/PVE%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/">PVE安装记录</a>
-            </h1>
+            <h1 class="post-title">面试复习收录</h1>
         </header>
         <date class="post-meta meta-date">
-            2020年12月4日
+            2021年10月12日
         </date>
         
-        <div class="post-meta meta-category">
-            |
+        <div class="post-meta">
+            <span>|</span>
             
-            <a href='/categories/%E8%99%9A%E6%8B%9F%E5%8C%96'>虚拟化</a>
+            <span class="meta-category"><a href='/categories/%E6%95%B0%E6%8D%AE%E5%BA%93'>数据库</a></span>
             
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="clear" style="display: none">
+            <div class="toc-article">
+                <div class="toc-title">文章目录</div>
+            </div>
         </div>
         
         <div class="post-content">
-            <p>PVE版本：6.3</p>
-<p>主板：Asus H370i</p>
-<p>显卡：RTX2070S</p>……
-            <p class="readmore"><a href="https://www.huahuaorz.com/post/PVE%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/">阅读全文</a></p>
+            <h2 id="计算机网络">计算机网络</h2>
+<ol>
+<li>
+<p>TCP四元组：源IP、目的IP、源端口、目的端口。</p>
+</li>
+<li>
+<p>HTTP请求报文结构：</p>
+<ol>
+<li>报文首部：请求行、请求首部字段、通用首部字段、实体首部字段、其他</li>
+<li>空行（CR+LF）</li>
+<li>报文主体</li>
+</ol>
+</li>
+<li>
+<p>TCP报文段首部：</p>
+<p>
+        <a data-fancybox="gallery" href="TCP%e9%a6%96%e9%83%a8%e6%a0%bc%e5%bc%8f.png">
+            <img class="mx-auto" alt="" src="TCP%e9%a6%96%e9%83%a8%e6%a0%bc%e5%bc%8f.png" />
+        </a>
+    </p>
+</li>
+<li>
+<p>一个确认字节号N的ACK表示所有直到N的字节（不包括N）已经成功被接收了，是期望收到对方下一个报文段的第一个数据字节的序号。</p>
+</li>
+<li>
+<p>数据偏移的单位是4字节，又占4bit，2^4-1=15，所以最大偏移60字节。</p>
+</li>
+<li>
+<p>控制位：</p>
+<ol>
+<li>紧急URG：当URG=1时，紧急指针字段有效。</li>
+<li>确认ACK：当ACK=1时，确认号字段有效。</li>
+<li>推送PSH：不需要缓冲区满，立即发送、接受交付报文。</li>
+<li>复位RST：释放链接重新建立。</li>
+<li>同步SYN：SYN置为1就表示这是一个连接请求或连接接收报文。</li>
+<li>终止FIN：当FIN=1时，表明此报文段的发送方的数据已发送完毕，并要求释放运输连接。</li>
+</ol>
+</li>
+<li>
+<p>窗口：从本报文段首部中的确定号算起，接收方目前允许对方发送的数据量。</p>
+</li>
+<li>
+<p>校验和：校验首部和数据。</p>
+</li>
+<li>
+<p>紧急指针：指出本报文段中的紧急数据的字节数。值得注意的是，即使窗口为零时也可发送紧急数据。</p>
+</li>
+<li>
+<p>UDP报文段首部：</p>
+</li>
+<li></li>
+</ol>
+
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://www.huahuaorz.com/">HuaHuaY</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://www.huahuaorz.com/post/%E9%9D%A2%E8%AF%95%E5%A4%8D%E4%B9%A0%E6%94%B6%E5%BD%95/%E9%9D%A2%E8%AF%95%E5%A4%8D%E4%B9%A0%E6%94%B6%E5%BD%95/">https://www.huahuaorz.com/post/%E9%9D%A2%E8%AF%95%E5%A4%8D%E4%B9%A0%E6%94%B6%E5%BD%95/%E9%9D%A2%E8%AF%95%E5%A4%8D%E4%B9%A0%E6%94%B6%E5%BD%95/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.13/">CTF校队暑期练习2021.7.13</a></li>
+        
+        <li><a href="/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.12/">CTF校队暑期练习2021.7.12</a></li>
+        
+        <li><a href="/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.10/">CTF校队暑期练习2021.7.10</a></li>
+        
+        <li><a href="/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.8/">CTF校队暑期练习2021.7.8</a></li>
+        
+        <li><a href="/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.6/">CTF校队暑期练习2021.7.6</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/%E6%8B%9B%E8%81%98'>招聘</a></li>
+                
+            </ul>
+            
         </div>
     </article>
     
-
     
 
-
-
-
-
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "HuaHuaY/HuaHuaY.github.io"
+            issue-term="title"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
 </div>
 
                     <footer id="footer">
@@ -133,6 +334,16 @@
 </footer>
 
 
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>

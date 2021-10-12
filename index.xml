@@ -6,7 +6,7 @@
     <description>Recent content on 空栈攻城狮</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 13 Jul 2021 08:00:00 +0800</lastBuildDate><atom:link href="https://www.huahuaorz.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Oct 2021 23:00:00 +0800</lastBuildDate><atom:link href="https://www.huahuaorz.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Welcome to My Website!</title>
       <link>https://www.huahuaorz.com/post/Welcome-to-My-Website/</link>
@@ -14,6 +14,15 @@
       
       <guid>https://www.huahuaorz.com/post/Welcome-to-My-Website/</guid>
       <description>欢迎来到我的站点，我是站长HuaHua。欢迎和我交朋友！</description>
+    </item>
+    
+    <item>
+      <title>面试复习收录</title>
+      <link>https://www.huahuaorz.com/post/%E9%9D%A2%E8%AF%95%E5%A4%8D%E4%B9%A0%E6%94%B6%E5%BD%95/%E9%9D%A2%E8%AF%95%E5%A4%8D%E4%B9%A0%E6%94%B6%E5%BD%95/</link>
+      <pubDate>Tue, 12 Oct 2021 23:00:00 +0800</pubDate>
+      
+      <guid>https://www.huahuaorz.com/post/%E9%9D%A2%E8%AF%95%E5%A4%8D%E4%B9%A0%E6%94%B6%E5%BD%95/%E9%9D%A2%E8%AF%95%E5%A4%8D%E4%B9%A0%E6%94%B6%E5%BD%95/</guid>
+      <description>计算机网络 TCP四元组：源IP、目的IP、源端口、目的端口。 HTTP请求报文结构： 报文首部：请求行、请求首部字段、通用首部字段、实体首部字段、其他 空行（CR+LF） 报文主体 TCP报文段首部： 一个确认字节号N的ACK表示所有直到N的字节（不包括N）已经成功被接收了，是期望收到对方下</description>
     </item>
     
     <item>
