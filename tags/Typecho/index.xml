@@ -6,15 +6,14 @@
     <description>Recent content in Typecho on 空栈攻城狮</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 12 Aug 2020 00:00:00 +0800</lastBuildDate><atom:link href="https://www.huahuaorz.com/tags/Typecho/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Aug 2020 00:00:00 +0800</lastBuildDate>
+    <atom:link href="https://www.huahuaorz.com/tags/Typecho/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Typecho Handsome主题美化</title>
       <link>https://www.huahuaorz.com/post/Typecho-Handsome%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/</link>
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0800</pubDate>
-      
       <guid>https://www.huahuaorz.com/post/Typecho-Handsome%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/</guid>
       <description>&lt;p&gt;记录我的个人站点美化教程，有些设定是自己用F12调试，有些是收集自网络。使用Typecho搭建，handsome主题。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

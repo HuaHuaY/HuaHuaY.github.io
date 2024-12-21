@@ -23,7 +23,10 @@
         
     <meta name="author" content="HuaHuaY">
     <meta property="og:url" content="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.28/">
-    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+    <link rel="shortcut icon" href='/favicon.ico' type="image/x-icon">
+    <link rel="icon" href='/favicon.png' type="image/png">
+    <link rel="alternate icon" href='/favicon.png' type="image/svg+xml">
+    
 
     <link rel="stylesheet" href='/css/normalize.css'>
     <link rel="stylesheet" href='/css/style.css'>
@@ -54,7 +57,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="current" href="https://www.huahuaorz.com/">首页</a>
+                    <a class="current" href="https://www.huahuaorz.com/">Home</a>
                     
                     <a  href="https://www.huahuaorz.com/archives/" title="归档">归档</a>
                     
@@ -135,7 +138,7 @@
     }
 </style>
 <div class="post-toc" style="position: absolute; top: 188px;">
-    <h2 class="post-toc-title">文章目录</h2>
+    <h2 class="post-toc-title">Table of Contents</h2>
     <div class="post-toc-content">
         <nav id="TableOfContents">
   <ul>
@@ -153,8 +156,8 @@
         var postToc = $(".post-toc");
         if (postToc.length) {
             var leftPos = $("#main").offset().left;
-            if(leftPos<220){
-                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            if (leftPos < 220) {
+                postToc.css({ "width": leftPos - 10, "margin-left": (0 - leftPos) })
             }
 
             var t = postToc.offset().top - 20,
@@ -173,33 +176,41 @@
                 e < t ? postToc.css(a.start) : postToc.css(a.process)
             })
         }
+
+        if ($("#TableOfContents").children().length < 1) {
+            $(".post-toc").remove();
+        }
     })
 </script>
     <article class="post">
         <header>
             <h1 class="post-title">CTF校队暑期练习2021.6.28</h1>
         </header>
-        <date class="post-meta meta-date">
-            2021年6月28日
-        </date>
+        
+  <time datetime="2021-06-28T15:59:59Z" class="post-meta meta-date dt-published">
+    2021-06-28
+  </time>
+
+
+<div class="post-meta meta-category">
+  <span>&nbsp;|</span>
+  
+    <a href='/categories/CTF' target="_blank">CTF</a>
+  
+</div>
+
+
         
         <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/CTF'>CTF</a></span>
-            
-        </div>
-        
-        
-        <div class="post-meta">
-            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
-                    阅读</span></span>
+            <span id="busuanzi_container_page_pv">&nbsp;|
+                <span id="busuanzi_value_page_pv"></span> <span>reads</span>
+            </span>
         </div>
         
         
         <div class="clear" style="display: none">
             <div class="toc-article">
-                <div class="toc-title">文章目录</div>
+                <div class="toc-title">Table of Contents</div>
             </div>
         </div>
         
@@ -263,9 +274,9 @@
         
 <div class="post-archive">
     <ul class="post-copyright">
-        <li><strong>原文作者：</strong><a rel="author" href="https://www.huahuaorz.com/">HuaHuaY</a></li>
-        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.28/">https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.28/</a></li>
-        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+        <li><strong>Author: </strong><a rel="author" href="https://www.huahuaorz.com/">HuaHuaY</a></li>
+        <li style="word-break:break-all"><strong>Link: </strong><a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.28/">https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.28/</a></li>
+        <li><strong>License: </strong>This work is under a <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>. Kindly fulfill the requirements of the aforementioned License when adapting or creating a derivative of this work.</li>
     </ul>
 </div>
 <br/>
@@ -296,9 +307,9 @@
             
             <ul class="clearfix">
                 
-                <li><a href='/tags/CTF'>CTF</a></li>
+                <li><a href='/tags/CTF' target="_blank">CTF</a></li>
                 
-                <li><a href='/tags/%E5%AE%89%E5%85%A8'>安全</a></li>
+                <li><a href='/tags/%E5%AE%89%E5%85%A8' target="_blank">安全</a></li>
                 
             </ul>
             
@@ -319,11 +330,14 @@
       </script>
     </div>
     
+    
+    
+
 </div>
 
                     <footer id="footer">
     <div>
-        &copy; 2021 <a href="https://www.huahuaorz.com/">空栈攻城狮 By HuaHuaY</a>
+        &copy; 2024 <a href="https://www.huahuaorz.com/">空栈攻城狮 By HuaHuaY</a>
         
     </div>
     <br />
@@ -342,6 +356,7 @@
 
 
     
+    
     <script type="text/javascript">
         window.MathJax = {
             tex2jax: {
@@ -350,11 +365,84 @@
                 }
             };
     </script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+<style type="text/css">
+div.highlight {
+    position: relative;
+    margin: 1em 0px;
+}
 
+.copy-code {
+    display: none;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(78, 78, 78, 0.8);
+    border-radius: var(--radius);
+    padding: 0 5px;
+    font: inherit;
+    user-select: none;
+    cursor: pointer;
+    border: 0;
+    --radius: 8px;
+}
+
+div.highlight:hover .copy-code,pre:hover .copy-code {
+    display: block;
+}
+
+</style>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
 
 
     <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
@@ -366,56 +454,56 @@
 
                 <div id="secondary">
     <section class="widget">
-        <form id="search" action='https://www.huahuaorz.com/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+        <form id="search" action='https://www.huahuaorz.com/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
       
       <input type="text" name="q" maxlength="20" placeholder="Search">
       <input type="hidden" name="sitesearch" value="https://www.huahuaorz.com/">
       <button type="submit" class="submit icon-search"></button>
 </form>
     </section>
-    
+
     <section class="widget">
-        <h3 class="widget-title">最近文章</h3>
+        <h3 class="widget-title">Latest articles</h3>
 <ul class="widget-list">
     
     <li>
-        <a href="https://www.huahuaorz.com/post/Welcome-to-My-Website/" title="Welcome to My Website!">Welcome to My Website!</a>
+        <a href="https://www.huahuaorz.com/post/Welcome-to-My-Website/" title="Welcome to My Website!" target="_blank">Welcome to My Website!</a>
     </li>
     
     <li>
-        <a href="https://www.huahuaorz.com/post/%E9%9D%A2%E8%AF%95%E5%A4%8D%E4%B9%A0%E6%94%B6%E5%BD%95/" title="面试复习收录">面试复习收录</a>
+        <a href="https://www.huahuaorz.com/post/%E9%9D%A2%E8%AF%95%E5%A4%8D%E4%B9%A0%E6%94%B6%E5%BD%95/" title="面试复习收录" target="_blank">面试复习收录</a>
     </li>
     
     <li>
-        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.13/" title="CTF校队暑期练习2021.7.13">CTF校队暑期练习2021.7.13</a>
+        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.13/" title="CTF校队暑期练习2021.7.13" target="_blank">CTF校队暑期练习2021.7.13</a>
     </li>
     
     <li>
-        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.12/" title="CTF校队暑期练习2021.7.12">CTF校队暑期练习2021.7.12</a>
+        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.12/" title="CTF校队暑期练习2021.7.12" target="_blank">CTF校队暑期练习2021.7.12</a>
     </li>
     
     <li>
-        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.10/" title="CTF校队暑期练习2021.7.10">CTF校队暑期练习2021.7.10</a>
+        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.10/" title="CTF校队暑期练习2021.7.10" target="_blank">CTF校队暑期练习2021.7.10</a>
     </li>
     
     <li>
-        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.8/" title="CTF校队暑期练习2021.7.8">CTF校队暑期练习2021.7.8</a>
+        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.8/" title="CTF校队暑期练习2021.7.8" target="_blank">CTF校队暑期练习2021.7.8</a>
     </li>
     
     <li>
-        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.6/" title="CTF校队暑期练习2021.7.6">CTF校队暑期练习2021.7.6</a>
+        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.6/" title="CTF校队暑期练习2021.7.6" target="_blank">CTF校队暑期练习2021.7.6</a>
     </li>
     
     <li>
-        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.5/" title="CTF校队暑期练习2021.7.5">CTF校队暑期练习2021.7.5</a>
+        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.5/" title="CTF校队暑期练习2021.7.5" target="_blank">CTF校队暑期练习2021.7.5</a>
     </li>
     
     <li>
-        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.2/" title="CTF校队暑期练习2021.7.2">CTF校队暑期练习2021.7.2</a>
+        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.2/" title="CTF校队暑期练习2021.7.2" target="_blank">CTF校队暑期练习2021.7.2</a>
     </li>
     
     <li>
-        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.1/" title="CTF校队暑期练习2021.7.1">CTF校队暑期练习2021.7.1</a>
+        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.1/" title="CTF校队暑期练习2021.7.1" target="_blank">CTF校队暑期练习2021.7.1</a>
     </li>
     
 </ul>
@@ -424,7 +512,7 @@
     
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+        <h3 class="widget-title"><a href='/categories/'>Categories</a></h3>
 <ul class="widget-list">
     
     <li><a href="https://www.huahuaorz.com/categories/CTF/">CTF (16)</a></li>
@@ -443,20 +531,20 @@
     </section>
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+        <h3 class="widget-title"><a href='/tags/'>Tags</a></h3>
 <div class="tagcloud">
     
     <a href="https://www.huahuaorz.com/tags/CTF/">CTF</a>
     
     <a href="https://www.huahuaorz.com/tags/KVM/">KVM</a>
     
-    <a href="https://www.huahuaorz.com/tags/PVE/">PVE</a>
-    
     <a href="https://www.huahuaorz.com/tags/PostgreSQL/">PostgreSQL</a>
     
-    <a href="https://www.huahuaorz.com/tags/Typecho/">Typecho</a>
+    <a href="https://www.huahuaorz.com/tags/PVE/">PVE</a>
     
-    <a href="https://www.huahuaorz.com/tags/themes/">themes</a>
+    <a href="https://www.huahuaorz.com/tags/themes/">Themes</a>
+    
+    <a href="https://www.huahuaorz.com/tags/Typecho/">Typecho</a>
     
     <a href="https://www.huahuaorz.com/tags/%E5%AE%89%E5%85%A8/">安全</a>
     
@@ -473,7 +561,7 @@
 
     
 <section class="widget">
-    <h3 class="widget-title">友情链接</h3>
+    <h3 class="widget-title">Links</h3>
     <ul class="widget-list">
         
         <li>
@@ -489,9 +577,9 @@
 
 
     <section class="widget">
-        <h3 class="widget-title">其它</h3>
+        <h3 class="widget-title">Meta</h3>
         <ul class="widget-list">
-            <li><a href="https://www.huahuaorz.com/index.xml">文章 RSS</a></li>
+            <li><a href="https://www.huahuaorz.com/index.xml">RSS</a></li>
         </ul>
     </section>
 </div>

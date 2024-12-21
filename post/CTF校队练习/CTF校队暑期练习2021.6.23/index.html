@@ -23,7 +23,10 @@
         
     <meta name="author" content="HuaHuaY">
     <meta property="og:url" content="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.23/">
-    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+    <link rel="shortcut icon" href='/favicon.ico' type="image/x-icon">
+    <link rel="icon" href='/favicon.png' type="image/png">
+    <link rel="alternate icon" href='/favicon.png' type="image/svg+xml">
+    
 
     <link rel="stylesheet" href='/css/normalize.css'>
     <link rel="stylesheet" href='/css/style.css'>
@@ -54,7 +57,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="current" href="https://www.huahuaorz.com/">首页</a>
+                    <a class="current" href="https://www.huahuaorz.com/">Home</a>
                     
                     <a  href="https://www.huahuaorz.com/archives/" title="归档">归档</a>
                     
@@ -135,7 +138,7 @@
     }
 </style>
 <div class="post-toc" style="position: absolute; top: 188px;">
-    <h2 class="post-toc-title">文章目录</h2>
+    <h2 class="post-toc-title">Table of Contents</h2>
     <div class="post-toc-content">
         <nav id="TableOfContents">
   <ul>
@@ -153,8 +156,8 @@
         var postToc = $(".post-toc");
         if (postToc.length) {
             var leftPos = $("#main").offset().left;
-            if(leftPos<220){
-                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            if (leftPos < 220) {
+                postToc.css({ "width": leftPos - 10, "margin-left": (0 - leftPos) })
             }
 
             var t = postToc.offset().top - 20,
@@ -173,33 +176,41 @@
                 e < t ? postToc.css(a.start) : postToc.css(a.process)
             })
         }
+
+        if ($("#TableOfContents").children().length < 1) {
+            $(".post-toc").remove();
+        }
     })
 </script>
     <article class="post">
         <header>
             <h1 class="post-title">CTF校队暑期练习2021.6.23</h1>
         </header>
-        <date class="post-meta meta-date">
-            2021年6月23日
-        </date>
+        
+  <time datetime="2021-06-23T15:59:59Z" class="post-meta meta-date dt-published">
+    2021-06-23
+  </time>
+
+
+<div class="post-meta meta-category">
+  <span>&nbsp;|</span>
+  
+    <a href='/categories/CTF' target="_blank">CTF</a>
+  
+</div>
+
+
         
         <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/CTF'>CTF</a></span>
-            
-        </div>
-        
-        
-        <div class="post-meta">
-            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
-                    阅读</span></span>
+            <span id="busuanzi_container_page_pv">&nbsp;|
+                <span id="busuanzi_value_page_pv"></span> <span>reads</span>
+            </span>
         </div>
         
         
         <div class="clear" style="display: none">
             <div class="toc-article">
-                <div class="toc-title">文章目录</div>
+                <div class="toc-title">Table of Contents</div>
             </div>
         </div>
         
@@ -249,39 +260,39 @@ Amount: 25.00€</p>
 </ol>
 </blockquote>
 <p>点开第一个Hint学习算法。跑这段Python代码算出flag：</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#000;font-weight:bold">for</span> i <span style="color:#000;font-weight:bold">in</span> <span style="color:#0086b3">range</span>(<span style="color:#099">0</span>, <span style="color:#099">999999</span>):
-    number <span style="color:#000;font-weight:bold">=</span> <span style="color:#0086b3">int</span>(<span style="color:#d14">&#34;543210&#34;</span> <span style="color:#000;font-weight:bold">+</span> <span style="color:#d14">&#34;</span><span style="color:#d14">%06d</span><span style="color:#d14">&#34;</span> <span style="color:#000;font-weight:bold">%</span> i <span style="color:#000;font-weight:bold">+</span> <span style="color:#d14">&#34;1234&#34;</span>)
-    <span style="color:#000;font-weight:bold">if</span> number <span style="color:#000;font-weight:bold">%</span> <span style="color:#099">123457</span> <span style="color:#000;font-weight:bold">==</span> <span style="color:#099">0</span>:
-        result <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>
-        <span style="color:#000;font-weight:bold">while</span> number <span style="color:#000;font-weight:bold">!=</span> <span style="color:#099">0</span>:
-            result <span style="color:#000;font-weight:bold">+=</span> number <span style="color:#000;font-weight:bold">%</span> <span style="color:#099">10</span>
-            number <span style="color:#000;font-weight:bold">//=</span> <span style="color:#099">10</span>
-            tmp <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">2</span> <span style="color:#000;font-weight:bold">*</span> (number <span style="color:#000;font-weight:bold">%</span> <span style="color:#099">10</span>)
-            result <span style="color:#000;font-weight:bold">+=</span> tmp <span style="color:#000;font-weight:bold">%</span> <span style="color:#099">10</span>
-            tmp <span style="color:#000;font-weight:bold">//=</span> <span style="color:#099">10</span>
-            result <span style="color:#000;font-weight:bold">+=</span> tmp <span style="color:#000;font-weight:bold">%</span> <span style="color:#099">10</span>
-            number <span style="color:#000;font-weight:bold">//=</span> <span style="color:#099">10</span>
-        <span style="color:#000;font-weight:bold">if</span> result <span style="color:#000;font-weight:bold">%</span> <span style="color:#099">10</span> <span style="color:#000;font-weight:bold">==</span> <span style="color:#099">0</span>:
-            <span style="color:#0086b3">print</span>(i)
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">for</span> i <span style="color:#000;font-weight:bold">in</span> <span style="color:#0086b3">range</span>(<span style="color:#099">0</span>, <span style="color:#099">999999</span>):
+</span></span><span style="display:flex;"><span>    number <span style="color:#000;font-weight:bold">=</span> <span style="color:#0086b3">int</span>(<span style="color:#d14">&#34;543210&#34;</span> <span style="color:#000;font-weight:bold">+</span> <span style="color:#d14">&#34;</span><span style="color:#d14">%06d</span><span style="color:#d14">&#34;</span> <span style="color:#000;font-weight:bold">%</span> i <span style="color:#000;font-weight:bold">+</span> <span style="color:#d14">&#34;1234&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">if</span> number <span style="color:#000;font-weight:bold">%</span> <span style="color:#099">123457</span> <span style="color:#000;font-weight:bold">==</span> <span style="color:#099">0</span>:
+</span></span><span style="display:flex;"><span>        result <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">while</span> number <span style="color:#000;font-weight:bold">!=</span> <span style="color:#099">0</span>:
+</span></span><span style="display:flex;"><span>            result <span style="color:#000;font-weight:bold">+=</span> number <span style="color:#000;font-weight:bold">%</span> <span style="color:#099">10</span>
+</span></span><span style="display:flex;"><span>            number <span style="color:#000;font-weight:bold">//=</span> <span style="color:#099">10</span>
+</span></span><span style="display:flex;"><span>            tmp <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">2</span> <span style="color:#000;font-weight:bold">*</span> (number <span style="color:#000;font-weight:bold">%</span> <span style="color:#099">10</span>)
+</span></span><span style="display:flex;"><span>            result <span style="color:#000;font-weight:bold">+=</span> tmp <span style="color:#000;font-weight:bold">%</span> <span style="color:#099">10</span>
+</span></span><span style="display:flex;"><span>            tmp <span style="color:#000;font-weight:bold">//=</span> <span style="color:#099">10</span>
+</span></span><span style="display:flex;"><span>            result <span style="color:#000;font-weight:bold">+=</span> tmp <span style="color:#000;font-weight:bold">%</span> <span style="color:#099">10</span>
+</span></span><span style="display:flex;"><span>            number <span style="color:#000;font-weight:bold">//=</span> <span style="color:#099">10</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">if</span> result <span style="color:#000;font-weight:bold">%</span> <span style="color:#099">10</span> <span style="color:#000;font-weight:bold">==</span> <span style="color:#099">0</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#0086b3">print</span>(i)
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="medium-reverse-engineering-bite-code">[Medium] [Reverse Engineering] Bite-code</h2>
 <blockquote>
@@ -298,33 +309,33 @@ Amount: 25.00€</p>
 <p>得到<code>(n &lt;&lt; 3) ^ n == 0b11010101101101011000011111101000</code></p>
 <p>第一次用0b000和最后3bit异或运算，结果作为flag的末尾3bit，然后拿这3bit与其前面3bit做异或运算，循环直到得到flag。</p>
 <p>Python代码如下：</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#000;font-weight:bold">import</span> <span style="color:#555">ctypes</span>
-res <span style="color:#000;font-weight:bold">=</span> <span style="color:#0086b3">int</span>(<span style="color:#0086b3">bin</span>((<span style="color:#000;font-weight:bold">-</span><span style="color:#099">889275714</span> <span style="color:#000;font-weight:bold">^</span> <span style="color:#099">525024598</span>) <span style="color:#000;font-weight:bold">&amp;</span> <span style="color:#099">0xFFFFFFFF</span>), base<span style="color:#000;font-weight:bold">=</span><span style="color:#099">2</span>)
-mask <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0x00000007</span>
-result <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>
-tmp <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>
-<span style="color:#000;font-weight:bold">for</span> _ <span style="color:#000;font-weight:bold">in</span> <span style="color:#0086b3">range</span>(<span style="color:#099">0</span>, <span style="color:#099">10</span>):
-    tmp <span style="color:#000;font-weight:bold">=</span> tmp <span style="color:#000;font-weight:bold">^</span> (mask <span style="color:#000;font-weight:bold">&amp;</span> res)
-    result <span style="color:#000;font-weight:bold">+=</span> tmp
-    tmp <span style="color:#000;font-weight:bold">&lt;&lt;=</span> <span style="color:#099">3</span>
-    mask <span style="color:#000;font-weight:bold">&lt;&lt;=</span> <span style="color:#099">3</span>
-<span style="color:#0086b3">print</span>(ctypes<span style="color:#000;font-weight:bold">.</span>c_int32(result <span style="color:#000;font-weight:bold">+</span> ((<span style="color:#099">0xC0000000</span> <span style="color:#000;font-weight:bold">&amp;</span> res) <span style="color:#000;font-weight:bold">^</span> (<span style="color:#099">0xC0000000</span> <span style="color:#000;font-weight:bold">&amp;</span> tmp)))<span style="color:#000;font-weight:bold">.</span>value)
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">import</span> <span style="color:#555">ctypes</span>
+</span></span><span style="display:flex;"><span>res <span style="color:#000;font-weight:bold">=</span> <span style="color:#0086b3">int</span>(<span style="color:#0086b3">bin</span>((<span style="color:#000;font-weight:bold">-</span><span style="color:#099">889275714</span> <span style="color:#000;font-weight:bold">^</span> <span style="color:#099">525024598</span>) <span style="color:#000;font-weight:bold">&amp;</span> <span style="color:#099">0xFFFFFFFF</span>), base<span style="color:#000;font-weight:bold">=</span><span style="color:#099">2</span>)
+</span></span><span style="display:flex;"><span>mask <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0x00000007</span>
+</span></span><span style="display:flex;"><span>result <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>
+</span></span><span style="display:flex;"><span>tmp <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">for</span> _ <span style="color:#000;font-weight:bold">in</span> <span style="color:#0086b3">range</span>(<span style="color:#099">0</span>, <span style="color:#099">10</span>):
+</span></span><span style="display:flex;"><span>    tmp <span style="color:#000;font-weight:bold">=</span> tmp <span style="color:#000;font-weight:bold">^</span> (mask <span style="color:#000;font-weight:bold">&amp;</span> res)
+</span></span><span style="display:flex;"><span>    result <span style="color:#000;font-weight:bold">+=</span> tmp
+</span></span><span style="display:flex;"><span>    tmp <span style="color:#000;font-weight:bold">&lt;&lt;=</span> <span style="color:#099">3</span>
+</span></span><span style="display:flex;"><span>    mask <span style="color:#000;font-weight:bold">&lt;&lt;=</span> <span style="color:#099">3</span>
+</span></span><span style="display:flex;"><span><span style="color:#0086b3">print</span>(ctypes<span style="color:#000;font-weight:bold">.</span>c_int32(result <span style="color:#000;font-weight:bold">+</span> ((<span style="color:#099">0xC0000000</span> <span style="color:#000;font-weight:bold">&amp;</span> res) <span style="color:#000;font-weight:bold">^</span> (<span style="color:#099">0xC0000000</span> <span style="color:#000;font-weight:bold">&amp;</span> tmp)))<span style="color:#000;font-weight:bold">.</span>value)
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="hard-web-inj3ction-time">[Hard] [Web] Inj3ction Time</h2>
 <blockquote>
@@ -346,9 +357,9 @@ tmp <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">
         
 <div class="post-archive">
     <ul class="post-copyright">
-        <li><strong>原文作者：</strong><a rel="author" href="https://www.huahuaorz.com/">HuaHuaY</a></li>
-        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.23/">https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.23/</a></li>
-        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+        <li><strong>Author: </strong><a rel="author" href="https://www.huahuaorz.com/">HuaHuaY</a></li>
+        <li style="word-break:break-all"><strong>Link: </strong><a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.23/">https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.6.23/</a></li>
+        <li><strong>License: </strong>This work is under a <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>. Kindly fulfill the requirements of the aforementioned License when adapting or creating a derivative of this work.</li>
     </ul>
 </div>
 <br/>
@@ -379,9 +390,9 @@ tmp <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">
             
             <ul class="clearfix">
                 
-                <li><a href='/tags/CTF'>CTF</a></li>
+                <li><a href='/tags/CTF' target="_blank">CTF</a></li>
                 
-                <li><a href='/tags/%E5%AE%89%E5%85%A8'>安全</a></li>
+                <li><a href='/tags/%E5%AE%89%E5%85%A8' target="_blank">安全</a></li>
                 
             </ul>
             
@@ -402,11 +413,14 @@ tmp <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">
       </script>
     </div>
     
+    
+    
+
 </div>
 
                     <footer id="footer">
     <div>
-        &copy; 2021 <a href="https://www.huahuaorz.com/">空栈攻城狮 By HuaHuaY</a>
+        &copy; 2024 <a href="https://www.huahuaorz.com/">空栈攻城狮 By HuaHuaY</a>
         
     </div>
     <br />
@@ -425,6 +439,7 @@ tmp <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">
 
 
     
+    
     <script type="text/javascript">
         window.MathJax = {
             tex2jax: {
@@ -433,11 +448,84 @@ tmp <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">
                 }
             };
     </script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+<style type="text/css">
+div.highlight {
+    position: relative;
+    margin: 1em 0px;
+}
 
+.copy-code {
+    display: none;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(78, 78, 78, 0.8);
+    border-radius: var(--radius);
+    padding: 0 5px;
+    font: inherit;
+    user-select: none;
+    cursor: pointer;
+    border: 0;
+    --radius: 8px;
+}
+
+div.highlight:hover .copy-code,pre:hover .copy-code {
+    display: block;
+}
+
+</style>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
 
 
     <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
@@ -449,56 +537,56 @@ tmp <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">
 
                 <div id="secondary">
     <section class="widget">
-        <form id="search" action='https://www.huahuaorz.com/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+        <form id="search" action='https://www.huahuaorz.com/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
       
       <input type="text" name="q" maxlength="20" placeholder="Search">
       <input type="hidden" name="sitesearch" value="https://www.huahuaorz.com/">
       <button type="submit" class="submit icon-search"></button>
 </form>
     </section>
-    
+
     <section class="widget">
-        <h3 class="widget-title">最近文章</h3>
+        <h3 class="widget-title">Latest articles</h3>
 <ul class="widget-list">
     
     <li>
-        <a href="https://www.huahuaorz.com/post/Welcome-to-My-Website/" title="Welcome to My Website!">Welcome to My Website!</a>
+        <a href="https://www.huahuaorz.com/post/Welcome-to-My-Website/" title="Welcome to My Website!" target="_blank">Welcome to My Website!</a>
     </li>
     
     <li>
-        <a href="https://www.huahuaorz.com/post/%E9%9D%A2%E8%AF%95%E5%A4%8D%E4%B9%A0%E6%94%B6%E5%BD%95/" title="面试复习收录">面试复习收录</a>
+        <a href="https://www.huahuaorz.com/post/%E9%9D%A2%E8%AF%95%E5%A4%8D%E4%B9%A0%E6%94%B6%E5%BD%95/" title="面试复习收录" target="_blank">面试复习收录</a>
     </li>
     
     <li>
-        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.13/" title="CTF校队暑期练习2021.7.13">CTF校队暑期练习2021.7.13</a>
+        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.13/" title="CTF校队暑期练习2021.7.13" target="_blank">CTF校队暑期练习2021.7.13</a>
     </li>
     
     <li>
-        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.12/" title="CTF校队暑期练习2021.7.12">CTF校队暑期练习2021.7.12</a>
+        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.12/" title="CTF校队暑期练习2021.7.12" target="_blank">CTF校队暑期练习2021.7.12</a>
     </li>
     
     <li>
-        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.10/" title="CTF校队暑期练习2021.7.10">CTF校队暑期练习2021.7.10</a>
+        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.10/" title="CTF校队暑期练习2021.7.10" target="_blank">CTF校队暑期练习2021.7.10</a>
     </li>
     
     <li>
-        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.8/" title="CTF校队暑期练习2021.7.8">CTF校队暑期练习2021.7.8</a>
+        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.8/" title="CTF校队暑期练习2021.7.8" target="_blank">CTF校队暑期练习2021.7.8</a>
     </li>
     
     <li>
-        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.6/" title="CTF校队暑期练习2021.7.6">CTF校队暑期练习2021.7.6</a>
+        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.6/" title="CTF校队暑期练习2021.7.6" target="_blank">CTF校队暑期练习2021.7.6</a>
     </li>
     
     <li>
-        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.5/" title="CTF校队暑期练习2021.7.5">CTF校队暑期练习2021.7.5</a>
+        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.5/" title="CTF校队暑期练习2021.7.5" target="_blank">CTF校队暑期练习2021.7.5</a>
     </li>
     
     <li>
-        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.2/" title="CTF校队暑期练习2021.7.2">CTF校队暑期练习2021.7.2</a>
+        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.2/" title="CTF校队暑期练习2021.7.2" target="_blank">CTF校队暑期练习2021.7.2</a>
     </li>
     
     <li>
-        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.1/" title="CTF校队暑期练习2021.7.1">CTF校队暑期练习2021.7.1</a>
+        <a href="https://www.huahuaorz.com/post/CTF%E6%A0%A1%E9%98%9F%E7%BB%83%E4%B9%A0/CTF%E6%A0%A1%E9%98%9F%E6%9A%91%E6%9C%9F%E7%BB%83%E4%B9%A02021.7.1/" title="CTF校队暑期练习2021.7.1" target="_blank">CTF校队暑期练习2021.7.1</a>
     </li>
     
 </ul>
@@ -507,7 +595,7 @@ tmp <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">
     
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+        <h3 class="widget-title"><a href='/categories/'>Categories</a></h3>
 <ul class="widget-list">
     
     <li><a href="https://www.huahuaorz.com/categories/CTF/">CTF (16)</a></li>
@@ -526,20 +614,20 @@ tmp <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">
     </section>
 
     <section class="widget">
-        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+        <h3 class="widget-title"><a href='/tags/'>Tags</a></h3>
 <div class="tagcloud">
     
     <a href="https://www.huahuaorz.com/tags/CTF/">CTF</a>
     
     <a href="https://www.huahuaorz.com/tags/KVM/">KVM</a>
     
-    <a href="https://www.huahuaorz.com/tags/PVE/">PVE</a>
-    
     <a href="https://www.huahuaorz.com/tags/PostgreSQL/">PostgreSQL</a>
     
-    <a href="https://www.huahuaorz.com/tags/Typecho/">Typecho</a>
+    <a href="https://www.huahuaorz.com/tags/PVE/">PVE</a>
     
-    <a href="https://www.huahuaorz.com/tags/themes/">themes</a>
+    <a href="https://www.huahuaorz.com/tags/themes/">Themes</a>
+    
+    <a href="https://www.huahuaorz.com/tags/Typecho/">Typecho</a>
     
     <a href="https://www.huahuaorz.com/tags/%E5%AE%89%E5%85%A8/">安全</a>
     
@@ -556,7 +644,7 @@ tmp <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">
 
     
 <section class="widget">
-    <h3 class="widget-title">友情链接</h3>
+    <h3 class="widget-title">Links</h3>
     <ul class="widget-list">
         
         <li>
@@ -572,9 +660,9 @@ tmp <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">
 
 
     <section class="widget">
-        <h3 class="widget-title">其它</h3>
+        <h3 class="widget-title">Meta</h3>
         <ul class="widget-list">
-            <li><a href="https://www.huahuaorz.com/index.xml">文章 RSS</a></li>
+            <li><a href="https://www.huahuaorz.com/index.xml">RSS</a></li>
         </ul>
     </section>
 </div>
